@@ -80,7 +80,10 @@ theme: jacman
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repository: git@github.com:qwguo/qwguo.github.io.git
+  branch: master
+
 
 stylus:
   compress: true
