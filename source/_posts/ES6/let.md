@@ -2,6 +2,7 @@
 title: let
 date: 2019-01-31 19:18:15
 tags:
+    - ES6
 ---
 
 # let 和 const 命令
