@@ -5,10 +5,10 @@
 # Site
 title: qwguo blog
 subtitle:
-description:
-keywords:
+description:  '记录工作学习中的知识点'
+keywords: '前端开发笔记'
 author: qwguo
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -81,7 +81,8 @@ theme: jacman
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:qwguo/qwguo.github.io.git
+  # repository: git@github.com:qwguo/qwguo.github.io.git
+  repository: git@gitee.com:qwguo/personal_blog.git
   branch: master
 
 

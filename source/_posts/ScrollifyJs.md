@@ -1,9 +1,7 @@
 ---
 title: ScrollifyJs
 date: 2019-02-14 14:16:15
-tags:
-    - 前端
-    - Jquery
+tags: [前端, Javascript, Jquery]
 ---
 
 ## jQuery Scrollify
