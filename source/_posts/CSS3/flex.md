@@ -1,8 +1,8 @@
 ---
-title: css3的flex布局
-date: 2019-12-11 13:23:42
+title: flex布局
+date: 2019-12-16 18:34:00
 tags:
-    - CSS3
+    - [CSS3]
 ---
 
 ## Flex
@@ -32,12 +32,12 @@ tags:
 - `column-reverse`：主轴和column一样垂直方向，起点改为相反方向，从下到上排列。
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/25C5861D1D1A48A8936D928BE4D677CE?method=getImage&version=5564&cstk=x6BmBPsp)
+![image](flex-direction-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#search=flex-direction)
 
 查看案例 [Demo](https://codepen.io/qwguo88/pen/abbqyVY)
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="flex-direction" src="https://codepen.io/qwguo88/embed/abbqyVY?height=300&theme-id=30742&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="flex-direction" src="https://codepen.io/qwguo88/embed/abbqyVY?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/abbqyVY'>flex-direction</a> by qwguo
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -55,10 +55,15 @@ tags:
 - `wrap-reverse`：和 wrap 的行为一样强制换行，但是排列会从下开始往上排列换行，或者从右开始向左排列换行。
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/C3BB79FDBC07470C9BB008931EEAD327?method=getImage&version=5609&cstk=x6BmBPsp)
+![image](flex-wrap-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#search=flex-wrap)
 
 查看案例 [Demo](https://codepen.io/qwguo88/pen/dyydwLr)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="flex-wrap" src="https://codepen.io/qwguo88/embed/dyydwLr?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/dyydwLr'>flex-wrap</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 #### 3、flex-flow
 
@@ -68,11 +73,15 @@ tags:
 `flex-flow: <'flex-direction'> || <'flex-wrap'>;`
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/AAB7F51D28124DD1A09E971F94BE0454?method=getImage&version=5632&cstk=x6BmBPsp)
+![image](flex-flow-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#search=flex-flow)
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/KKKQYBN)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="flex-flow" src="https://codepen.io/qwguo88/embed/KKKQYBN?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/KKKQYBN'>flex-flow</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 #### 4、justify-content
 
@@ -89,11 +98,15 @@ tags:
 - `space-evenly`：弹性容器的子项目将平局分布对齐，首尾子项将不贴近容器边缘，首尾子项贴近容器的间距和子项之间的间距相同；
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/96FAB7DA252740F9933FB851EF37386A?method=getImage&version=5688&cstk=xofCQiPX)
+![image](justify-content-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#feat=mdn-css_properties_justify-content_flex_context)
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/LYYQoop)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="justify-content" src="https://codepen.io/qwguo88/embed/LYYQoop?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/LYYQoop'>justify-content</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 #### 5、align-items
 
@@ -109,11 +122,15 @@ tags:
 - `stretch`：默认值，弹性容器的子项目如果不设置高度或者高度是auto，那么子项目将占满整个容器的高度
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/4122BF1B42134E56A7747B667404C831?method=getImage&version=5745&cstk=JZVQk732)
+![image](flex-align-items-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#feat=mdn-css_properties_align-items_flex_context)
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/NWWMjPG)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="align-items" src="https://codepen.io/qwguo88/embed/NWWMjPG?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/NWWMjPG'>align-items</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 #### 6、align-content
 
@@ -130,11 +147,15 @@ tags:
 - `stretch`：默认值，弹性容器的子项目如果不设置高度或者高度是auto，那么子项目将拉伸平均占满整个容器的高度活宽度
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/D0F9B843BDA14B69A1B8DE7714F7110F?method=getImage&version=5793&cstk=Q8wcw0NC)
+![image](flex-align-content-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#feat=mdn-css_properties_align-content_flex_context)
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/ExxLoGv)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="align-centent" src="https://codepen.io/qwguo88/embed/ExxLoGv?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/ExxLoGv'>align-centent</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ### 弹性容器中的子项目的属性：
 
@@ -150,10 +171,15 @@ tags:
     - 假设容器的宽度为400px, 子项1的占用的基础空间(flex-basis)为50px，子项2占用的基础空间是70px，子项3占用基础空间是100px，剩余空间为 400-50-70-100 = 180px。 其中子项1的flex-grow: 0(未设置默认为0)， 子项2flex-grow: 2，子项3flex-grow: 1，剩余空间分成3份，子项2占2份(120px)，子项3占1份(60px)。所以 子项1真实的占用空间为: 50+0 = 50px， 子项2真实的占用空间为: 70+120 = 190px， 子项3真实的占用空间为: 100+60 = 160px。
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/96A5A7DF42DE432EAB27879AFA4EAB67?method=getImage&version=5831&cstk=S8SxzCsz)
+![image](flex-grow-caniuse.png)
 [查看兼容详情](https://caniuse.com/#search=flex-grow)
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/xxxjJZo)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="flex-grow" src="https://codepen.io/qwguo88/embed/xxxjJZo?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/xxxjJZo'>flex-grow</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 #### 2、flex-shrink
 
@@ -198,10 +224,15 @@ tags:
 
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/FA2AB5E0B258434CB79BFB15CB16EB9D?method=getImage&version=6021&cstk=X4D5g_E2)
+![image](flex-shrink-caniuse.png)
 [查看兼容详情](https://caniuse.com/#search=flex-shrink)
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/vYYrEmp)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="flex-shrink" src="https://codepen.io/qwguo88/embed/vYYrEmp?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/vYYrEmp'>flex-shrink</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 #### 3、flex-basis
 
@@ -215,11 +246,15 @@ tags:
 
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/00D5763F38EE402D85F3FADF0F665120?method=getImage&version=5948&cstk=Z1VsMjTY)
+![image](flex-basis-caniuse.png)
 [查看兼容详情](https://caniuse.com/#search=flex-basis)
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/NWWzemV)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="flex-basis" src="https://codepen.io/qwguo88/embed/NWWzemV?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/NWWzemV'>flex-basis</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 #### 4、flex
 
@@ -247,10 +282,15 @@ tags:
 
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/159140AAF6D64E7A8BC98739B0BD2FE3?method=getImage&version=6000&cstk=i6N6JJYJ)
+![image](flex-caniuse.png)
 [查看兼容详情](https://caniuse.com/#search=flex)
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/JjjBpWO)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="flex" src="https://codepen.io/qwguo88/embed/JjjBpWO?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/JjjBpWO'>flex</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 #### 5、order
 
@@ -263,11 +303,15 @@ tags:
 
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/2BDE43A9E7F948C8A711ECA2DD03CB33?method=getImage&version=6022&cstk=X4D5g_E2)
+![image](flex-order-caniuse.png)
 [查看兼容详情](https://caniuse.com/#feat=mdn-css_properties_order)
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/rNNrbxb)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="order" src="https://codepen.io/qwguo88/embed/rNNrbxb?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/rNNrbxb'>order</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 #### 6、align-self
 
@@ -286,7 +330,12 @@ tags:
 
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/87E42E82A4F84EBAA33134B5C7797D25?method=getImage&version=6105&cstk=1JxD4ZTa)
+![image](flex-align-self-caniuse.png)
 [查看兼容详情](https://caniuse.com/#feat=mdn-css_properties_align-self_flex_context)
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/GRRXxQg)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="align-self" src="https://codepen.io/qwguo88/embed/GRRXxQg?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/GRRXxQg'>align-self</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
