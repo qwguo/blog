@@ -1,5 +1,5 @@
 ---
-title: columns多列属性1
+title: columns多列属性2
 date: 2019-12-13 16:02:03
 tags: [CSS3]
 ---
