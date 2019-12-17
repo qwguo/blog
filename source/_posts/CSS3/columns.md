@@ -45,6 +45,10 @@ tags: [CSS3]
 
 查看案例 [Demo](https://codepen.io/qwguo88/pen/poodMNw)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="column-width" src="https://codepen.io/qwguo88/embed/poodMNw?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/poodMNw'>column-width</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ### column-count样式属性使用
 
@@ -63,6 +67,10 @@ tags: [CSS3]
 
 查看案例 [Demo](https://codepen.io/qwguo88/pen/poodMNw)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="column-width" src="https://codepen.io/qwguo88/embed/poodMNw?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/poodMNw'>column-width</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## column-gap样式属性使用
 
@@ -80,6 +88,11 @@ tags: [CSS3]
 
 查看案例 [Demo](https://codepen.io/qwguo88/pen/wvvpNmp)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="column-gap" src="https://codepen.io/qwguo88/embed/wvvpNmp?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/wvvpNmp'>column-gap</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 ## column-span样式属性使用
 
 > `column-span`：用于设置元素中的子元素横向跨越的列数
@@ -96,6 +109,10 @@ tags: [CSS3]
 
 查看案例 [Demo](https://codepen.io/qwguo88/pen/GRRQZQW)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="column-span" src="https://codepen.io/qwguo88/embed/GRRQZQW?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/GRRQZQW'>column-span</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## column-rule样式属性使用
 
@@ -134,6 +151,11 @@ tags: [CSS3]
 [查看兼容性详情](https://caniuse.com/#search=column-rule)
 
 查看案例 [Demo](https://codepen.io/qwguo88/pen/jOOZrwo)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="column-rule" src="https://codepen.io/qwguo88/embed/jOOZrwo?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/jOOZrwo'>column-rule</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 
 ## column-fill样式属性使用
