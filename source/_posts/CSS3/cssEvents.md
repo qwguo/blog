@@ -2,13 +2,13 @@
 title: 在css3中有两个控制js事件行为的属性
 date: 2019-12-17 20:40:16
 tags: [CSS3]
+description: "在css3中pointer-events，touch-action属性的详细使用"
 ---
 
-# 在css3中有两个控制js事件行为的属性
+# pointer-events
 
-### 1、 `pointer-events`：属性指定在什么情况下 (如果有) 某个特定的图形元素可以成为鼠标事件的 `target`
 
-> 这个属性主要应用在`SVG`元素上，这篇文章主要介绍的是应用在HTML的DOM元素上
+> 属性指定在什么情况下某个特定的图形元素可以成为鼠标事件的 `target`，这个属性主要应用在`SVG`元素上，这篇文章主要介绍的是应用在HTML的DOM元素上
 
 **语法：**
 `pointer-events: auto | none | inherit | initial | unset;`
@@ -21,15 +21,19 @@ tags: [CSS3]
 - `unset`：未定义，继承父级行为。
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/59BDF31754F54CDEA0488EAE2F3E3A86?method=getImage&version=6159&cstk=LEc7ZUH5)
+![image](pointer-events-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#search=pointer-events)
 
 查看案例 [Demo](https://codepen.io/qwguo88/pen/MWWZWBj)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="pointer-events" src="https://codepen.io/qwguo88/embed/MWWZWBj?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/MWWZWBj'>pointer-events</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
-### 2、`touch-action`：用于设置触摸屏用户如何操纵元素的区域(例如，浏览器内置的缩放功能)。
+# touch-action
 
-> touch-action是控制手势事件过滤的CSS属性，为开发人员提供了一种声明性机制，以有选择地禁用触摸滚动（在一个或两个轴上）或双击缩放
+> touch-action是控制手势事件过滤的CSS属性，为开发人员提供了一种声明性机制，以有选择地禁用触摸滚动（在一个或两个轴上）或双击缩放，用于设置触摸屏用户如何操纵元素的区域
 
 **语法：**
 `touch-action: auto | none | [ [ pan-x | pan-left | pan-right ] || [ pan-y | pan-up | pan-down ] || pinch-zoom ] | manipulation;`
@@ -41,8 +45,12 @@ tags: [CSS3]
 
 
 **兼容性：**
-![image](https://note.youdao.com/yws/api/personal/file/8C03E32918884646A10A86685B38C502?method=getImage&version=6204&cstk=-DVFWHVL)
+![image](touch-action-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#search=touch-action)
 
 查看案例 [Demo](https://codepen.io/qwguo88/pen/YzzdyMd)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="touch-action" src="https://codepen.io/qwguo88/embed/YzzdyMd?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/YzzdyMd'>touch-action</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>

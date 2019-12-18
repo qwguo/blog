@@ -88,3 +88,11 @@ deploy:
 
 stylus:
   compress: true
+
+nofollow:
+  enable: true
+
+search:
+  path: search.xml
+  field: post
+  content: true
