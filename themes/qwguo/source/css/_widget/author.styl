@@ -1,0 +1,67 @@
+.author-box
+  text-align center
+  .portrait
+    width 120px
+    height 120px
+    overflow hidden
+    margin 10px auto
+    img
+      radius(50%)
+      max-width 100%
+      max-height 100%
+  ul,li
+    padding 0
+    margin 0
+    list-style none
+  li
+    margin-top 20px
+  .author-name
+    font-size 20px
+    color darken(font-color, 20%)
+  .author-intro
+    font-size 12px
+    color darken(font-color, 50%)
+  .author-icon
+    letter-spacing -.3em;
+    display flex
+    flex-wrap wrap
+    justify-content flex-start
+    a
+      flex-grow 0
+      flex-shkin 0
+      letter-spacing normal
+      width 30px
+      height 30px
+      margin 0 11px 10px 0
+      background-color lighten(main-color, 25%)
+      radius(15px)
+      line-height 30px
+      cursor pointer
+      color darken(font-color, 25%)
+      font-size: 16px
+      &:hover
+        color font-color
+        &.icon-weixin
+          background-color #00BC0D
+        &.icon-QQ
+          background-color #27BDF6
+        &.icon-weibo
+          background-color #F8231F
+        &.icon-douban
+          background-color #2E963D
+        &.icon-zhihu
+          background-color #0073DD
+        &.icon-email
+          background-color #0073DD
+        &.icon-twitter
+          background-color #41ABE1
+        &.icon-facebook
+          background-color #3B5997
+        &.icon-github
+          background-color #fff
+          color #000
+        &.icon-linkedin
+          background-color #0073B0
+        &.icon-stack-overflow
+          background-color #F48024
+

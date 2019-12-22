@@ -1,0 +1,46 @@
+.tags-widget
+  .tag-list,tag-list-item
+    padding 0
+    margin 0
+    list-style none
+  .tag-list-item
+    position relative
+    display inline-block
+    padding 6px 20px
+    margin 0 10px 10px 0
+    background-color lighten(main-color, 25%)
+    transform(skew(30deg))
+    radius(8px)
+    font-size 14px
+    transition(all .25s ease)
+    &:hover
+      transform(scale(1.1) skew(0))
+      background-color lighten(main-color, 40%)
+      z-index 2
+      .tag-list-link
+        transform(skew(0deg))
+      .tag-list-count
+        opacity 1
+        transform(skew(0deg) scale(1))
+  .tag-list-link
+    transition(all .25s ease)
+    transform(skew(-30deg))
+    display inline-block
+    color darken(font-color, 35%)
+  .tag-list-count
+    transform(skew(-30deg) scale(0))
+    opacity 0
+    radius(10px)
+    font-size 10px
+    position absolute
+    right -6px
+    top -5px
+    width 15px
+    height 15px
+    line-height 15px
+    text-align center
+    background-color darken(font-color, 40%)
+    transition(transform .25s ease .1s)
+
+
+

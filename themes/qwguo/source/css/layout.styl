@@ -1,0 +1,29 @@
+.page
+  overflow hidden
+  .page-sidebar, .page-container
+    background-color lighten(main-color, 15%)
+    float left
+  .page-sidebar
+    width: 250px;
+    padding: 30px 20px
+  .page-container
+    width 100%
+    .page-content
+      padding 30px 20px
+      background-color lighten(main-color, 10%)
+.page-left
+  .page-sidebar
+    margin-left -100%
+    boxShadow(1px 0 0 0 main-color)
+    border-right 1px solid lighten(main-color, 2%)
+  .page-content
+    margin-left 250px
+
+.page-right
+  .page-sidebar
+    margin-left -250px
+    boxShadow(-1px 0 0 0 main-color)
+    border-left 1px solid lighten(main-color, 2%)
+  .page-content
+    margin-right 250px
+
