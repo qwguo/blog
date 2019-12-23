@@ -8,7 +8,7 @@ subtitle:
 description:  '记录工作学习中的知识点'
 keywords: '前端开发笔记'
 author: qwguo
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -75,7 +75,7 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 # theme: landscape
 # theme: hexo-theme-doc
-theme: jacman
+theme: qwguo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

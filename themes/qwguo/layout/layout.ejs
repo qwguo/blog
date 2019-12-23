@@ -1,0 +1,22 @@
+<%- include('_partial/head.ejs') %>
+<body>
+  <% 
+    var pageClass = ""; 
+    if(theme.sidebar.show){
+      if(theme.sidebar.posiiton === 'right'){
+        pageClass = "page-right";
+      }else{
+        pageClass = "page-left"
+      }
+    }
+  %>
+  <div class="q page <%= pageClass %>">
+    <div class="page-container">
+      <div class="page-content">content</div>
+    </div>
+    <% if(pageClass){ %>
+      <%- include('sidebar.ejs') %>
+    <% } %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<div class="author-box">
+  <% var author = theme.author; %>
+  <div class="portrait"><img src="<%- author.portrait %>" alt=""></div>
+  <ul>
+    <li class="author-name"><%- author.name; %></li>
+    <li class="author-intro"><%- author.intro; %></li>
+    <li class="author-icon">
+      <% if(author.weixin){ %>
+        <a href="javascript:weixin();" title="weixin" class="icon-weixin"></a>
+      <% } %>
+      <% if(author.QQ){ %>
+        <a target="_blank" href="<%- author.QQ%>" title="QQ" class="icon-QQ"></a>
+      <% } %>
+      <% if(author.weibo){ %>
+        <a target="_blank" href="<%- author.weibo%>" title="weibo" class="icon-weibo"></a>
+      <% } %>
+      <% if(author.douban){ %>
+        <a target="_blank" href="<%- author.douban%>" title="douban" class="icon-douban"></a>
+      <% } %>
+      <% if(author.zhihu){ %>
+        <a target="_blank" href="<%- author.zhihu%>" title="zhihu" class="icon-zhihu"></a>
+      <% } %>
+      <% if(author.email){ %>
+        <a target="_blank" href="<%- author.email%>" title="email" class="icon-email"></a>
+      <% } %>
+      <% if(author.twitter){ %>
+        <a target="_blank" href="<%- author.twitter%>" title="twitter" class="icon-twitter"></a>
+      <% } %>
+      <% if(author.github){ %>
+        <a target="_blank" href="<%- author.github%>" title="github" class="icon-github"></a>
+      <% } %>
+      <% if(author.facebook){ %>
+        <a target="_blank" href="<%- author.facebook%>" title="facebook" class="icon-facebook"></a>
+      <% } %>
+      <% if(author.linkedin){ %>
+        <a target="_blank" href="<%- author.linkedin%>" title="linkedin" class="icon-linkedin"></a>
+      <% } %>
+      <% if(author.stackoverflow){ %>
+        <a target="_blank" href="<%- author.stackoverflow%>" title="stack overflow" class="icon-stack-overflow"></a>
+      <% } %>
+    </li>
+  </ul>
+</div>
+<script>
+  function weixin(){
+    console.log(123);
+  }
+</script>

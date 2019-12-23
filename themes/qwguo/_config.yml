@@ -1,0 +1,42 @@
+title: qwguo themes
+logo: qwguo
+
+menus:
+  主页: /
+  关于: /about
+
+# Sidebar
+sidebar: 
+  show: true                               #是否显示侧边栏 true, false
+  posiiton: left                           #侧边栏的位置 left, right
+# 侧边栏部件
+widgets:
+- author                                    #博主介绍
+- tag                                       #分类标签
+- category                                  #
+- archive                                   #归档标签
+- recent_posts
+- tagcloud                                  #标签云
+
+author:
+  portrait: /image/author.jpg
+  name: 祁维国
+  intro: 一台电脑，一根网线，能够窄到天昏地暗
+  weibo: http://www.weibo.com
+  weixin: 18201109020
+  QQ: 75624839
+  douban: https://www.douban.com/people/wuchong1014
+  zhihu: http://www.zhihu.com/people/jark
+  email: 75624839@qq.com
+  twitter: https://twitter.com/qwguo
+  github:  https://github.com/qwguo
+  facebook: https://facebook.com/qwguo
+  linkedin: https://www.linkedin.com/in/qwguo
+  stackoverflow: http://stackoverflow.com/users/3222790/jark
+
+tags:
+  show_count: true
+
+archive:
+  show_count: false
+  archive_type: monthly
