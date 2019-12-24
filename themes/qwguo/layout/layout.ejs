@@ -12,7 +12,9 @@
   %>
   <div class="q page <%= pageClass %>">
     <div class="page-container">
-      <div class="page-content">content</div>
+      <div class="page-content">
+        <%- include('index.ejs') %>
+      </div>
     </div>
     <% if(pageClass){ %>
       <%- include('sidebar.ejs') %>

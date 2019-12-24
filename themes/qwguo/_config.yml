@@ -6,7 +6,7 @@ menus:
   关于: /about
 
 # Sidebar
-sidebar: 
+sidebar:
   show: true                               #是否显示侧边栏 true, false
   posiiton: left                           #侧边栏的位置 left, right
 # 侧边栏部件
@@ -15,7 +15,7 @@ widgets:
 - tag                                       #分类标签
 - category                                  #
 - archive                                   #归档标签
-- recent_posts
+- recent_posts                              #最新文章
 - tagcloud                                  #标签云
 
 author:
