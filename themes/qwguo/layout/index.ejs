@@ -1,13 +1,28 @@
-<div id="main">
-<% page.posts.each(function(item){ %>
-  <%- partial('_partial/article', {item: item, index: true,desc: true}) %>
+<div class="index-main">
+  <% var a = false; %>
+  <% site.posts.forEach(function(post, index){ %>
+    <% if(!a && index === 1){
+      console.log(index);
+      a = true;
+      console.log("path_______"+ post.path)
+      console.log("permalink_______"+ post.permalink)
+      console.log("full_source_______"+ post.full_source)
+      console.log("asset_dir_______"+ post.asset_dir)
+      console.log("tags_______"+ post.tags)
+      console.log("categories_______"+ post.categories)
+
+      post.tags.forEach((tag)=>{
+        console.log(tag.name)
+      })
+      post.categories.data.forEach((category)=>{
+        console.log('category---'+category.name)
+      })
+
+    } %>
+    <div class="post-item">
+      <h2><a href="<%- post.path %>"></a></h2>
+      <div><%- post.excerpt %></div>
+
+    </div>
 <% }); %>
-<% if (page.total > 1){ %>
-  <nav id="page-nav" class="clearfix<% if (theme.index.expand != true) { %> unexpand<% } %>">
-    <%- paginator({
-      prev_text: '<span></span>Prev',
-      next_text: 'Next<span></span>'
-    }) %>
-  </nav>
-<% } %>
 </div>
