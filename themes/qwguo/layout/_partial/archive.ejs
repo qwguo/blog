@@ -15,18 +15,12 @@ if (page.archive){
   else title = __('archive_a');
 };
 %>
-
 <div class="archive-title" >
-  <h2 class="<%= icon %>-icon"><%= title %></h2>
-  <% if(page.archive){ %>
-  <div class="archiveslist archive-float clearfix">
-   <%- list_archives({format:__('archive_date')}) %>
- </div>
-  <% } %>
+  <h2 class="<%= icon %>-icon"><% console.log(page) %><%= title %></h2>
 </div>
 <div id="main" class="archive-part clearfix">
   <div id="archive-page">
-<% page.posts.each(function(item){ %>
+<% page.posts.each(function(item, i){ %>
   <%- partial('_partial/article_row', {item: item, index: true}) %>
 <% }); %>
 <% if (page.total > 1){ %>

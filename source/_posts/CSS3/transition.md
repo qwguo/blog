@@ -20,7 +20,7 @@ tags:
 <!-- more -->
 
 **例如：**
-```
+```css
     transition-property: width;
     transition-property: window, height, background-color, opacity;
     transition-property: all;
@@ -47,7 +47,7 @@ tags:
 - `time`：指定动画执行时长。
 
 **例如：**
-```
+```css
     transition-duration: 10s;
     transition-duration: .5s, 10ms, .9ms, 0.5s, 10.05s; //如果是小数点左边只有一个0的话，前边的 0可以省略。
 ```
@@ -112,22 +112,20 @@ tags:
 - `none`：没有过渡效果。
 
 **基本写法：**
-```
-    <!--两个值，属性名，过渡持续时间-->
+```css
+    /* 两个值，属性名，过渡持续时间 */
     transition: margin-right 4s;
-    <!--三个值，属性名，过渡持续时间，延迟开始过渡时间-->
+    /* 三个值，属性名，过渡持续时间，延迟开始过渡时间 */
     transition: margin-right 4s 1s;
-    <!--三个值，属性名，过渡持续时间，过渡动画效果-->
+    /* 三个值，属性名，过渡持续时间，过渡动画效果 */
     transition: margin-right 4s ease-in-out;
-    <!--四个值，属性名，过渡持续时间，过渡动画效果，延迟开始过渡时间-->
+    /* 四个值，属性名，过渡持续时间，过渡动画效果，延迟开始过渡时间 */
     transition: margin-right 4s ease-in-out 1s;
-
-    <!--可以同时写多个过渡属性，每个过渡之间用逗号分开-->
+    /* 可以同时写多个过渡属性，每个过渡之间用逗号分开 */
     transition: margin-right 4s, color 1s;
-
-    <!--也可以使用all表示全部属性-->
+    /* 也可以使用all表示全部属性 */
     transition: all 0.5s ease-out;
-
+    /* 其他 */
     transition: inherit;
     transition: initial;
     transition: unset;

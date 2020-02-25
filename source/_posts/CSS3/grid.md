@@ -56,10 +56,10 @@ grid |
 > #### grid-template-rows, grid-template-columns
 
 
-<iframe height="420" style="width: 100%;" scrolling="no" title="grid-template-rows" src="//codepen.io/qwguo88/embed/voOdMK/?height=420&theme-id=30742&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<!-- <iframe height="420" style="width: 100%;" scrolling="no" title="grid-template-rows" src="//codepen.io/qwguo88/embed/voOdMK/?height=420&theme-id=30742&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/voOdMK/'>grid-template-rows</a> by qwguo
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+</iframe> -->
 
 从上面可以看到，通过设置`grid-template-rows: 50px auto 1fr;`把Grid元素中的子元素划分成了三行，并且给每一行分别设置高度值。
 
@@ -73,10 +73,10 @@ grid |
 通过字面理解area是区域的意思，这个属性的作用是给父元素（网格元素）划分区域。
 
 
-<iframe height="420" style="width: 100%;" scrolling="no" title="grid-template-areas" src="//codepen.io/qwguo88/embed/ZgBXoE/?height=420&theme-id=30742&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<!-- <iframe height="420" style="width: 100%;" scrolling="no" title="grid-template-areas" src="//codepen.io/qwguo88/embed/ZgBXoE/?height=420&theme-id=30742&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/ZgBXoE/'>grid-template-areas</a> by qwguo
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+</iframe> -->
 
 <pre>
 网格元素{

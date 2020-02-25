@@ -1,28 +1,36 @@
-<div class="index-main">
+<!--
+ * @Author: your name
+ * @Date: 2019-12-25 09:30:25
+ * @LastEditTime : 2020-02-23 19:07:24
+ * @LastEditors  : qwguo
+ * @Description: In User Settings Edit
+ * @FilePath     : \qwguo\themes\qwguo\layout\index.ejs
+ -->
+<div class="index-main" id="indexMain">
   <% var a = false; %>
-  <% site.posts.forEach(function(post, index){ %>
-    <% if(!a && index === 1){
-      console.log(index);
-      a = true;
-      console.log("path_______"+ post.path)
-      console.log("permalink_______"+ post.permalink)
-      console.log("full_source_______"+ post.full_source)
-      console.log("asset_dir_______"+ post.asset_dir)
-      console.log("tags_______"+ post.tags)
-      console.log("categories_______"+ post.categories)
-
-      post.tags.forEach((tag)=>{
-        console.log(tag.name)
-      })
-      post.categories.data.forEach((category)=>{
-        console.log('category---'+category.name)
-      })
-
-    } %>
+  <% site.posts.forEach(function(post, index){
+    let tags = null;
+    if(post.tags.length){
+      tags = [];
+      post.tags.forEach((tag, i)=>{
+        tags.push(tag.name);
+      });
+    }
+  %>
     <div class="post-item">
-      <h2><a href="<%- post.path %>"></a></h2>
-      <div><%- post.excerpt %></div>
-
+      <div class="item-inner">
+        <h2 class="title"><a href="<%- post.path %>"><%- post.title %></a></h2>
+        <div class="article-box excerpt"><%- post.excerpt %></div>
+        <% if(tags !== null){ %>
+          <div class="tag-box">
+            <% console.log(tags) %>
+            <% tags.sort().forEach((tag)=>{ %>
+              <span class="tag-item"><a href=""><%- tag %></a></span>
+            <% }) %>
+          </div>
+          <span class="tag-class"><%- tags.sort()[0] %></span>
+        <% } %>
+      </div>
     </div>
 <% }); %>
 </div>

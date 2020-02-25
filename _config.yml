@@ -39,10 +39,10 @@ post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
-  tab_replace:
+  tab_replace: 10
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -75,6 +75,7 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 # theme: landscape
 # theme: hexo-theme-doc
+# theme: jacman
 theme: qwguo
 
 # Deployment

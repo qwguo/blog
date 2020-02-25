@@ -1,8 +1,24 @@
 @import "normalize.css"
-@import "vs.css"
+// @import "vs.css"
 @import "mixins"
 @import "variables"
 @import "font/iconfont.css"
+// ::-webkit-scrollbar 滚动条整体部分，可以设置宽度等
+// ::-webkit-scrollbar-button 滚动条两端的按钮
+// ::-webkit-scrollbar-track  外层轨道
+// ::-webkit-scrollbar-track-piece  内层滚动槽
+// ::-webkit-scrollbar-thumb 滚动的滑块
+// ::-webkit-scrollbar-corner 边角
+// ::-webkit-resizer 定义右下角拖动块的样式
+::-webkit-scrollbar
+  width 6px
+  background-color lighten(main-color, 20%)
+::-webkit-scrollbar-thumb
+  border-radius 4px
+  background-color lighten(main-color, 30%)
+::-webkit-scrollbar-button
+  height 6px
+
 *
   box-sizing border-box
 html,body
@@ -17,6 +33,7 @@ body
   margin 0
   background-color lighten(main-color, 10%)
   color font-color
+  font-family PingFang SC, Hiragino Sans GB, Microsoft Yahei, WenQuanYi Micro Hei, sans-serif
 a
   color link-color
   text-decoration none
@@ -26,4 +43,6 @@ a
 
 @import "layout"
 @import "sidebar"
+@import "index"
+@import "post"
 

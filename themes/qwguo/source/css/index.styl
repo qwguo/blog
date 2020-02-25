@@ -1,0 +1,42 @@
+@import "anim_effect"
+.index-main
+  .post-item
+    margin-bottom 40px
+    transition(all .3s linear)
+    position relative
+    .item-inner
+      padding 20px
+      position relative
+      z-index 2
+      background-color lighten(main-color, 12%)
+      border 1px solid rgba(255, 255, 255, .1)
+    .title
+      margin 0 0 20px
+      transition(all .3s linear)
+      font-size 45px
+      a
+        background-image: linear-gradient(50deg,#ccc,#ddd, #aaa, #888, #555);
+        -webkit-background-clip:text;
+        color: transparent;
+        transition(all .3s linear)
+      &:hover
+        padding-left 30px
+        a
+          background-image: linear-gradient(75deg,#ccc,#666,#555);
+    .tag-class
+      position absolute
+      right .1em
+      top -.1em
+      font-size 60px
+      font-family 'Lucida Calligraphy'
+      color lighten(main-color, 20%)
+      transition(all .3s linear)
+      // transform(scale(0))
+      opacity 0
+      user-select none
+    &:hover
+      .tag-class
+        opacity 1
+        // transform(scale(1))
+
+

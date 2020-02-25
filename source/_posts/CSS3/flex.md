@@ -5,7 +5,7 @@ tags:
     - [CSS3]
 ---
 
-## Flex
+# Flex
 
 >  flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。我们可以把任何容器转换成(flex container)成为**弹性容器**，它的所有子元素就变为(flex item)称为**弹性项目成员**
 

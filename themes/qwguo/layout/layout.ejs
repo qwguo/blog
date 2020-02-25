@@ -3,7 +3,7 @@
   <%
     var pageClass = "";
     if(theme.sidebar.show){
-      if(theme.sidebar.posiiton === 'right'){
+      if(theme.sidebar.position === 'right'){
         pageClass = "page-right";
       }else{
         pageClass = "page-left"
@@ -20,5 +20,6 @@
       <%- include('sidebar.ejs') %>
     <% } %>
   </div>
+  <%- include('footer.ejs') %>
 </body>
 </html>

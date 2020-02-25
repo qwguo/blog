@@ -1,1 +1,11 @@
-<%- page.content %>
+<div class="article-main">
+  <div class="article-box">
+    <div class="article-tags">
+      <div class="post-author">作者: <%- theme.author.name %></div>
+      <div class="post-date"><%- date(page.date, "YYYY-MM-DD HH:mm:ss") %></div>
+    </div>
+    <div class="article-box">
+      <%- page.content %>
+    </div>
+  </div>
+</div>
