@@ -22,17 +22,17 @@ author:
   portrait: /image/author.jpg
   name: 祁维国
   intro: 一台电脑，一根网线，能够窄到天昏地暗
-  weibo: http://www.weibo.com
-  weixin: 18201109020
-  QQ: 75624839
-  douban: https://www.douban.com/people/wuchong1014
-  zhihu: http://www.zhihu.com/people/jark
+  weibo: false
+  weixin: false
+  QQ: false
+  douban: false
+  zhihu: https://www.zhihu.com/people/qwguo
   email: 75624839@qq.com
-  twitter: https://twitter.com/qwguo
+  twitter: false
   github:  https://github.com/qwguo
-  facebook: https://facebook.com/qwguo
-  linkedin: https://www.linkedin.com/in/qwguo
-  stackoverflow: http://stackoverflow.com/users/3222790/jark
+  facebook: false
+  linkedin: false
+  stackoverflow: false
 
 tags:
   show_count: true

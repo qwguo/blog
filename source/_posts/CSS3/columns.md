@@ -1,10 +1,12 @@
 ---
 title: columns多列属性
 date: 2019-12-13 16:02:03
-tags: [CSS3, 前端]
+tags: [CSS3]
+cover: image/650-650.jpg
+description: CSS3中实现多列布局，可以让文本多列显示
 ---
 
-## columns样式属性使用
+# columns样式属性使用
 
 > `columns`：用于设置元素的列宽和列数。它是`column-width`和`column-count`的简写属性。
 

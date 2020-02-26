@@ -21,7 +21,7 @@
         <a target="_blank" href="<%- author.zhihu%>" title="zhihu" class="icon-zhihu"></a>
       <% } %>
       <% if(author.email){ %>
-        <a target="_blank" href="<%- author.email%>" title="email" class="icon-email"></a>
+        <a href="mailto:<%- author.email%>" title="<%- author.email%>" class="icon-email"></a>
       <% } %>
       <% if(author.twitter){ %>
         <a target="_blank" href="<%- author.twitter%>" title="twitter" class="icon-twitter"></a>

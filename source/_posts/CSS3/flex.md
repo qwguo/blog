@@ -1,8 +1,8 @@
 ---
 title: flex布局
 date: 2019-12-16 18:34:00
-tags:
-    - [CSS3]
+tags: [CSS3]
+description: "css3中的flex布局"
 ---
 
 # Flex

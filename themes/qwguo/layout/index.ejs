@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-25 09:30:25
- * @LastEditTime : 2020-02-23 19:07:24
+ * @LastEditTime : 2020-02-25 23:34:09
  * @LastEditors  : qwguo
  * @Description: In User Settings Edit
  * @FilePath     : \qwguo\themes\qwguo\layout\index.ejs
@@ -16,14 +16,15 @@
         tags.push(tag.name);
       });
     }
+    if(index===3){ console.log(post);}
   %>
     <div class="post-item">
       <div class="item-inner">
         <h2 class="title"><a href="<%- post.path %>"><%- post.title %></a></h2>
+        <div class="cover"><img src="<%- post.cover %>" /></div>
         <div class="article-box excerpt"><%- post.excerpt %></div>
         <% if(tags !== null){ %>
           <div class="tag-box">
-            <% console.log(tags) %>
             <% tags.sort().forEach((tag)=>{ %>
               <span class="tag-item"><a href=""><%- tag %></a></span>
             <% }) %>

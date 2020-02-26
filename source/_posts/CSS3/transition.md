@@ -1,7 +1,7 @@
 ---
 title: css3中用来设置元素的过度效果属性：transition
 date: 2019-12-21 14:35:01
-tags:
+tags: [CSS3]
 ---
 
 # transition过度属性

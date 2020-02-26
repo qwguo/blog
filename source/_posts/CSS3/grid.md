@@ -1,8 +1,7 @@
 ---
 title: Grid网格布局
 date: 2019-07-20 23:15:52
-tags:
-    - CSS3
+tags: [CSS3]
 ---
 
 > ### css3中的grid布局学习
