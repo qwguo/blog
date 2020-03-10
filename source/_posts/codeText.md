@@ -235,7 +235,8 @@ code {
   function(){
     alert(123);
   }
-    var abc;
+  var abc;
+  abc === bcd;
 ```
 ```js
   setTimeout(()=>{
