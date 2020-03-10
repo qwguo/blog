@@ -4,6 +4,7 @@ logo: qwguo
 menus:
   主页: /
   关于: /about
+  categories: /categories
 
 # Sidebar
 sidebar:

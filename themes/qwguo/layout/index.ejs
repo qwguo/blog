@@ -1,37 +1,39 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-25 09:30:25
- * @LastEditTime : 2020-02-25 23:34:09
+ * @LastEditTime : 2020-03-10 23:55:59
  * @LastEditors  : qwguo
  * @Description: In User Settings Edit
  * @FilePath     : \qwguo\themes\qwguo\layout\index.ejs
  -->
 <div class="index-main" id="indexMain">
   <% var a = false; %>
-  <% site.posts.forEach(function(post, index){
-    let tags = null;
+  <% page.posts.forEach(function(post, index){
+    let firstTags = null;
     if(post.tags.length){
-      tags = [];
       post.tags.forEach((tag, i)=>{
-        tags.push(tag.name);
+        i === 0 && (firstTags = tag)
       });
     }
-    if(index===3){ console.log(post);}
   %>
     <div class="post-item">
       <div class="item-inner">
         <h2 class="title"><a href="<%- post.path %>"><%- post.title %></a></h2>
-        <div class="cover"><img src="<%- post.cover %>" /></div>
+        <!-- <div class="cover"><img src="<%- post.path %>cover.jpg" /></div> -->
         <div class="article-box excerpt"><%- post.excerpt %></div>
-        <% if(tags !== null){ %>
-          <div class="tag-box">
-            <% tags.sort().forEach((tag)=>{ %>
-              <span class="tag-item"><a href=""><%- tag %></a></span>
-            <% }) %>
-          </div>
-          <span class="tag-class"><%- tags.sort()[0] %></span>
-        <% } %>
+        <%- partial('_partial/post/tag', {post: post}) %>
+        <span class="tag-class"><%- firstTags && firstTags.name %></span>
       </div>
     </div>
 <% }); %>
+
+<% if (page.total > 1){ %>
+  <div class="paginator">
+    <%- paginator({
+      total: 6,
+      prev_text: '<span></span>Prev',
+      next_text: 'Next<span></span>'
+    }) %>
+  </div>
+<% } %>
 </div>

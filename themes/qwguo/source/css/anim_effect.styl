@@ -1,3 +1,17 @@
+// 回到顶部波动效果
+@keyframes rotates {
+  0% {
+    transform(translate(-50%, 0) rotateZ(0deg))
+  }
+
+  50% {
+    transform(translate(-50%, -2%) rotateZ(180deg))
+  }
+
+  100% {
+    transform(translate(-50%, 0%) rotateZ(360deg))
+  }
+}
 // 转圈效果动画
 @keyframes surround{
   from, to {

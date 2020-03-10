@@ -1,4 +1,13 @@
 <div class="article-main">
+  <a class="iconfont icon-home" href="<%- url_for('/') %>"></a>
+  <span class="article-doc-switch" id="docSwitch">
+    <% for(let i = 0; i < 3; i++){%>
+    <i></i>
+    <% }%>
+  </span>
+  <div class="article-doc" id="docBox">
+    <%- toc(page.content) %>
+  </div>
   <div class="article-box">
     <div class="article-tags">
       <div class="post-author">作者: <%- theme.author.name %></div>
@@ -9,3 +18,6 @@
     </div>
   </div>
 </div>
+
+
+

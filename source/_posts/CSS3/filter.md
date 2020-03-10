@@ -2,11 +2,7 @@
 title: css3中的filter滤镜使用
 date: 2020-02-23 18:54:41
 # categories: [前端]
-categories:
-  - [Diary, PlayStation]
-  - [Diary, Games]
-  - [Life]
-tags: [CSS3]
+tags: [CSS3, CSS]
 description: "在css3中使用filter滤镜设置图像的灰度，褐色，亮度，对比度等效果"
 ---
 
@@ -112,7 +108,7 @@ filter:saturate(100%);
 </iframe>
 
 
-### 4、hue-rotate 色相旋转
+## 4、hue-rotate 色相旋转
 
 > 给图像应用色相旋转。
 
@@ -136,7 +132,7 @@ filter: hue-rotate(360deg);
 </iframe>
 
 
-### 5、invert 反色
+## 5、invert 反色
 
 > 给图片进行反转取色显示
 
@@ -160,7 +156,7 @@ filter: invert(.3);
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-### 6、opacity 透明度
+## 6、opacity 透明度
 
 > 给图像或者元素设置透明度，该函数与已有的opacity属性很相似，不同之处在于通过filter，一些浏览器为了提升性能会提供硬件加速。
 
@@ -185,7 +181,7 @@ filter: opacity(.3);
 </iframe>
 
 
-### 7、brightness 亮度
+## 7、brightness 亮度
 
 > 用于设置图像的亮度，给图片应用一种线性乘法，使其看起来更亮或更暗。
 
@@ -208,7 +204,7 @@ filter: brightness(.3);
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-### 8、contrast 对比度
+## 8、contrast 对比度
 
 > 用于设置图像的对比度，
 
@@ -232,7 +228,7 @@ filter: contrast(.3);
 </iframe>
 
 
-### 9、blur 模糊度
+## 9、blur 模糊度
 
 > 用于设置图像的高斯模糊度
 
@@ -256,7 +252,7 @@ filter: blur(5px);
 </iframe>
 
 
-### 10、drop-shadow 投影
+## 10、drop-shadow 投影
 
 > 设置图像或元素的投影效果，他和box-shadow效果一样
 
