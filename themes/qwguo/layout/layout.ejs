@@ -1,4 +1,4 @@
-<%- include('_partial/head.ejs') %>
+<%- partial('_partial/head.ejs') %>
 <body>
   <%
     var pageClass = "";
@@ -17,9 +17,9 @@
       </div>
     </div>
     <% if(pageClass){ %>
-      <%- include('sidebar.ejs') %>
+      <%- partial('sidebar.ejs') %>
     <% } %>
   </div>
-  <%- include('footer.ejs') %>
+  <%- partial('footer.ejs') %>
 </body>
 </html>

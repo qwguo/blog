@@ -1,31 +1,13 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-25 09:30:25
- * @LastEditTime : 2020-03-10 23:55:59
+ * @LastEditTime : 2020-03-18 11:47:38
  * @LastEditors  : qwguo
  * @Description: In User Settings Edit
  * @FilePath     : \qwguo\themes\qwguo\layout\index.ejs
  -->
-<div class="index-main" id="indexMain">
-  <% var a = false; %>
-  <% page.posts.forEach(function(post, index){
-    let firstTags = null;
-    if(post.tags.length){
-      post.tags.forEach((tag, i)=>{
-        i === 0 && (firstTags = tag)
-      });
-    }
-  %>
-    <div class="post-item">
-      <div class="item-inner">
-        <h2 class="title"><a href="<%- post.path %>"><%- post.title %></a></h2>
-        <!-- <div class="cover"><img src="<%- post.path %>cover.jpg" /></div> -->
-        <div class="article-box excerpt"><%- post.excerpt %></div>
-        <%- partial('_partial/post/tag', {post: post}) %>
-        <span class="tag-class"><%- firstTags && firstTags.name %></span>
-      </div>
-    </div>
-<% }); %>
+<div class="index-page-main" id="indexPageMain">
+  <%- partial('_partial/post/postExcerpt', {item: page.posts, pageType: 'index'})%>
 
 <% if (page.total > 1){ %>
   <div class="paginator">

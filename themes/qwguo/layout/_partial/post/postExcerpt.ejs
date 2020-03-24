@@ -1,0 +1,55 @@
+<!--
+ * @Author       : qwguo
+ * @description  : description
+ * @Date         : 2020-03-17 23:50:25
+ * @LastEditors  : qwguo
+ * @LastEditTime : 2020-03-19 08:01:59
+ * @FilePath     : \qwguo\themes\qwguo\layout\_partial\post\postExcerpt.ejs
+ -->
+
+<% if(!is_home()){ %>
+  <div class="crumbs-box">
+    <span><i class="iconfont icon-home"></i><a href="<%- url_for('/') %>">首页</a></span><em></em>
+    <% if(is_tag()){%>
+      <b>当前标签/<%- page.tag %>/总共<%- item.length %>文章</b>
+    <%}%>
+    <% if(is_month()){%>
+      <b>当前归档/<%- page.year%>年<%- page.month %>月/总共<%- item.length %>文章</b>
+    <%}%>
+  </div>
+<% } %>
+
+ <% var a = false; %>
+  <% item.forEach(function(post, index){
+    let firstTags = null;
+    if(post.tags.length){
+      post.tags.forEach((tag, i)=>{
+        i === 0 && (firstTags = tag)
+      });
+    }
+  %>
+    <div class="post-excerpt">
+      <div class="excerpt-inner">
+        <h2 class="title"><a href="<%- url_for(post.path) %>"><%- post.title %></a></h2>
+        <div class="q">
+          <% if(post.poster){ %>
+          <div class="poster"><img src="<%- url_for(post.path + post.poster) %>" /></div>
+          <% } %>
+          <div class="excerpt">
+            <%- partial('_partial/post/postProp', {item: post})%>
+            <div class="summary">
+              <% if(post.summary){
+                post.summary.forEach((p, i)=>{
+              %>
+              <p><%- p %></p>
+              <% });} %>
+            </div>
+            <a href="<%- url_for(post.path) %>" class="more-btn">阅读全文</a>
+          </div>
+        </div>
+        <!-- <div class="article-box excerpt"><%- post.excerpt %></div> -->
+        <%- partial('_partial/post/tag', {post: post}) %>
+        <span class="tag-class"><%- firstTags && firstTags.name %></span>
+      </div>
+    </div>
+<% }); %>

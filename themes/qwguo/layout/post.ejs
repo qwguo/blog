@@ -5,17 +5,13 @@
     <i></i>
     <% }%>
   </span>
-  <div class="article-doc" id="docBox">
-    <%- toc(page.content) %>
+  <%- partial('_partial/post/toc', {item: page}) %>
+  <div class="article-tags">
+    <div class="post-author">作者: <%- theme.author.name %></div>
+    <%- partial('_partial/post/postProp', {item: page})%>
   </div>
   <div class="article-box">
-    <div class="article-tags">
-      <div class="post-author">作者: <%- theme.author.name %></div>
-      <div class="post-date"><%- date(page.date, "YYYY-MM-DD HH:mm:ss") %></div>
-    </div>
-    <div class="article-box">
-      <%- page.content %>
-    </div>
+    <%- page.content %>
   </div>
 </div>
 

@@ -5,6 +5,7 @@ var htmlmin = require('gulp-htmlmin');
 var htmlclean = require('gulp-htmlclean');
 var imagemin = require('gulp-imagemin');
 var del = require('del');
+var babel = require('gulp-babel');
 var runSequence = require('run-sequence');
 var Hexo = require('hexo');
 // 清除public文件夹
@@ -52,7 +53,13 @@ gulp.task('minify-html', function() {
 // 压缩public目录下的所有js
 gulp.task('minify-js', function() {
     return gulp.src('./public/**/*.js')
+        .pipe(babel({
+            presets: ['es2015'] // es5检查机制
+        }))
         .pipe(uglify())
+        .on('error', function(err) {
+            // gutil.log(gutil.colors.red('[Error]'), err.toString());
+        })
         .pipe(gulp.dest('./public'));
 });
 // 压缩public目录下的所有img： 这个采用默认配置
@@ -74,6 +81,7 @@ gulp.task('minify-img-aggressive', function() {
 })
 // 用run-sequence并发执行，同时处理html，css，js，img
 gulp.task('compress', function(cb) {
+    // runSequence(['minify-html', 'minify-css', 'minify-js', 'minify-img-aggressive'], cb);
     runSequence(['minify-html', 'minify-css', 'minify-js', 'minify-img-aggressive'], cb);
 });
 // 执行顺序： 清除public目录 -> 产生原始博客内容 -> 执行压缩混淆

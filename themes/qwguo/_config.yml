@@ -1,10 +1,14 @@
 title: qwguo themes
 logo: qwguo
+favicon: image/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.
+apple_icon: image/favicon.png ## size:114px*114px,please put image into the theme folder `/jacman/source/img`.
 
 menus:
   主页: /
   关于: /about
   categories: /categories
+  tags: /tags
+  archives: /archives
 
 # Sidebar
 sidebar:
@@ -13,16 +17,16 @@ sidebar:
 # 侧边栏部件
 widgets:
 - author                                    #博主介绍
-- tag                                       #分类标签
-- category                                  #
-- archive                                   #归档标签
-- recent_posts                              #最新文章
-- tagcloud                                  #标签云
+- category                                  #分类
+# - tags                                       #标签
+- archive                                   #归档
+- recentPosts                              #最新文章
+- tagsCloud                                  #标签云
 
 author:
   portrait: /image/author.jpg
   name: 祁维国
-  intro: 一台电脑，一根网线，能够窄到天昏地暗
+  intro: 一台电脑，一根网线，能够宅到天昏地暗
   weibo: false
   weixin: false
   QQ: false
@@ -46,3 +50,4 @@ archive:
 # 代码高亮主题
 # available: default | night
 # highlight_theme: default
+

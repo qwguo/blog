@@ -74,19 +74,22 @@
       opacity 1
 
 .article-main
-  padding .5em 20px
+  position relative
+  margin 0 20px
   .article-box
-    position relative
+    padding 1px 0 0
   .article-tags
     position absolute
     z-index 2
     right 0
-    top 0
+    top 30px
     text-align right
-    color darken(font-color, 70%)
+    color darken(font-color, 50%)
     transition(all .3s linear)
+    opacity .5
+    line-height 2
     &:hover
-      color darken(font-color, 50%)
+      opacity 1
 /* #################### 文章 #################### */
 .article-box
   line-height 2
@@ -133,7 +136,7 @@
     line-height 1.8
     font-size 18px
     position relative
-    font-family: 'Operator Mono SSm', MonoSpace;
+    font-family: 'Operator Mono SSm', 'PingFang SC';
     .code-lang
       position absolute
       color #0ed2f7

@@ -1,9 +1,11 @@
 ---
 title: css3中的filter滤镜使用
 date: 2020-02-23 18:54:41
-# categories: [前端]
-tags: [CSS3, CSS]
-description: "在css3中使用filter滤镜设置图像的灰度，褐色，亮度，对比度等效果"
+categories:
+  - [CSS, CSS3]
+tags: [CSS3, CSS, filter, 滤镜]
+poster: poster.jpg
+summary: ['以前我们要处理一张图片的取色，模糊，褐色等效果必须使用Photoshop处理完后保存多张图片，而css3滤镜的出现使我们在网站中想要轻松实现这些效果变得可能。只需要通过filter滤镜的各种属性就能轻松实现，如：grayscale(灰色)、sepia(褐色)、saturate(饱和度)、blur(模糊)...等']
 ---
 
 # css3中的filter滤镜使用
@@ -254,6 +256,29 @@ filter: blur(5px);
 
 ## 10、drop-shadow 投影
 
-> 设置图像或元素的投影效果，他和box-shadow效果一样
+> 设置图像或元素的投影效果，他和box-shadow效果一样，但是区别在于他不能使用`inset`设置内阴影，也不能同时这只多个阴影。
 
-**基本语法：** `filter: drop-shadow()`
+**基本语法：** `filter: drop-shadow(offset-x offset-y blur-radius color);`
+
+`offset-x`：设置投影的x轴的投影大小，取正直为投影像右偏移，取负值为投影像左偏移；
+`offset-y`：设置投影的Y轴的投影大小，取正直为投影像下偏移，取负值为投影像上偏移；
+`blur-radius`：表示投影的模糊半径值，值越大表示投影越模糊并且越大，取0表示投影不进行模糊处理，此属性不支持负数；
+`color`：表示投影的颜色，可以使用颜色关键字(red)，十六进制法(#fff)，rgb，rgba等写法；
+
+
+```css
+/* 只设置offset-x */
+filter: drop-shadow(10px 0 0 red);
+/* 只设置offset-y */
+filter: drop-shadow(0 10px 0 #c00);
+/* 只设置blur-radius */
+filter: drop-shadow(0 0 10px rgb(255, 0, 0, .5))
+/* 同时设置 */
+filter: drop-shadow(10px 20px 20px rgba(0, 0, 0, .5))
+```
+**案例** [Demo](https://codepen.io/qwguo88/pen/rNVdRJq)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="filter-drop-shadow" src="https://codepen.io/qwguo88/embed/rNVdRJq?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/rNVdRJq'>filter-drop-shadow</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>

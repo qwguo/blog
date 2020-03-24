@@ -1,10 +1,8 @@
-@import "anim_effect"
-.index-main
-  .post-item
+  .post-excerpt
     margin-bottom 40px
     transition(all .3s linear)
     position relative
-    .item-inner
+    .excerpt-inner
       padding 20px
       position relative
       z-index 2
@@ -15,9 +13,9 @@
       transition(all .3s linear)
       font-size 45px
       a
-        background-image: linear-gradient(50deg,#ccc,#ddd, #aaa, #888, #555);
-        -webkit-background-clip:text;
-        color: transparent;
+        background-image linear-gradient(50deg,#ccc,#ddd, #aaa, #888, #555)
+        -webkit-background-clip text;
+        color transparent;
         transition(all .3s linear)
       &:hover
         padding-left 30px
@@ -34,29 +32,51 @@
       // transform(scale(0))
       opacity 0
       user-select none
+    .poster
+      width 150px
+      // display inline-block
+      float right
+      margin 0 1.5em 1em 2em;
+      img
+        max-width 100%
     &:hover
       .tag-class
         opacity 1
         // transform(scale(1))
-    .article-box.excerpt
+    .excerpt
+      overflow hidden
+      vertical-align top
       h1
         font-size 30px
       h2
         font-size 24px
       h3
         font-size 18px
+      .summary
+        padding-top .5em
+        p
+          line-height 2
+          text-indent 2em
+      .more-btn
+        display inline-block
+        padding 10px 20px 10px 0
+        font-size 14px
+        // background-color lighten(main-color, 20%)
+        color btn-color
+
     .article-tag-list
-      margin 10px 0
+      margin 20px 0 0
       padding 0
       list-style none
       li
         display inline-block
-        margin 0 20px 0 0
+        margin 0 10px 0 0
         background-color lighten(main-color, 30%)
         border-radius 5px
         a
           padding 5px 10px
           display inline-block
+          font-size 12px
 
 
 

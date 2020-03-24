@@ -1,1 +1,9 @@
-<%- partial('_partial/archive', {pagination: config.archive, index: true}) %>
+<!--
+ * @Author       : qwguo
+ * @description  : description
+ * @Date         : 2020-02-22 20:54:25
+ * @LastEditors  : qwguo
+ * @LastEditTime : 2020-03-21 16:28:43
+ * @FilePath     : \qwguo\themes\qwguo\layout\archive.ejs
+ -->
+<%- partial('_partial/post/postExcerpt', {item: page.posts, pageType: 'index'})%>

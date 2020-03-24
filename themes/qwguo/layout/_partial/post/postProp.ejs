@@ -1,0 +1,36 @@
+<!--
+ * @Author       : qwguo
+ * @description  : description
+ * @Date         : 2020-03-18 21:25:28
+ * @LastEditors  : qwguo
+ * @LastEditTime : 2020-03-19 16:23:03
+ * @FilePath     : \qwguo\themes\qwguo\layout\_partial\post\postProp.ejs
+ -->
+ <ul class="post-prop">
+  <li>
+    <i class="iconfont icon-date"></i>
+    发布时间<b><%- date(item.date, "YYYY-MM-DD, dddd") %></b>
+  </li>
+  <% if(item.categories.length){
+    let firstCate = null;
+    item.categories.forEach((cate, i)=>{
+      i === 0 && (firstCate = cate);
+    });
+  %>
+  <li>
+
+    <a href="<%- url_for(firstCate.path)%>">
+      <i class="iconfont icon-file"></i>
+      <%= __('categories') %><b><%- firstCate.name %></b>
+    </a>
+  </li>
+  <% } %>
+  <li>
+    <i class="iconfont icon-fontSum"></i>
+    大约<b><%- wordcount(item.content) %></b>个字数
+  </li>
+  <li>
+    <i class="iconfont icon-time"></i>
+    预计阅读<b><%- min2read(item.content, {cn: 300, en: 160}) %>分钟</b>
+  </li>
+</ul>

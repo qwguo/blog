@@ -1,8 +1,11 @@
 ---
 title: flex布局
 date: 2019-12-16 18:34:00
-tags: [CSS3]
-description: "css3中的flex布局"
+categories:
+  - [CSS, CSS3]
+tags: [CSS3, flex, 弹性布局]
+poster: poster.jpg
+summary: ['在flex出现之前我们做页面都是使用的左右浮动，inline-block，表格等布局方式来实现页面的各种布局，在这些写法中由于浏览器的兼容问题还需要写很多的hack来解决兼容问题。','2009年，W3C 提出了一种新的方案----Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地在页面中使用弹性flex布局，Flex 布局也将成为未来布局的首选方案。']
 ---
 
 # Flex
@@ -14,7 +17,7 @@ description: "css3中的flex布局"
 ***注意，设为 Flex 布局以后，子元素的`float`、`clear`和`vertical-align`属性将失效。***
 
 
-### 弹性容器的属性：
+### 一、弹性容器的属性：
 
 #### 1、flex-direction
 
@@ -157,7 +160,7 @@ description: "css3中的flex布局"
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-### 弹性容器中的子项目的属性：
+### 二、弹性容器中的子项目的属性：
 
 #### 1、flex-grow
 

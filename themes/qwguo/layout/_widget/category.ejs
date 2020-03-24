@@ -1,6 +1,10 @@
 <% if (site.categories.length){ %>
-  <div class="widget-wrap">
-    <h3 class="widget-title"><%= __('categories') %></h3>
+  <div class="widget-wrap category-widget">
+    <h3 class="widget-title">
+      <i class="iconfont icon-file"></i>
+      <!-- <a href="<%- url_for(theme.menus.categories) %>"><%= __('categories') %></a> -->
+      <span class="widget-title-name"><%= __('categories') %></span>
+    </h3>
     <div class="widget">
       <%- list_categories({show_count: theme.show_count}) %>
     </div>

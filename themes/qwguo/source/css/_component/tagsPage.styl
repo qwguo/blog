@@ -1,0 +1,71 @@
+.tags-page-main
+  .tag-list
+      display flex
+      flex-direction row
+      flex-wrap wrap
+      padding 30px 0
+      margin 0
+      list-style none
+    .tag-list-item
+      position relative
+      // flex-grow 1
+      height auto
+      margin 0 20px 20px 0
+      background-color lighten(main-color, 10%)
+      radius(8px)
+      transition(all .25s ease)
+      color darken(font-color, 35%)
+      &:nth-child(2n-1)
+        background-color lighten(main-color, 20%)
+        color darken(font-color,0)
+      &:nth-child(3n-2)
+        background-color lighten(main-color, 82%)
+        color darken(font-color,80%)
+      &:nth-child(4n-1)
+        background-color lighten(main-color, 24%)
+        color darken(font-color,28%)
+      &:nth-child(5n-3)
+        background-color lighten(main-color, 30%)
+        color darken(font-color,30%)
+      &:nth-child(6n-2)
+        background-color lighten(main-color, 70%)
+        color darken(font-color,70%)
+      &:nth-child(7n-3)
+        background-color lighten(main-color, 40%)
+        color darken(font-color,40%)
+      &:nth-child(8n-2)
+        background-color lighten(main-color, 32%)
+        color darken(font-color,40%)
+      &:nth-child(9n-1)
+        background-color lighten(main-color, 34%)
+        color darken(font-color,38%)
+      &:hover
+        transform(scale(1.1))
+        background-color lighten(main-color, 40%)
+        z-index 2
+        .tag-list-link
+          transform(skew(0deg))
+        .tag-list-count
+          opacity 1
+          transform(skew(0deg) scale(1))
+    .tag-list-link
+      transition(all .25s ease)
+      display inline-block
+      width 100%
+      padding .8em 2em
+      color inherit
+      font-size 18px
+    .tag-list-count
+      opacity 0
+      radius(10px)
+      font-size 10px
+      position absolute
+      right -6px
+      top -5px
+      width 15px
+      height 15px
+      line-height 15px
+      text-align center
+      color font-color
+      background-color darken(font-color, 40%)
+      transition(transform .25s ease .1s)

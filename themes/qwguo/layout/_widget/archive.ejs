@@ -1,8 +1,11 @@
 <% if (site.posts.length){ %>
   <div class="widget-wrap archive-widget">
-    <h3 class="widget-title"><%= __('archive_a') %></h3>
+    <h3 class="widget-title">
+      <i class="iconfont icon-date"></i>
+      <a class="widget-title-name" href="<%- url_for(theme.menus.archives) %>"><%= __('archive_a') %></a>
+    </h3>
     <div class="widget">
-      <%- list_archives({show_count: theme.archive.show_count, type: theme.archive.archive_type, format: 'YYYY-MM-DD'}) %>
+      <%- list_archives({show_count: theme.archive.show_count, type: theme.archive.archive_type, format: 'YYYY-MM'}) %>
     </div>
   </div>
 <% } %>

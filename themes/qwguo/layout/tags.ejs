@@ -1,0 +1,15 @@
+<!--
+ * @Author       : qwguo
+ * @description  : description
+ * @Date         : 2020-03-18 23:16:56
+ * @LastEditors  : qwguo
+ * @LastEditTime : 2020-03-19 23:51:30
+ * @FilePath     : \qwguo\themes\qwguo\layout\tags.ejs
+ -->
+<div class="tags-page-main">
+  <div class="crumbs-box">
+    <span><i class="iconfont icon-home"></i><a href="<%- url_for('/') %>">首页</a></span><em></em>
+    <b>共计<%- site.tags.length %>个标签</b>
+  </div>
+  <%- list_tags({show_count: theme.tags.show_count}) %>
+</div>

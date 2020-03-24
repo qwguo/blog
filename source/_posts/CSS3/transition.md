@@ -1,14 +1,18 @@
 ---
-title: css3中用来设置元素的过度效果属性：transition
+title: transition轻松实现元素过度效果
 date: 2019-12-21 14:35:01
-tags: [CSS3]
+categories:
+  - [CSS, CSS3]
+tags: [CSS3, transition, 过渡]
+poster: poster.gif
+summary: ['transition是css3中的新增属性，用来设置元素的动画过渡效果，以前要实现一个元素的过渡动画往往需要通过js写很多代码来实现而且还需要考虑各种兼容性，并且js做出的效果消耗浏览器性能；使用transition属性只需要几行代码就能实现各种炫酷的过渡效果，而且transition还可以通过GPU硬件加速，减少repaint操作，不占用js线程，过渡效果更佳柔和。']
 ---
 
 # transition过度属性
 
 > `transition`：用于设置DOM元素在不同状态之间切换的时候应用不同的过度效果，以前如果要想实现一个非生硬的状态切换需要写很多的js来实现，现在使用`transition`变可以轻松的实现。
 
-### 1、transition-property：
+### 1、transition-property
 
 > `property`：表示属性的意思，这里用来设置元素要过度的css属性名。
 
@@ -21,9 +25,12 @@ tags: [CSS3]
 
 **例如：**
 ```css
-    transition-property: width;
-    transition-property: window, height, background-color, opacity;
-    transition-property: all;
+/* 单个属性过渡 */
+transition-property: width;
+/* 多个属性过渡用逗号分隔 */
+transition-property: window, height, background-color, opacity;
+/* 全部属性过渡 */
+transition-property: all;
 ```
 
 **兼容性：**
@@ -34,6 +41,12 @@ tags: [CSS3]
 
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/YzzBPYM)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="transition-property" src="https://codepen.io/qwguo88/embed/YzzBPYM?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/YzzBPYM'>transition-property</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 
 能够支持过度的css属性[查看1](http://leaverou.github.io/animatable/)，[查看2](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_animated_properties)
 
@@ -48,8 +61,9 @@ tags: [CSS3]
 
 **例如：**
 ```css
-    transition-duration: 10s;
-    transition-duration: .5s, 10ms, .9ms, 0.5s, 10.05s; //如果是小数点左边只有一个0的话，前边的 0可以省略。
+transition-duration: 10s;
+/* 如果是小数点左边只有一个0的话，前边的 0可以省略。 */
+transition-duration: .5s, 10ms, .9ms, 0.5s, 10.05s;
 ```
 
 **兼容性：**
@@ -61,6 +75,10 @@ tags: [CSS3]
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/LYYazMY)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="transition-duration" src="https://codepen.io/qwguo88/embed/LYYazMY?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/LYYazMY'>transition-duration</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 
 
@@ -85,6 +103,11 @@ tags: [CSS3]
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/zYYXypo)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="transition-timing-function" src="https://codepen.io/qwguo88/embed/zYYXypo?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/zYYXypo'>transition-timing-function</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 ### 4、transition-delay
 
 > `transition-delay`：延迟指定时间后执行过度效果。值以秒（s）或毫秒（ms）为单位。取值为正时会延迟一段时间来响应过渡效果；取值为负时会导致过渡立即开始。可以指定多个延迟时间，每个延迟用逗号分开，分别作用于你所指定的相符合的css属性`transition-property`;
@@ -101,6 +124,11 @@ tags: [CSS3]
 
 查看案例[Demo](https://codepen.io/qwguo88/pen/qBBGOBG)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="transition-delay" src="https://codepen.io/qwguo88/embed/qBBGOBG?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/qBBGOBG'>transition-delay</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 ### 5、transition
 
 > `transition`：它是`transition-property`、`transition-duration`、`transition-timin-function`、`transition-delay` 的缩写形式，能够更方面的设置过渡效果，一般在开发中使用这种方式写过渡效果。
@@ -113,22 +141,22 @@ tags: [CSS3]
 
 **基本写法：**
 ```css
-    /* 两个值，属性名，过渡持续时间 */
-    transition: margin-right 4s;
-    /* 三个值，属性名，过渡持续时间，延迟开始过渡时间 */
-    transition: margin-right 4s 1s;
-    /* 三个值，属性名，过渡持续时间，过渡动画效果 */
-    transition: margin-right 4s ease-in-out;
-    /* 四个值，属性名，过渡持续时间，过渡动画效果，延迟开始过渡时间 */
-    transition: margin-right 4s ease-in-out 1s;
-    /* 可以同时写多个过渡属性，每个过渡之间用逗号分开 */
-    transition: margin-right 4s, color 1s;
-    /* 也可以使用all表示全部属性 */
-    transition: all 0.5s ease-out;
-    /* 其他 */
-    transition: inherit;
-    transition: initial;
-    transition: unset;
+/* 两个值，属性名，过渡持续时间 */
+transition: margin-right 4s;
+/* 三个值，属性名，过渡持续时间，延迟开始过渡时间 */
+transition: margin-right 4s 1s;
+/* 三个值，属性名，过渡持续时间，过渡动画效果 */
+transition: margin-right 4s ease-in-out;
+/* 四个值，属性名，过渡持续时间，过渡动画效果，延迟开始过渡时间 */
+transition: margin-right 4s ease-in-out 1s;
+/* 可以同时写多个过渡属性，每个过渡之间用逗号分开 */
+transition: margin-right 4s, color 1s;
+/* 也可以使用all表示全部属性 */
+transition: all 0.5s ease-out;
+/* 其他 */
+transition: inherit;
+transition: initial;
+transition: unset;
 ```
 
 ![image](transition-caniuse.png)

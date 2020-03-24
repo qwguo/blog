@@ -1,16 +1,10 @@
 ---
 title: columns多列属性
 date: 2019-12-13 16:02:03
-categories: [前端]
-tags: [CSS3]
-cover: image/650-650.jpg
-a: 1
-b: 2
-c: 3
-d: 4
-e: 5
-f: 6
-description: CSS3中实现多列布局，可以让文本多列显示
+categories: [CSS, CSS3]
+tags: [CSS3, columns, column-gap, 布局]
+poster: poster.jpg
+summary: ['我们在做新闻网站的时候想实现和报纸一样的多列布局效果可以使用css为我们提供的columns属性，他可以让我们轻松实现多列布局效果，类似于word中对文字的分栏排版效果，同时我们还可以通过他的各种属性来设置不同的效果。']
 ---
 
 # columns样式属性使用
@@ -20,7 +14,7 @@ description: CSS3中实现多列布局，可以让文本多列显示
 **语法：**
  `columns: <'column-width'> || <'column-count'>;`
 
-- `column-width1`：用来设置列宽，取值`auto`和`像素值`，实际宽度可能会更宽或更窄以适合可用空间。
+- `column-width`：用来设置列宽，取值`auto`和`像素值`，实际宽度可能会更宽或更窄以适合可用空间。
 - `column-count`：用来设置元素内容被划分成几列，取值`auto`和`正整数`。如果取值和列的宽度都非`auto` ，则它仅指示允许的最大列数。
 
 <!-- more -->

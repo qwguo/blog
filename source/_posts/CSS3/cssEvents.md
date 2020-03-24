@@ -1,8 +1,10 @@
 ---
-title: 在css3中有两个控制js事件行为的属性
+title: css3中控制js事件行为
 date: 2019-12-17 20:40:16
-tags: [CSS3]
-description: "在css3中pointer-events，touch-action属性的详细使用"
+categories:
+  - [CSS, CSS3]
+tags: [CSS3, events, touch]
+summary: ["有时候我们在做页面的时候经常会遇到这样的需求，想让某个元素不执行js的一些交互行为，这个时候我们可以使用css3中为我们提供的pointer-events属性，他可以让我们轻松实现元素禁止js的交互行文，包括click、hover等事件。","移动端想要禁止某元素的滑动行为可以使用touch-action属性"]
 ---
 
 # pointer-events

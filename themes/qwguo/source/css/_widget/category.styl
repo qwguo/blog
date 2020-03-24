@@ -1,0 +1,40 @@
+.category-widget
+  ul
+    margin 0
+    padding 0
+    list-style none
+    li
+      display inline-block
+      &::before
+        font-size 1em
+        margin 0 .3em 0 0
+        color darken(font-color, 30%)
+        display inline-block
+        transition(all .1s linear)
+      &:hover
+        &::before
+          transform(scale(1.5))
+          color darken(font-color, 10%)
+
+  .category-list
+    ul
+      padding .8em 0 0 .5em
+    >.category-list-item
+      padding .5em 0
+      width 50%
+      font-size 16px
+      &::before
+        content '\2746'
+      >.category-list-child
+        >.category-list-item
+          font-size 14px
+          &::before
+            content '\2745'
+          >.category-list-child
+            >.category-list-item
+              font-size 12px
+              &::before
+                content '\272F'
+
+
+

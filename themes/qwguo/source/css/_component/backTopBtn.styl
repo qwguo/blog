@@ -1,0 +1,74 @@
+#backTopBtn
+  width 40px
+  height 40px
+  border-radius 50%
+  box-shadow inset 0 0 30px lighten(main-color, 30%)
+  position fixed
+  right 30px
+  bottom 30px
+  z-index 10
+  overflow hidden
+  cursor pointer
+  opacity 0
+  transform(scale(0))
+  transition(all .2s linear)
+  &.show
+    transform(scale(1))
+    opacity 1
+  i
+    height 30%
+    position absolute
+    z-index 2
+    left 0
+    right 0
+    bottom 0
+    height 0
+    transition(all .2s linear)
+    &::after,&::before
+      content ''
+      position absolute
+      width 80px
+      height 80px
+      border-radius 40%
+      top 0
+      left 50%
+      background-image linear-gradient(code-color, darken(code-color, 40%))
+      transform(translate(-50%,-5%) rotate(0deg))
+    &::before
+      opacity .9
+      animation rotates 6s linear -5s infinite
+      z-index 2
+    &::after
+      z-index 1
+      opacity .4
+      animation rotates 6s linear infinite
+  span
+    z-index 3
+    overflow hidden
+    color #fff
+    &, em, b
+      position absolute
+      width 100%
+      height 100%
+    em,b
+      transition(all .2s linear)
+      display flex
+      justify-content center
+      align-items center
+      left 0
+      top 0
+    em
+      font-style normal
+      transform(translateY(100%))
+      font-size 20px
+      opacity 0
+    b
+      font-size 12px
+      opacity 1
+    &:hover
+      b
+        transform(translateY(-100%))
+        opacity 0
+      em
+        transform(translateY(0))
+        opacity 1

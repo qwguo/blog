@@ -1,7 +1,9 @@
 <% if (site.tags.length){ %>
   <div class="widget-wrap tags-widget">
-
-    <h3 class="widget-title"><%= __('tags') %></h3>
+    <h3 class="widget-title">
+      <i class="iconfont icon-tags"></i>
+      <a class="widget-title-name" href="<%- url_for(theme.menus.tags) %>"><%= __('tagcloud') %></a>
+    </h3>
     <div class="widget">
       <%- list_tags({show_count: theme.tags.show_count}) %>
     </div>
