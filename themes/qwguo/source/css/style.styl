@@ -12,12 +12,19 @@
 // ::-webkit-resizer 定义右下角拖动块的样式
 ::-webkit-scrollbar
   width 6px
+  height 6px
   background-color lighten(main-color, 20%)
 ::-webkit-scrollbar-thumb
-  border-radius 4px
+  radius(4px)
   background-color lighten(main-color, 30%)
 ::-webkit-scrollbar-button
+  width 6px
   height 6px
+  radius(4px)
+  background-color lighten(main-color, 40%)
+::-webkit-scrollbar-corner
+  background-color lighten(main-color, 50%)
+  radius(4px)
 
 *
   box-sizing border-box

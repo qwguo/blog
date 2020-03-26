@@ -55,18 +55,18 @@
     transition(all .2s linear)
     ol
       padding 10px 0 10px 10px
+      list-style-type decimal
+      list-style-position inside
+      &.toc
+        font-size 20px
       li
+        font-size .95em
         padding 5px 0
-        list-style none
         white-space nowrap
         .toc-number
           display none
-    .toc-level-1
-      > a
-        font-size 16px
-    .toc-level-2
-      > a
-        font-size 14px
+        .toc-text
+          font-size inherit
     &.open
       left 0
       width 250px
@@ -118,7 +118,7 @@
     background-color lighten(main-color, 15%)
     padding 6px 12px
     margin 5px 0
-    font-size 14px
+    font-size 16px
     border-left 10px solid lighten(main-color, 25%)
   code
     color #D7BA7D
@@ -126,6 +126,7 @@
     background-image linear-gradient(80deg, lighten(main-color, 35%), lighten(main-color, 25%))
     border-radius 5px
     margin 0 .2em
+    font-family 'jetbrains-mono', 'PingFang SC'
   code.hljs
     color #ebdbb2
     display block
@@ -136,7 +137,7 @@
     line-height 1.8
     font-size 18px
     position relative
-    font-family: 'Operator Mono SSm', 'PingFang SC';
+    font-family 'Operator Mono SSm', 'PingFang SC'
     .code-lang
       position absolute
       color #0ed2f7
@@ -171,6 +172,8 @@
   li,
   dd
     padding: .5em 0;
+  p
+    line-height 2
   img
     max-width 100%
     border-radius 5px

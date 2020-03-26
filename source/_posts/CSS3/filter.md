@@ -31,7 +31,7 @@ summary: ['以前我们要处理一张图片的取色，模糊，褐色等效果
 ![image](filter.png)
 [查看兼容性详情](https://caniuse.com/#search=filter)
 
-## 1、grayscale 灰度模式
+## grayscale 灰度模式
 
 > 用来设置图像或者元素的灰度模式，也就是去掉所有颜色以灰色显示元素
 
@@ -62,7 +62,7 @@ filter:grayscale(0);
 </iframe>
 
 
-## 2、sepia 褐色
+## sepia 褐色
 
 > 将图片或者元素以褐色的形式显示，也就是复古效果。
 
@@ -86,7 +86,7 @@ filter:sepia(100%);
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## 3、saturate 饱和度
+## saturate 饱和度
 
 > 用于设置图像的饱和度。
 
@@ -110,7 +110,7 @@ filter:saturate(100%);
 </iframe>
 
 
-## 4、hue-rotate 色相旋转
+## hue-rotate 色相旋转
 
 > 给图像应用色相旋转。
 
@@ -134,7 +134,7 @@ filter: hue-rotate(360deg);
 </iframe>
 
 
-## 5、invert 反色
+## invert 反色
 
 > 给图片进行反转取色显示
 
@@ -158,7 +158,7 @@ filter: invert(.3);
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## 6、opacity 透明度
+## opacity 透明度
 
 > 给图像或者元素设置透明度，该函数与已有的opacity属性很相似，不同之处在于通过filter，一些浏览器为了提升性能会提供硬件加速。
 
@@ -183,7 +183,7 @@ filter: opacity(.3);
 </iframe>
 
 
-## 7、brightness 亮度
+## brightness 亮度
 
 > 用于设置图像的亮度，给图片应用一种线性乘法，使其看起来更亮或更暗。
 
@@ -206,7 +206,7 @@ filter: brightness(.3);
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## 8、contrast 对比度
+## contrast 对比度
 
 > 用于设置图像的对比度，
 
@@ -230,7 +230,7 @@ filter: contrast(.3);
 </iframe>
 
 
-## 9、blur 模糊度
+## blur 模糊度
 
 > 用于设置图像的高斯模糊度
 
@@ -254,7 +254,7 @@ filter: blur(5px);
 </iframe>
 
 
-## 10、drop-shadow 投影
+## drop-shadow 投影
 
 > 设置图像或元素的投影效果，他和box-shadow效果一样，但是区别在于他不能使用`inset`设置内阴影，也不能同时这只多个阴影。
 
