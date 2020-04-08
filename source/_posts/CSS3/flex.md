@@ -17,9 +17,9 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ***注意，设为 Flex 布局以后，子元素的`float`、`clear`和`vertical-align`属性将失效。***
 
 
-### 一、弹性容器的属性：
+### 弹性容器的属性：
 
-#### 1、flex-direction
+#### flex-direction
 
 > `flex-direction`：用于设置容器中的子项目排列方向，定义主轴的方向（正反方向）
 
@@ -46,7 +46,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 </iframe>
 
 
-#### 2、flex-wrap
+#### flex-wrap
 
 > `flex-wrap`：属性定义容器中的子项目如果在一条轴线上排不下时如何显示。默认情况下，项目都排在一条线（又称"轴线"）上。
 
@@ -68,7 +68,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### 3、flex-flow
+#### flex-flow
 
 > `flex-flow`：属性是`flex-direction` 和 `flow-wrap` 的简写形式，字面上理解就是flex容器中字项目的流向。
 
@@ -86,7 +86,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### 4、justify-content
+#### justify-content
 
 > `justify-content`：属性定义容器中的子项目在主轴线上的对齐方式
 
@@ -111,7 +111,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### 5、align-items
+#### align-items
 
 > `align-items`：属性设置弹性容器中的子项目在侧轴（纵轴 | 副轴）方向上的对齐方式
 
@@ -160,9 +160,9 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-### 二、弹性容器中的子项目的属性：
+### 弹性容器中的子项目的属性：
 
-#### 1、flex-grow
+#### flex-grow
 
 > `flex-grow`：属性设置弹性容器的子项是否拉伸填充容器的剩余空间
 
@@ -184,7 +184,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### 2、flex-shrink
+#### flex-shrink
 
 > `flex-shrink`：属性设置弹性容器的子项目在所有子项宽度之和大于容器总宽度是是否收缩。
 
@@ -237,7 +237,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### 3、flex-basis
+#### flex-basis
 
 > `flex-basis`：定义弹性容器的子项目在主轴方向上占容器的空间大小。*它要比`width`或者`height`权重高*
 
@@ -259,7 +259,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### 4、flex
+#### flex
 
 > `flex`：属性规定了弹性元素如何伸长或缩短以适应flex容器中的可用空间，它是`flex-basis`、`flex-grow`、`flex-shrink`三个属性的简写形式。可以指定1个，2个或3个值
 
@@ -295,7 +295,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### 5、order
+#### order
 
 > `order`：属性定义弹性容器的子项目在显示中的排列顺序，数值越小越靠前，默认值为0。如果两个子项目的 ` order ` 值相同那么就按照他们的代码出现结构排序。
 
@@ -316,7 +316,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### 6、align-self
+#### align-self
 
 > `align-self`：属性可以对弹性容器中的单个子项目进行设置对齐方式，并且覆盖容器中设置的`align-items`值。
 

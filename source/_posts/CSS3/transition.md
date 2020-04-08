@@ -12,7 +12,7 @@ summary: ['transition是css3中的新增属性，用来设置元素的动画过�
 
 > `transition`：用于设置DOM元素在不同状态之间切换的时候应用不同的过度效果，以前如果要想实现一个非生硬的状态切换需要写很多的js来实现，现在使用`transition`变可以轻松的实现。
 
-### 1、transition-property
+### transition-property
 
 > `property`：表示属性的意思，这里用来设置元素要过度的css属性名。
 
@@ -50,7 +50,7 @@ transition-property: all;
 
 能够支持过度的css属性[查看1](http://leaverou.github.io/animatable/)，[查看2](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_animated_properties)
 
-### 2、transition-duration
+### transition-duration
 
 > `transition-duration`：表示过渡动画在多长时间内执行完毕。值以秒（s）或毫秒（ms）为单位不接受负值。可以指定多个值，每个值之间用逗号分开并且分别应用到 `transition-property` 指定的对应属性上。
 
@@ -82,7 +82,7 @@ transition-duration: .5s, 10ms, .9ms, 0.5s, 10.05s;
 
 
 
-### 3、transition-timing-function
+### transition-timing-function
 
 > `transition-timing-function`：指定一个函数，定义属性值怎么变化。缓动函数 Timing functions 定义属性如何计算。多数 timing functions 由四点定义一个 bezier 曲线。也可以从 Easing Functions Cheat Sheet 选择缓动效果。
 
@@ -108,7 +108,7 @@ transition-duration: .5s, 10ms, .9ms, 0.5s, 10.05s;
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-### 4、transition-delay
+### transition-delay
 
 > `transition-delay`：延迟指定时间后执行过度效果。值以秒（s）或毫秒（ms）为单位。取值为正时会延迟一段时间来响应过渡效果；取值为负时会导致过渡立即开始。可以指定多个延迟时间，每个延迟用逗号分开，分别作用于你所指定的相符合的css属性`transition-property`;
 
@@ -129,7 +129,7 @@ transition-duration: .5s, 10ms, .9ms, 0.5s, 10.05s;
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-### 5、transition
+### transition
 
 > `transition`：它是`transition-property`、`transition-duration`、`transition-timin-function`、`transition-delay` 的缩写形式，能够更方面的设置过渡效果，一般在开发中使用这种方式写过渡效果。
 
