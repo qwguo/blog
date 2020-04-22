@@ -21,13 +21,19 @@ function randomNum(minNum,maxNum){
       getLang = codeDom.getAttribute('class'),
       getCode = codeDom.innerText,
       spanLang = document.createElement('span'),
+      spanCopy = document.createElement('span'),
       textarea = document.createElement('textarea');
       spanLang.setAttribute('class','code-lang');
+      spanCopy.setAttribute('class', 'iconfont icon-copy code-copy');
+      /* spanCopy.setAttribute('data-clipboard-action', 'copy');
+      spanCopy.setAttribute('data-clipboard-target', '#codeTextarea_'+i); */
       spanLang.innerText = '</>'+ getLang;
       textarea.value = getCode;
+      textarea.setAttribute('id', 'codeTextarea_' + i);
       // textarea.style.display = 'none';
       codeDom.style.display = 'none';
       curPre.appendChild(spanLang);
+      curPre.appendChild(spanCopy);
       curPre.appendChild(textarea);
       var tags = '';
       switch(getLang){
@@ -47,6 +53,9 @@ function randomNum(minNum,maxNum){
           getLang = 'application/json';
           break;
         case 'js':
+        case 'JavaScript':
+        case 'javascript':
+        case 'JAVASCRIPT':
           getLang = 'javascript';
           break;
         case 'TypeScript':
@@ -142,4 +151,10 @@ $(function(){
       fun(HTMLDom.scrollTop());
     })
   }());
+
+  new ClipboardJS('.code-copy', {
+    target: function(trigger) {
+      return trigger.nextElementSibling;
+    }
+  });
 });
