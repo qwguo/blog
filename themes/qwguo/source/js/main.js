@@ -152,9 +152,23 @@ $(function(){
     })
   }());
 
-  new ClipboardJS('.code-copy', {
+  var clip = new ClipboardJS('.code-copy', {
     target: function(trigger) {
       return trigger.nextElementSibling;
+    },
+    text: function(trigger){
+      return trigger.nextElementSibling.value;
     }
   });
+  clip.on('success', function(){
+    $.evPopupPoint({
+      hint: '复制成功',
+      icon: 1,
+      closeTime: 1,
+      position: 't-r',
+      className: 'light-danger',
+      shade: {opacity:0},
+      animate: ['fadeInRight', 'fadeOutRight']
+    });
+  })
 });
