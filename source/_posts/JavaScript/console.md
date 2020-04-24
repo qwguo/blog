@@ -321,9 +321,31 @@ console.table(data [, columns]);
 
 
 ```JavaScript
-// 打印一个由字符串组成的数组
+// 打印数组
 console.table(["apples", "oranges", "bananas"]);
 ```
+![image](console.table_1.png)
+
+```JavaScript
+// 打印对象
+console.table({"apples":"苹果", "oranges":"橙子", "bananas":"香蕉"});
+```
+![image](console.table_2.png)
+
+
+```JavaScript
+// 打印多维数组
+console.table([["apples","苹果"], ["oranges","橙子"], ["bananas","香蕉"]]);
+```
+![image](console.table_3.png)
+
+```JavaScript
+// 打印多维数组
+var obj = {fruit:{"apples":"苹果", "oranges":"橙子", "bananas":"香蕉", "pair":"梨"}, greens: {"cucumber":"黄瓜", "spinage":"菠菜", "potato":"马铃薯"}}
+console.table(obj);
+```
+![image](console.table_4.png)
+
 
 ### tim()
 >启动一个计时器来跟踪某一个操作的占用时长。每一个计时器必须拥有唯一的名字，页面中最多能同时运行10,000个计时器。当以此计时器名字为参数调用 console.timeEnd() 时，浏览器将以毫秒为单位，输出对应计时器所经过的时间。
