@@ -125,6 +125,7 @@ $(function(){
 
   // 页面滚动百分百计算效果
   (function(){
+    HTMLDomH =  HTMLDom.height();
     let backTopBtn = $('#backTopBtn'),
       i = backTopBtn.find('i'),
       b = backTopBtn.find('b'),

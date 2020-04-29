@@ -3,7 +3,7 @@
  * @description  : description
  * @Date         : 2020-03-17 23:50:25
  * @LastEditors  : qwguo
- * @LastEditTime : 2020-03-19 08:01:59
+ * @LastEditTime : 2020-04-26 14:10:06
  * @FilePath     : \qwguo\themes\qwguo\layout\_partial\post\postExcerpt.ejs
  -->
 
@@ -27,6 +27,7 @@
         i === 0 && (firstTags = tag)
       });
     }
+    if(!post.drafts){
   %>
     <div class="post-excerpt">
       <div class="excerpt-inner">
@@ -52,4 +53,7 @@
         <span class="tag-class"><%- firstTags && firstTags.name %></span>
       </div>
     </div>
-<% }); %>
+<%
+    }
+  });
+%>

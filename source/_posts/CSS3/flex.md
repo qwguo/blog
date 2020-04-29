@@ -193,32 +193,33 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 
 - `1`：初始化值，表示每个子项目都进行缩放。
 - `number`： 取值==0==表示不进行缩放，取值其他正整数表示进行缩放。具体计算规则是：
-```
-    //html
-      <div class="box">
-        <div class="sub-1">11111</div>
-        <div class="sub-2">2</div>
-        <div class="sub-3">3</div>
-      </div>
-    //less
-    .box{
-      display: flex;
-      width: 500px;
-      height: 200px;
-      .sub-1{
-        width: 100px;
-        flex-shrink: 1;
-      }
-      .sub-2{
-        width: 200px;
-        flex-shrink: 2;
-      }
-      .sub-3{
-        width: 300px;
-        flex-shrink: 3;
-      }
-    }
 
+
+```html
+<div class="box">
+  <div class="sub-1">11111</div>
+  <div class="sub-2">2</div>
+  <div class="sub-3">3</div>
+</div>
+```
+```less
+.box{
+  display: flex;
+  width: 500px;
+  height: 200px;
+  .sub-1{
+    width: 100px;
+    flex-shrink: 1;
+  }
+  .sub-2{
+    width: 200px;
+    flex-shrink: 2;
+  }
+  .sub-3{
+    width: 300px;
+    flex-shrink: 3;
+  }
+}
 ```
 
 > 先计算总权重TW = 100px * 1(flex-shrink) + 200px *2(flex-shrink) + 300px *3(flex-shrink) = 1400px 也就是每个div的宽度乘以flex-shrink系数的总和。
