@@ -1,5 +1,6 @@
 <% if (post.tags && post.tags.length){ %>
   <%- list_tags(post.tags, {
+    order: 'desc',
     show_count: false,
     class: 'article-tag'
   }) %>

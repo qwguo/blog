@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-25 09:30:25
- * @LastEditTime : 2020-03-18 11:47:38
+ * @LastEditTime : 2020-05-01 15:35:39
  * @LastEditors  : qwguo
  * @Description: In User Settings Edit
  * @FilePath     : \qwguo\themes\qwguo\layout\index.ejs
@@ -10,7 +10,7 @@
   <%- partial('_partial/post/postExcerpt', {item: page.posts, pageType: 'index'})%>
 
 <% if (page.total > 1){ %>
-  <div class="paginator">
+  <div class="pagination">
     <%- paginator({
       total: 6,
       prev_text: '<span></span>Prev',

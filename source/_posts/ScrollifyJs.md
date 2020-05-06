@@ -1,7 +1,8 @@
 ---
 title: ScrollifyJs
 date: 2019-02-14 14:16:15
-tags: [Javascript, Jquery]
+tags: [JavaScript, JQuery]
+drafts: true
 ---
 
 ## jQuery Scrollify

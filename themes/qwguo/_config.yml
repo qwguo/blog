@@ -24,12 +24,14 @@ widgets:
 - tagsCloud                                  #标签云
 
 author:
+  resume: 'http://qwguo.gitee.io/resume/'
   portrait: /image/author.jpg
   name: 祁维国
   intro: 一台电脑，一根网线，能够宅到天昏地暗
   weibo: false
   weixin: false
-  QQ: false
+  QQ: 75624839
+  gitee: https://gitee.com/qwguo
   douban: false
   zhihu: https://www.zhihu.com/people/qwguo
   email: 75624839@qq.com

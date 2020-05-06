@@ -1,6 +1,14 @@
 <div class="author-box">
   <% var author = theme.author; %>
-  <div class="portrait"><img src="<%- author.portrait %>" alt=""></div>
+  <div class="portrait">
+    <% if(author.resume){%>
+    <a href="<%- author.resume; %>" target="_block" title="查看我">
+      <img src="<%- author.portrait %>" alt="">
+    </a>
+    <% }else{%>
+      <img src="<%- author.portrait %>" alt="">
+    <%}%>
+    </div>
   <ul>
     <li class="author-name"><%- author.name; %></li>
     <li class="author-intro"><%- author.intro; %></li>
@@ -9,7 +17,7 @@
         <a href="javascript:weixin();" title="weixin" class="iconfont icon-weixin"></a>
       <% } %>
       <% if(author.QQ){ %>
-        <a target="_blank" href="<%- author.QQ%>" title="QQ" class="iconfont icon-QQ"></a>
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<%- author.QQ%>&site=qq&menu=yes" title="QQ" class="iconfont icon-QQ"></a>
       <% } %>
       <% if(author.weibo){ %>
         <a target="_blank" href="<%- author.weibo%>" title="weibo" class="iconfont icon-weibo"></a>
@@ -23,11 +31,14 @@
       <% if(author.email){ %>
         <a href="mailto:<%- author.email%>" title="<%- author.email%>" class="iconfont icon-email"></a>
       <% } %>
-      <% if(author.twitter){ %>
-        <a target="_blank" href="<%- author.twitter%>" title="twitter" class="iconfont icon-twitter"></a>
+      <% if(author.gitee){ %>
+        <a target="_blank" href="<%- author.gitee%>" title="码云" class="iconfont icon-gitee"></a>
       <% } %>
       <% if(author.github){ %>
         <a target="_blank" href="<%- author.github%>" title="github" class="iconfont icon-github"></a>
+      <% } %>
+      <% if(author.twitter){ %>
+        <a target="_blank" href="<%- author.twitter%>" title="twitter" class="iconfont icon-twitter"></a>
       <% } %>
       <% if(author.facebook){ %>
         <a target="_blank" href="<%- author.facebook%>" title="facebook" class="iconfont icon-facebook"></a>

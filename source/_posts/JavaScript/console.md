@@ -1,12 +1,13 @@
 ---
 title: 'console控制台输出语法使用'
 summary:
-  - ''
+  - '以前我们在调试代码的时候常用alert方法输出代码，这个方法不能输出详细内容，而且会阻止后面的代码执行，非常不利于我们调试。'
+  - 'console用于在控制台输出内容，他的出现可以让我们在开发过程中调试代码变得方便，而且console也为我们提供了很多的方法，有些再调试过程中非常实用，可以节省很多时间。'
 p: JavaScript/clone
 date: 2020-04-22 14:01:58
-categories:
-tags:
-poster:
+categories: [JavaScript]
+tags: [JavaScript, console, 工具, 调试]
+poster: poster.png
 drafts: false
 ---
 
@@ -320,7 +321,6 @@ console.table(data [, columns]);
 
 **案例：**
 
-
 ```JavaScript
 // 打印数组
 console.table(["apples", "oranges", "bananas"]);
@@ -342,11 +342,31 @@ console.table([["apples","苹果"], ["oranges","橙子"], ["bananas","香蕉"]])
 
 ```JavaScript
 // 打印多维数组
-var obj = {fruit:{"apples":"苹果", "oranges":"橙子", "bananas":"香蕉", "pair":"梨"}, greens: {"cucumber":"黄瓜", "spinage":"菠菜", "potato":"马铃薯"}}
+var obj = {
+  fruit:{
+  "apples":"苹果", "oranges":"橙子", "bananas":"香蕉", "pair":"梨"
+  },
+  greens:{
+    "cucumber":"黄瓜", "spinage":"菠菜", "potato":"马铃薯"
+  }
+};
 console.table(obj);
 ```
 ![image](console.table_4.png)
 
+```JavaScript
+// 打印多维数组，并传入要打印的指定的值
+var obj = {
+  fruit:{
+    "name":"苹果", "size":"10cm", "weight":"500g", "color":"红色"
+  },
+  greens: {
+    "name":"黄瓜", "size":"20cm", "weight":"20g", "color": "green"
+  }
+};
+console.table(obj,['name', 'size']);
+```
+![image](console.table_5.png)
 
 ### tim()
 >启动一个计时器来跟踪某一个操作的占用时长。每一个计时器必须拥有唯一的名字，页面中最多能同时运行10,000个计时器。当以此计时器名字为参数调用 console.timeEnd() 时，浏览器将以毫秒为单位，输出对应计时器所经过的时间。
@@ -398,8 +418,202 @@ console.timeEnd(myTime);
 ![image](console.time_1.png)
 
 
+### trace()
+> 堆栈跟踪，控制台也支持输出堆栈，其将会显示到调用 console.trace() 的点的调用路径，个人理解就是从哪里调用的此方法：
+
+```javascript
+function foo(a) {
+    function bar(a) {
+        console.trace();
+    }
+    bar(10);
+}
+foo(20);
+```
+![image](console.trace_1.png)
+
+### warn()
+> 以警告的方式输出消息
+
+```javascript
+var obj = {
+  fruit:{
+    "name":"苹果", "size":"10cm", "weight":"500g", "color":"红色"
+  },
+  greens: {
+    "name":"黄瓜", "size":"20cm", "weight":"20g", "color": "green"
+  }
+};
+console.warn(obj);
+```
+
+![image](console.warn_1.png)
 
 
+## console的占位符
+
+> 还记得我们上面提道德的`msg`占位符吗，console为我们提供了一些实用的占位符，让我们来替换要想要的内容。
+
+占位符 | 描述
+---------|----------
+ %o or %O | 打印 JavaScript 对象。主要是用来替换对象元素
+ %d or %i | 打印整数。支持数字格式化。例如, console.log("Foo %.2d", 1.1) 表示给数字添加2个。
+ %s | 打印字符串。
+ %f | 打印浮点数。支持格式化，比如 console.log("Foo %.2f", 1.1) 会输出两位小数: Foo 1.10
+ %c | 用于修饰输出结果的样式替换
+
+### %o 和 %O
+
+> 表示要替换的是javascript对象，如果替换的是非对象类型
+
+```javascript
+var obj = {"name":"黄瓜", "size":"20cm", "weight":"20g", "color": "green"}
+var arr = ["name","黄瓜", "size","20cm"];
+var num = 10;
+var str = '这是字符串';
+console.log('这是输出的对象类型%o', obj);
+console.log('这是输出的数组类型%O', arr);
+console.log('这是输出的数值类型%o', num);
+console.log('这是输出的字符串类型%o', str);
+```
+![image](console.msg_obj_1.png)
+
+经过测试发现这个占位符可以替换所有类型，比较javascript的类型都归属于对象类型
+
+### %d 和 %i
+> 用于替换数值类型
+```javascript
+var obj = {"name":"黄瓜", "size":"20cm", "weight":"20g", "color": "green"}
+var arr = ["name","黄瓜", "size","20cm"];
+var num = 10;
+var str = '这是字符串';
+console.log('这是输出的对象类型%d', obj);
+console.log('这是输出的数组类型%i', arr);
+console.log('这是输出的数值类型%d', num);
+console.log('这是输出的字符串类型%i', str);
+console.log('这是输出的字符串类型%i', '50');
+console.log('这是输出的字符串类型%d', '50');
+console.log('这是输出的字符串类型%i', 50.35);
+console.log('这是输出的字符串类型%d', 50.35);
+```
+![image](console.msg_num_1.png)
+
+还是使用上边的代码输出结果就不一样了，非对象类型都将输出`NaN`，即便是字符串数值也不会强制转换，如果是小数将取整输出。
+
+> `%d` 和 `%i`还有另一种用法就是数字格式化，在数字前面加前导0或前导空格
+
+```javascript
+console.log("Foo %.2d", 1.1);
+console.log("Foo %4d", 4.100);
+console.log("Foo %.2i", 1.1);
+console.log("Foo %4i", 4.100);
+```
+chrome | firefox
+--- | ---
+![image](console.msg_num_2_chrome.png) | ![image](console.msg_num_2_firefox.png)
+
+从输出结果可以看出，在`%`号后边增加`.`表示添加前导0，再跟多少位；在`%`后边直接跟数字表示加指定多少空位；此方法只有Firefox支持。
 
 
+### %f
+> 用于替换浮点类型数据
 
+```javascript
+var obj = {"name":"黄瓜", "size":"20cm", "weight":"20g", "color": "green"}
+var arr = ["name","黄瓜", "size","20cm"];
+var num = 10;
+var str = '这是字符串';
+console.log('这是输出的对象类型%f', obj);
+console.log('这是输出的数组类型%f', arr);
+console.log('这是输出的数值类型%f', num);
+console.log('这是输出的字符串类型%f', str);
+console.log('这是输出的字符串类型%f', '50');
+console.log('这是输出的字符串类型%f', '50');
+console.log('这是输出的字符串类型%f', 50.35);
+console.log('这是输出的字符串类型%f', 50.35);
+```
+![image](console.msg_f_1.png)
+
+从输出结果可以看出，它和，`%d` 和 `%i`基本一样，唯一的区别是他支持小数，同时非数值型数据将输出`NaN`;
+
+### %s
+> 用于替换字符串类型数据
+
+```javascript
+var obj = {"name":"黄瓜", "size":"20cm", "weight":"20g", "color": "green"}
+var arr = ["name","黄瓜", "size","20cm"];
+var num = 10;
+var str = '这是字符串';
+console.log('这是输出的对象类型%s', obj);
+console.log('这是输出的数组类型%s', arr);
+console.log('这是输出的数值类型%s', num);
+console.log('这是输出的字符串类型%s', str);
+console.log('这是输出的字符串类型%s', '50');
+console.log('这是输出的字符串类型%s', '50');
+console.log('这是输出的字符串类型%s', 50.35);
+console.log('这是输出的字符串类型%s', 50.35);
+```
+
+chrome | firefox
+---------|----------
+![image](console.msg_str_1_chrome.png) | ![image](console.msg_str_1_firefox.png)
+
+还是上边的代码，从输出结果可以看出，它把对象转换成`Object`，把数组转换成`Array(4)`，其他的都转换成字符串形式，火狐和谷歌输出结果不太相同;
+
+
+## %c 输出结果的样式修饰
+
+>在控制台中打印普通结果往往非常单调，有时候我们想让我们打印出的结果具有向css一样的样式修饰，可以使用占位符`%c`，在`%c`后面的结构将要使用我们定义的样式来修饰
+
+```javascript
+// 红色的文字
+console.log("%c这里输出红色文字", "color: red; font-style: italic");
+// 给文字添加阴影，输出3D效果
+console.log("%c3D 文字效果", " text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
+// 输出一个渐变文字
+console.log('%c输出一个渐变文字 ', 'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:5em;');
+//输出带背景的文字
+console.log('%c这是红色背景白色文字，%c这是红色文字蓝色背景', 'color: #fff; background: #f40; font-size: 24px;','color: #f00; background: #00f; font-size: 30px;');
+```
+上面代码打印结果：
+
+chrome | firefox
+---------|----------
+![image](console.msg_c_1_chrome.png) | ![image](console.msg_c_1_firefox.png)
+
+可以看出`%c`后边的文字将应用我们自定义的样式，如果我们一行要定义不同的文字样式，可以添加多个`%c`,然后后边的参数分别一一对应。
+
+```javascript
+console.log('%c这是红色背景白色文字，%c这是红色文字蓝色背景', 'color: #fff; background: #f40; font-size: 24px;');
+console.log('%c这是红色背景白色文字，这是红色文字蓝色背景', 'color: #fff; background: #f40; font-size: 24px;','color: #f00; background: #00f; font-size: 30px;');
+```
+chrome | firefox
+---------|----------
+![image](console.msg_c_2_chrome.png) | ![image](console.msg_c_2_firefox.png)
+
+上面结果可以看出，如果`%c`和传入的参数没有一一对应，那么浏览器解析的结果不一样。
+
+`%c` 语法可用的属性如下：
+
+属性 | 说明
+---------|----------
+background | 与其全写版本。
+border | 与其全写版本。
+border-radius | 圆角
+box-decoration-break | ？
+box-shadow | 元素的投影
+clear 和 float | 浮动
+color | 颜色
+cursor | 当前颜色
+display | 默认输出是inline，可以通过次数从改变元素
+font 与其全写版本。| 文字样式
+line-height | 文字行高
+margin | 外间距
+outline 与其全写版本。 | 外边线
+padding | 内间距
+text-transform 这类 text-* 属性 | 字母大小写
+white-space | 文字间距
+word-spacing 和 word-break | 文字是否换行
+writing-mode | 排布模式
+
+> **注意:** 控制台信息的默认行为与行内元素相似。为了应用 padding, margin 这类效果，你应当这样设置display: inline-block。

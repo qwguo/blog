@@ -135,7 +135,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### 6、align-content
+#### align-content
 
 > `align-content`：属性定义了弹性容器中多根轴线的对齐方式。如果项目只有一根轴线或（设置了flex-wrap-nowrap属性的弹性容器）将不起作用，也可以理解为子项目整体的对齐方式，会把子项目划分成一个组。
 

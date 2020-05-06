@@ -8,6 +8,7 @@
     border-radius 0 10px 10px 0
     background-color lighten(main-color, 25%)
     cursor pointer
+    z-index 10
   .icon-home
     font-size 20px
     color #fff
@@ -33,6 +34,7 @@
         margin-left 4px
         background-color  lighten(main-color, 25%)
     &.open
+      margin-left -10px
       i
         &::before
           opacity 0
@@ -45,7 +47,7 @@
   .article-doc
     position fixed
     z-index 100
-    left 250px
+    left 280px
     top 0
     bottom 0
     width 0
@@ -54,22 +56,25 @@
     opacity 0
     transition(all .2s linear)
     ol
-      padding 10px 0 10px 10px
+      padding 10px 0 10px 0
       list-style-type decimal
-      list-style-position inside
+      list-style-position outside
+      margin 0 .5em 0 1.2em
+      ol
+        margin 0 0 0 .5em
       &.toc
         font-size 20px
       li
         font-size .95em
         padding 5px 0
-        white-space nowrap
+        line-height 1.5
         .toc-number
           display none
         .toc-text
           font-size inherit
     &.open
       left 0
-      width 250px
+      width 280px
       overflow auto
       opacity 1
 

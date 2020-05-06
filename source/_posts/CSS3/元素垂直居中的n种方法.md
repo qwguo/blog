@@ -5,11 +5,10 @@ summary:
   - '在css3之前我们前端技术人员要实现垂直居中布局往往需要绞尽脑汁的去解决各种浏览器兼容问题，而随着时间的推移，ie浏览器已经退出历史舞台，现在的浏览器已经完全支持css3的各种布局方式，在css3中实现居中布局已经变得非常容易'
 p: CSS3/元素垂直居中的n种方法
 date: 2020-04-29 09:54:45
-categories:
-tags:
+categories: [CSS]
+tags: [垂直居中, CSS, CSS3, layout]
 poster: poster.png
 ---
-
 
 # 元素垂直居中的n种方法
 
@@ -226,7 +225,7 @@ poster: poster.png
     align-items: center;
 }
 ```
-> 最简单的方法，只通过父级设置，把父元素设置成弹性很模型，然后设置父元素的子元素横向纵向居中显示。
+最简单的方法，只通过父级设置，把父元素设置成弹性很模型，然后设置父元素的子元素横向纵向居中显示。
 
 ### 方法2：
 
@@ -239,7 +238,7 @@ poster: poster.png
 }
 ```
 
-> 也是只通过父级设置，把父元素设置成弹性很模型，然后设置父元素的子元素横向居中显示，然后通过弹性很模型的子元素组`align-content:center`对齐方式，配合`flex-wrap:wrap`实现。
+也是只通过父级设置，把父元素设置成弹性很模型，然后设置父元素的子元素横向居中显示，然后通过弹性很模型的子元素组`align-content:center`对齐方式，配合`flex-wrap:wrap`实现。
 
 ### 方法3：
 
@@ -255,7 +254,7 @@ poster: poster.png
 }
 ```
 
-> 这个也只只给父级设置，不同的是这个需要借助父级的伪元素；先把父元素设置成弹性很模型，然后设置纵向排列，然后设置横轴左右居中，然后再借助父元素伪类，设置纵向占据父元素的.5大小，实现上下居中。
+这个也只只给父级设置，不同的是这个需要借助父级的伪元素；先把父元素设置成弹性很模型，然后设置纵向排列，然后设置横轴左右居中，然后再借助父元素伪类，设置纵向占据父元素的.5大小，实现上下居中。
 
 ### 方法4：
 
@@ -268,7 +267,7 @@ poster: poster.png
 }
 ```
 
-> 把父元素设置成弹性很模型，然后通过要居中的子元素设置margin:auto，元素外间距依照父级自适应外间距。
+把父元素设置成弹性很模型，然后通过要居中的子元素设置margin:auto，元素外间距依照父级自适应外间距。
 
 ### 方法5：
 
@@ -282,7 +281,7 @@ poster: poster.png
 }
 ```
 
-> 把父元素设置成弹性很模型，然后子元素设置align-self: content。
+把父元素设置成弹性很模型，然后子元素设置align-self: content。
 
 **查看案例：** [https://codepen.io/qwguo88/full/ZEbKgXG](https://codepen.io/qwguo88/full/ZEbKgXG)
 
@@ -369,4 +368,64 @@ poster: poster.png
 </iframe>
 
 
+## 使用calc()计算函数实现
 
+> 此方法需要固定高度
+
+```html
+<div class="box">
+    <div class="content">
+      这是要垂直居中的内容。
+    </div>
+</div>
+```
+
+```css
+.content{
+    margin: auto;
+    position: relative;
+    width: 300px;
+    height: 100px;
+    top: calc((100% - 100px)/ 2);
+}
+```
+
+首先设置固定宽高，利用`margin:auto`左右居中，然后通过`relative`定位`top`通过`calc()`函数计算，使用父级的100% 减去元素自身高度然后除以2，也就是总高度减去元素高度计算后的一半值，如果元素设置了边线和内边距需要相应的减掉。
+
+## 使用设置文字排布方向属性writing-mode实现
+
+```html
+<div class="box">
+    <div class="box-inner">
+        <div class="content">
+          这是要垂直居中的内容。
+        </div>
+    </div>
+</div>
+```
+
+```css
+.box{
+    writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    text-align: center;
+}
+.box-inner{
+    width: 100%;
+    display: inline-block;
+    writing-mode: lr;
+    writing-mode: horizontal-tb;
+}
+.content{
+    display: inline-block;
+    text-align: left;
+}
+```
+这个方法相对来说复杂一些，需要多加一个标签，首先给最外层改变排布方向为垂直排布，然后设置垂直居中；然后在里边一层再把排布方向设置回来，并且设置为行内块级元素宽度100%；最后让居中的元素设置成行内块级元素，文字对齐设置成左对齐实现。
+
+**查看案例：** [https://codepen.io/qwguo88/full/GRpmMjV](https://codepen.io/qwguo88/full/GRpmMjV)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="vertical-middle-write-mode" src="https://codepen.io/qwguo88/embed/GRpmMjV?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/GRpmMjV'>vertical-middle-write-mode</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>

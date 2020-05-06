@@ -1,0 +1,27 @@
+/*
+ * @Author       : qwguo
+ * @description  : 页码样式
+ * @Date         : 2020-05-01 15:34:28
+ * @LastEditors  : qwguo
+ * @LastEditTime : 2020-05-01 15:43:32
+ * @FilePath     : \qwguo\themes\qwguo\source\css\_component\pagination.styl
+ */
+.pagination
+  text-align center
+  .page-number
+    display inline-block
+    width 50px
+    height 50px
+    line-height 50px
+    radius(50%)
+    margin 0 10px
+    cursor pointer
+    background-color lighten(main-color, 20%)
+    transition(all .5s ease)
+    &:hover
+      background-color lighten(main-color, 30%)
+      transform(scale(1.2))
+    &.current
+      background-color lighten(main-color, 40%)
+      transform(scale(1.3))
+
