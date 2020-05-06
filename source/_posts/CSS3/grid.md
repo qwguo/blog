@@ -431,7 +431,7 @@ chrome | Firefox
 
 #### justify-content
 
-> 值得是把网格布局中的所以子项成一个整体，然后让整体在网格容器中水平对齐。
+> 指的是把网格布局中的所以子项成一个整体，然后让整体在网格容器中水平对齐。
 
 center | start | end
 ---|---|---
@@ -447,6 +447,8 @@ center | start | end
 </iframe>
 
 #### align-content
+
+> 指的是把网格布局中的所以子项成一个整体，然后让整体在网格容器中垂直对齐。
 
 
 最后推荐一个学习网格布局的地址：[https://grid.layoutit.com/](https://grid.layoutit.com/)
