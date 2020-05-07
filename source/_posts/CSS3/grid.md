@@ -363,6 +363,24 @@ grid-auto-flow: unset;
 
 > 基本布局分析完毕，我们来说一下网格容器中的对齐方式，网格中对齐方式有：
 
+
+#### align-items
+
+> 是指网格项目元素在单元格中的垂直呈现方式，是垂直拉伸显示，还是上中下对齐
+
+chrome | Firefox
+--- | ---
+![image](align-items_chrome.png) | ![image](align-items_firefox.png)
+
+我们还是可以借助上面的截图图片再结合下边的案例来理解各个取值的区别，图中虚线的位置代表的是网格的单元格，色块代表的是网格项目
+
+**案例演示：** [https://codepen.io/qwguo88/full/jObYKzd](https://codepen.io/qwguo88/full/jObYKzd)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="grid-align-items" src="https://codepen.io/qwguo88/embed/jObYKzd?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/jObYKzd'>grid-align-items</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 #### justify-items
 
 > 是指网格项目元素在单元格中的水平呈现方式，是水平拉伸显示，还是左中右对齐
@@ -383,23 +401,6 @@ chrome | Firefox
 通过上边的案例我们发现，一般使用 `stretch`、`start`、`end`、`center`这几个值，`stretch`是默认值
 
 
-#### align-items
-
-> 是指网格项目元素在单元格中的垂直呈现方式，是垂直拉伸显示，还是上中下对齐
-
-chrome | Firefox
---- | ---
-![image](align-items_chrome.png) | ![image](align-items_firefox.png)
-
-我们还是可以借助上面的截图图片再结合下边的案例来理解各个取值的区别，图中虚线的位置代表的是网格的单元格，色块代表的是网格项目
-
-**案例演示：** [https://codepen.io/qwguo88/full/jObYKzd](https://codepen.io/qwguo88/full/jObYKzd)
-
-<iframe height="500" style="width: 100%;" scrolling="no" title="grid-align-items" src="https://codepen.io/qwguo88/embed/jObYKzd?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/qwguo88/pen/jObYKzd'>grid-align-items</a> by qwguo
-  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
 #### place-items
 
 > 此属性是 `align-items`和`justify-items`的缩写形式
@@ -414,7 +415,7 @@ place-items: align-items justify-items;
 ```
 
 **说明：**
-如果是单个值的情况下，将引用于垂直和水平对齐，如果是两个值得话需要用空格分开，前边的表示垂直对齐，后边的表示水平对齐。
+如果是单个值的情况下，将应用于垂直和水平对齐，如果是两个值的话需要用空格分开，前边的表示垂直对齐，后边的表示水平对齐。
 
 chrome | Firefox
 --- | ---
@@ -429,15 +430,33 @@ chrome | Firefox
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### justify-content
+#### align-content
 
-> 指的是把网格布局中的所以子项成一个整体，然后让整体在网格容器中水平对齐。
+> 指的是把网格布局中的所以子项成一个整体，然后让整体在网格容器中垂直对齐，这个需要两行以上才能看到效果。
 
 center | start | end
 ---|---|---
-![image](justify-content-center.png) | ![image](justify-content-start.png) | ![image](justify-content-end.png)
+![image](align-content_center.png) | ![image](align-content_start.png) | ![image](align-content_end.png)
 
-我们还是结合上图Firefox截图理解各个支的表现形式。在图上我们可以看到，取值为`start`的时候网格项整体会靠左显示，取值为`center`的时候网格项整体的左边会填充`gap`使其整体居中显示，取值为`end`的时候所取的`gap`会更大。他可取的值还有很多，我们可以结合下边的实例来查看效果。
+我们还是结合上图Firefox截图理解各个支的表现形式。在图上我们可以看到，取值为`start`的时候网格项整体会靠上显示，取值为`center`的时候网格项整体的上边会填充`gap`使其整体垂直居中显示，取值为`end`的时候所取的`gap`会更大，使网格项整体靠下对齐。他可取的值还有很多，我们可以结合下边的实例来查看效果。
+
+**案例展示：**[https://codepen.io/qwguo88/full/mdeXWxy](https://codepen.io/qwguo88/full/mdeXWxy)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="grid-align-content" src="https://codepen.io/qwguo88/embed/mdeXWxy?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/mdeXWxy'>grid-align-content</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+
+#### justify-content
+
+> 指的是把网格布局中的所以子项成一个整体，然后让整体在网格容器中水平对齐，这个需要两列以上才能看到效果。
+
+center | start | end
+---|---|---
+![image](justify-content_center.png) | ![image](justify-content_start.png) | ![image](justify-content_end.png)
+
+我们还是结合上图Firefox截图理解各个支的表现形式。在图上我们可以看到，取值为`start`的时候网格项整体会靠左显示，取值为`center`的时候网格项整体的左边会填充`gap`使其整体水平居中显示，取值为`end`的时候所取的`gap`会更大，使网格项整体靠右对齐。他可取的值还有很多，我们可以结合下边的实例来查看效果。
 
 **案例展示：**[https://codepen.io/qwguo88/full/ExVopyW](https://codepen.io/qwguo88/full/ExVopyW)
 
@@ -446,9 +465,38 @@ center | start | end
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### align-content
 
-> 指的是把网格布局中的所以子项成一个整体，然后让整体在网格容器中垂直对齐。
+#### place-content
+
+> 此属性是 `align-content`和`justify-content`的缩写形式
+
+**语法**
+
+```css
+/* 单个值 */
+place-content: center;
+/* 两个值 */
+place-content: align-content justify-content;
+```
+
+**说明：**
+如果是单个值的情况下，将应用于垂直和水平对齐，如果是两个值的话需要用空格分开，前边的表示垂直对齐，后边的表示水平对齐。
+
+start | center | end
+--- | ---
+![image](place-content_start.png) | ![image](place-content_center.png) | ![image](place-content_end.png)
+
+我们还是可以借助上面的截图图片再结合下边的案例来理解各个取值的区别
+
+**案例演示：** [https://codepen.io/qwguo88/full/JjYpvex](https://codepen.io/qwguo88/full/JjYpvex)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="grid-place-content" src="https://codepen.io/qwguo88/embed/JjYpvex?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/JjYpvex'>grid-place-content</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+
+### grid
 
 
 最后推荐一个学习网格布局的地址：[https://grid.layoutit.com/](https://grid.layoutit.com/)
