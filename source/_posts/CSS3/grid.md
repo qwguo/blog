@@ -451,4 +451,12 @@ center | start | end
 > 指的是把网格布局中的所以子项成一个整体，然后让整体在网格容器中垂直对齐。
 
 
+## 应用在网格项目上
+
+### grid-column-start、grid-column-end
+
+> 指定网格项目从哪个列开始
+
+
+
 最后推荐一个学习网格布局的地址：[https://grid.layoutit.com/](https://grid.layoutit.com/)
