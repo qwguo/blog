@@ -499,4 +499,12 @@ start | center | end
 ### grid
 
 
+## 应用在网格项目上
+
+### grid-column-start、grid-column-end
+
+> 指定网格项目从哪个列开始
+
+
+
 最后推荐一个学习网格布局的地址：[https://grid.layoutit.com/](https://grid.layoutit.com/)
