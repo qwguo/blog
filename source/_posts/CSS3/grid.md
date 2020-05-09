@@ -199,12 +199,19 @@ Chrome | Firefox
 上图案例中我们使用`fit-content()`函数定义列值：`grid-template-columns: fit-content(10px) fit-content(70px) 50% 35%;`表示第一列按内容计算宽度最大值为`10px`但是截图中第一列的换行后的最小宽度`child-`字符已经超过`10px`所以宽度取值为`child-`字符宽度，第二列给定按内容计算宽度最大值为`70px`这个时候此列取值为`70px`并且此列的所有项都能在`70px`内换行，第三列宽度是固定的总宽度的50%：`820px*0.5=410px`，第四列宽度是总宽度的30%：`820px*0.35=287px`；
 
 #### [line-name]
-> 定义垂直和水平线的名称，同时可以使用多个名字来命名一条分隔线多个名字之间用空格分开，给分隔线命名的字符不许用`[]`括起来
+> 定义垂直和水平线的名称，同时可以使用多个名字来命名一条分隔线，多个名字之间用空格分开，给分隔线命名的字符必须用`[]`括起来，网格线的作用是为了网格中网格项目的定位使用。
 
 ```css
 grid-template-rows: [row-one-start] 30% [row-one-end row-two-start] 40% [row-two-end row-three-start] auto [row-three-end];
 grid-template-columns: repeat(3, 33% [col-line]);
 ```
+上面的代码定义了三行三列的网格那么网格线分别有4条横向和4条纵向，并且给网格线起了名字。
+分别表示给横向网格线的第一条线命名为`row-one-start`，第二条网格线命名为两个名字`row-one-end`和`row-tow-start`，第三条网格线命名为`row-two-end`和`row-three-start`，第四条网格线命名为`row-three-end`；纵向使用了`repeat()`方法重复定义了三列，同时四条纵向的网格线名称都定义为了相同的名称`col-line`。
+
+当我们不给网格线定义名称的情况下浏览器会从1开始自动递增生成网格线名称，我们可以借助下图查看
+![image](line-name_auto.png)
+上图是截取的Firefox的调试工具，可以看出最左边的第一条纵向线名称为1，最上边的第一条横向网格线名称也是1。
+
 
 ### grid-template-areas
 
@@ -503,8 +510,20 @@ start | center | end
 
 ### grid-column-start、grid-column-end
 
-> 指定网格项目从哪个列开始
+> 指定网格项目从哪个列开始，到那个列结束，同时也可以设置夸多少列
+
+![image](grid-column-start_1.png)
+
+结合通过上图，和下边的案例我们来看一下具体用法
+
+**案例展示：**[https://codepen.io/qwguo88/pen/gOavJVo](https://codepen.io/qwguo88/pen/gOavJVo)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="grid-column-start-end" src="https://codepen.io/qwguo88/embed/gOavJVo?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/gOavJVo'>grid-column-start-end</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 
+上图我们还是借助Firefox开发者工具，我们在没有设置网格线名称的情况下显示网格线的数字号，这样可以更容易理解
 
 最后推荐一个学习网格布局的地址：[https://grid.layoutit.com/](https://grid.layoutit.com/)
