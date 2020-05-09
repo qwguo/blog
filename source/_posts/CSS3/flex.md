@@ -38,7 +38,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](flex-direction-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#search=flex-direction)
 
-查看案例 [Demo](https://codepen.io/qwguo88/pen/abbqyVY)
+查看案例：[https://codepen.io/qwguo88/full/abbqyVY](https://codepen.io/qwguo88/full/abbqyVY)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="flex-direction" src="https://codepen.io/qwguo88/embed/abbqyVY?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/abbqyVY'>flex-direction</a> by qwguo
@@ -61,7 +61,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](flex-wrap-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#search=flex-wrap)
 
-查看案例 [Demo](https://codepen.io/qwguo88/pen/dyydwLr)
+查看案例：[https://codepen.io/qwguo88/full/dyydwLr](https://codepen.io/qwguo88/full/dyydwLr)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="flex-wrap" src="https://codepen.io/qwguo88/embed/dyydwLr?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/dyydwLr'>flex-wrap</a> by qwguo
@@ -79,7 +79,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](flex-flow-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#search=flex-flow)
 
-查看案例[Demo](https://codepen.io/qwguo88/pen/KKKQYBN)
+查看案：[https://codepen.io/qwguo88/full/KKKQYBN](https://codepen.io/qwguo88/full/KKKQYBN)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="flex-flow" src="https://codepen.io/qwguo88/embed/KKKQYBN?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/KKKQYBN'>flex-flow</a> by qwguo
@@ -104,7 +104,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](justify-content-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#feat=mdn-css_properties_justify-content_flex_context)
 
-查看案例[Demo](https://codepen.io/qwguo88/pen/LYYQoop)
+查看案：[https://codepen.io/qwguo88/full/LYYQoop](https://codepen.io/qwguo88/full/LYYQoop)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="justify-content" src="https://codepen.io/qwguo88/embed/LYYQoop?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/LYYQoop'>justify-content</a> by qwguo
@@ -128,7 +128,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](flex-align-items-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#feat=mdn-css_properties_align-items_flex_context)
 
-查看案例[Demo](https://codepen.io/qwguo88/pen/NWWMjPG)
+查看案：[https://codepen.io/qwguo88/full/NWWMjPG](https://codepen.io/qwguo88/full/NWWMjPG)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="align-items" src="https://codepen.io/qwguo88/embed/NWWMjPG?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/NWWMjPG'>align-items</a> by qwguo
@@ -153,7 +153,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](flex-align-content-caniuse.png)
 [查看兼容性详情](https://caniuse.com/#feat=mdn-css_properties_align-content_flex_context)
 
-查看案例[Demo](https://codepen.io/qwguo88/pen/ExxLoGv)
+查看案：[https://codepen.io/qwguo88/full/ExxLoGv](https://codepen.io/qwguo88/full/ExxLoGv)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="align-centent" src="https://codepen.io/qwguo88/embed/ExxLoGv?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/ExxLoGv'>align-centent</a> by qwguo
@@ -177,7 +177,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](flex-grow-caniuse.png)
 [查看兼容详情](https://caniuse.com/#search=flex-grow)
 
-查看案例[Demo](https://codepen.io/qwguo88/pen/xxxjJZo)
+查看案：[https://codepen.io/qwguo88/full/xxxjJZo](https://codepen.io/qwguo88/full/xxxjJZo)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="flex-grow" src="https://codepen.io/qwguo88/embed/xxxjJZo?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/xxxjJZo'>flex-grow</a> by qwguo
@@ -231,7 +231,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](flex-shrink-caniuse.png)
 [查看兼容详情](https://caniuse.com/#search=flex-shrink)
 
-查看案例[Demo](https://codepen.io/qwguo88/pen/vYYrEmp)
+查看案：[https://codepen.io/qwguo88/full/vYYrEmp](https://codepen.io/qwguo88/full/vYYrEmp)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="flex-shrink" src="https://codepen.io/qwguo88/embed/vYYrEmp?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/vYYrEmp'>flex-shrink</a> by qwguo
@@ -253,7 +253,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](flex-basis-caniuse.png)
 [查看兼容详情](https://caniuse.com/#search=flex-basis)
 
-查看案例[Demo](https://codepen.io/qwguo88/pen/NWWzemV)
+查看案：[https://codepen.io/qwguo88/full/NWWzemV](https://codepen.io/qwguo88/full/NWWzemV)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="flex-basis" src="https://codepen.io/qwguo88/embed/NWWzemV?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/NWWzemV'>flex-basis</a> by qwguo
@@ -289,7 +289,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](flex-caniuse.png)
 [查看兼容详情](https://caniuse.com/#search=flex)
 
-查看案例[Demo](https://codepen.io/qwguo88/pen/JjjBpWO)
+查看案：[https://codepen.io/qwguo88/full/JjjBpWO](https://codepen.io/qwguo88/full/JjjBpWO)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="flex" src="https://codepen.io/qwguo88/embed/JjjBpWO?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/JjjBpWO'>flex</a> by qwguo
@@ -310,7 +310,7 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](flex-order-caniuse.png)
 [查看兼容详情](https://caniuse.com/#feat=mdn-css_properties_order)
 
-查看案例[Demo](https://codepen.io/qwguo88/pen/rNNrbxb)
+查看案：[https://codepen.io/qwguo88/full/rNNrbxb](https://codepen.io/qwguo88/full/rNNrbxb)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="order" src="https://codepen.io/qwguo88/embed/rNNrbxb?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/rNNrbxb'>order</a> by qwguo
@@ -337,9 +337,22 @@ summary: ['在flex出现之前我们做页面都是使用的左右浮动，inlin
 ![image](flex-align-self-caniuse.png)
 [查看兼容详情](https://caniuse.com/#feat=mdn-css_properties_align-self_flex_context)
 
-查看案例[Demo](https://codepen.io/qwguo88/pen/GRRXxQg)
+查看案：[https://codepen.io/qwguo88/full/GRRXxQg](https://codepen.io/qwguo88/full/GRRXxQg)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="align-self" src="https://codepen.io/qwguo88/embed/GRRXxQg?height=300&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/GRRXxQg'>align-self</a> by qwguo
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+### 相关网站
+
+#### flex在线演示，和在线代码生成网址：
+
+1. 在线演示：[https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/](https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/)
+2. 一个有趣的游戏学习flex布局：[http://flexboxfroggy.com/](http://flexboxfroggy.com/)
+3. flex布局在线代码生成：[https://the-echoplex.net/flexyboxes/](https://the-echoplex.net/flexyboxes/)
+
+#### flex相关文章：
+
+1. 阮一峰老师的flex详解：[http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+2. 张鑫旭老师flex详解：[https://www.zhangxinxu.com/wordpress/2018/10/display-flex-css3-css/](https://www.zhangxinxu.com/wordpress/2018/10/display-flex-css3-css/)
