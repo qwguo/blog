@@ -505,25 +505,215 @@ start | center | end
 
 ### grid
 
+>grid 是一个简写属性，它可以用来设置以下属性：显式网格属性 `grid-template-rows`、`grid-template-columns` 和 `grid-template-areas`， 隐式网格属性 `grid-auto-rows`、`grid-auto-columns` 和  `grid-auto-flow`， 间距属性 `grid-column-gap` 和 `grid-row-gap`。
+
+**语法：**
+```css
+/*最简单理解*/
+grid: row/column; /* / 先前面的都是指行，右边的都指的是列*/
+grid: [ auto-flow && dense? ] <grid-auto-rows>? / <grid-template-columns>
+grid: <grid-template-rows> / [ auto-flow && dense? ] <grid-auto-columns>?
+
+/* <'grid-template'> values */
+grid: none;
+grid: "a" 100px "b" 1fr;
+grid: [linename1] "a" 100px [linename2];
+grid: "a" 200px "b" min-content;
+grid: "a" minmax(100px, max-content) "b" 20%;
+grid: 100px / 200px;
+grid: minmax(400px, min-content) / repeat(auto-fill, 50px);
+
+/* <'grid-template-rows'> /
+   [ auto-flow && dense? ] <'grid-auto-columns'>? values */
+grid: 200px / auto-flow;
+grid: 30% / auto-flow dense;
+grid: repeat(3, [line1 line2 line3] 200px) / auto-flow 300px;
+grid: [line1] minmax(20em, max-content) / auto-flow dense 40%;
+
+/* [ auto-flow && dense? ] <'grid-auto-rows'>? /
+   <'grid-template-columns'> values */
+grid: auto-flow / 200px;
+grid: auto-flow dense / 30%;
+grid: auto-flow 300px / repeat(3, [line1 line2 line3] 200px);
+grid: auto-flow dense 40% / [line1] minmax(20em, max-content);
+```
 
 ## 应用在网格项目上
 
 ### grid-column-start、grid-column-end
 
-> 指定网格项目从哪个列开始，到那个列结束，同时也可以设置夸多少列
+> 指定网格项目从哪个纵向网格线开始，到那个纵向网格线结束，同时也可以设置夸多少列
 
-![image](grid-column-start_1.png)
+**语法：**
+```css
+grid-column-start: start-line-name | number | span number;
+grid-column-end: end-line-name | number | span number;
+```
+1. `start-line-name`和 `end-line-name`：表示纵向的网格线名称；
+2. `number`：表示没有给网格线起名的情况下使用数字表示；
+3. `span`：表示跨越的意思，后边的数字表示跨越几列；
 
-结合通过上图，和下边的案例我们来看一下具体用法
+结合案例和图片我们来看一下具体用法：
 
-**案例展示：**[https://codepen.io/qwguo88/pen/gOavJVo](https://codepen.io/qwguo88/pen/gOavJVo)
+**案例展示：**[https://codepen.io/qwguo88/full/gOavJVo](https://codepen.io/qwguo88/full/gOavJVo)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="grid-column-start-end" src="https://codepen.io/qwguo88/embed/gOavJVo?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/qwguo88/pen/gOavJVo'>grid-column-start-end</a> by qwguo
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+图我们还是借助Firefox开发者工具，我们在没有设置网格线名称的情况下显示网格线的数字号，这样可以更容易理解；此示例我们都是使用的三行三列的网格布局。
 
-上图我们还是借助Firefox开发者工具，我们在没有设置网格线名称的情况下显示网格线的数字号，这样可以更容易理解
+![image](grid-column-start_1.png)
 
-最后推荐一个学习网格布局的地址：[https://grid.layoutit.com/](https://grid.layoutit.com/)
+上图中我们只设置了网格子项的`grid-column-start`属性，
+1. `child-1`我们设置了`grid-column-start: 1;`也就是此项列的开始位置是第1条纵向网格线，如果我们给网格线定义名称我们这也可以使用网格线名字来标记，这里并没有设置`grid-column-end`属性，那么子项默认在第2条纵向网格线结束，占据一列位置，也就是得出结论只设置start但是没设置end，默认end = start+1。
+2. `child-2`我们设置了`grid-column-start: 3;`此项从第3条纵向网格线开始，跨越一列结束在最后一条网格线。
+3. `child-3`我们也设置了`grid-column-start: 3;`此项从第3条网格线开始，由于第二个子元素已经占据了最后一列，所以这一个子项将从第二行开始计算，在第二行的第3条纵向网格线开始到第4个结束。这一字项的开始位置在不大于最后一个纵向线条数值，会自动换到下一列显示。
+
+![image](grid-column-end_1.png)
+
+上图中我们只设置了网格子项的`grid-column-end`属性，通过设置结束位置来布局子项位置，在只设置end的情况下start = end -1；同时他也是当占据一行的最后一列时，如果后边元素结束位置不大于最后一个纵向线条数值，会自动换到下一列显示。
+
+![image](grid-column-start_2.png)
+
+上图中我们设置得子项开始位置都超过了纵向线条得总个数，这个时候可以看出，给第一个设置了`grid-column-start: 5;`表示从第5条纵向网格线开始，由于没设置end所以跨越一列，并且隐式给网格增加了两列，此时后边的项设置start位置的时候如果不大于5，那么会从第二行开始。
+相应的`grid-column-end`也是同样效果。
+
+![image](grid-column-start-end_1.png)
+
+当两个属性结合使用表示，子元素左边从第几个网格线开始，右边到第几个线条结束，中间跨越开始和结束之间的列，如果结束的列大于网格纵向线条个数会自用增加隐式列。途中`child-1`设置了`grid-column-start: 2;      grid-column-end: 5;`从第2个纵向线开始到第5个纵向线结束，所以中间自动增加一列。
+
+![image](grid-column-start-span.png)
+
+上图我们使用了关键字`span`表示跨几列得意思。
+1. `child-1`设置了`grid-column-start: span 2;`表示从默认的开始位置跨越两列位置。
+2. `child-2`设置了`grid-column-start: 2;grid-column-end: span 3;`表示从第第2个纵向线开始结束线跨越3列，在这里也会隐式增加一列，因为总列数只有三列。
+
+如果命名了网格线名称，上边的数字换成网格线对应的名称就可以了，这里需要注意的是，如果给定一个没有名称的网格线，那么他会从最后一条网格线开始，相当于隐式增加列。
+
+### grid-row-start、grid-row-end
+
+> 指定网格项目从哪个横线网格线开始，到那个列横线网格线结束，同时也可以设置夸多行
+
+**语法：**
+```css
+grid-row-start: start-line-name | number;
+grid-row-end: end-line-name | number;
+```
+1. `start-line-name`和 `end-line-name`：表示横向的网格线名称；
+2. `number`：表示没有给网格线起名的情况下使用数字表示；
+3. `span`：表示跨越的意思，后边的数字表示跨越几行；
+
+横线网格线开始和结束和纵向基本差不多，只是在方向上有所不同，横线网格会设置大于总横线网格线会自用增加行数，他默认的`grid-column-start`是第1条纵向网格，他会总动在第列开始下一个子项等。
+
+**案例展示：**[https://codepen.io/qwguo88/full/mdexLRo](https://codepen.io/qwguo88/full/mdexLRo)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="grid-row-start-end" src="https://codepen.io/qwguo88/embed/mdexLRo?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/mdexLRo'>grid-row-start-end</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+
+### grid-row、grid-column
+
+> 他们是一种缩写形式，`grid-row`是 `grid-row-start`和`grid-row-end`的缩写，`grid-column`是`grid-column-start`和`grid-column-end`的缩写。中间值用`/`分割
+
+**语法：**
+```css
+grid-row: line-name | number
+grid-row: line-name | number / line-name | number | span number
+grid-column: line-name | number
+grid-column: line-name | number / line-name | number | span number
+```
+
+**案例展示：**[https://codepen.io/qwguo88/full/YzyLxLR](https://codepen.io/qwguo88/full/YzyLxLR)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="grid-row、grid-column" src="https://codepen.io/qwguo88/embed/YzyLxLR?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/YzyLxLR'>grid-row、grid-column</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+通过上边的案例我的得知，当该属性取一个值的时候表示`start`并且子项占一行或者一列；当`end`的值小于`start`值得时候，两个值互换。
+
+
+### grid-area
+
+**语法：**
+```css
+grid-area: area-name;
+grid-area: <row-start> / <column-start> / <row-end> / <column-end>;
+```
+
+1. `name`：表示区域的名称；
+2. `row-start`和`row-end`：横向网格线名称；
+2. `column-start`和`column-end`：纵向网格线名称；
+
+
+**案例展示：**[https://codepen.io/qwguo88/full/KKdRXLe](https://codepen.io/qwguo88/full/KKdRXLe)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="grid-area" src="https://codepen.io/qwguo88/embed/KKdRXLe?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/KKdRXLe'>grid-area</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+![image](grid-area_1.png)
+
+上图是通过设置子项的`grid-area: area-name`，可以看出第一个子项占据了3列得区域也就是`head`区域，第二个子项占据第2行的第1列区域`body-content`，第三个子项占据第2行的后2列`body-right`，最后一个子项占据第3行的3列区域`foot`。
+
+![image](grid-area_2.png)
+
+这里我们重点说一下使用第二种方式，图上可以看出第一项子项使用`grid-area: row-two-start / col-one-start /row-three-end /col-three-end;`，虽然网格容器定义了区域，但是第一项还是按照`grid-row`和`grid-column`的形式占据区域。
+
+### 单项对齐方式
+
+#### justify-self
+> 用于单独设置子项的水平对齐方式
+
+**案例展示：**[https://codepen.io/qwguo88/full/PoPeOXB](https://codepen.io/qwguo88/full/PoPeOXB)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="grid-justify-self" src="https://codepen.io/qwguo88/embed/PoPeOXB?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/PoPeOXB'>grid-justify-self</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+![image](justify-self.png)
+
+上图展示了各取值的展示效果。
+
+#### align-self
+
+> 用于单独设置子项的垂直对齐方式
+
+**案例展示：**[https://codepen.io/qwguo88/full/gOazoLZ](https://codepen.io/qwguo88/full/gOazoLZ)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="grid-align-self" src="https://codepen.io/qwguo88/embed/gOazoLZ?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/gOazoLZ'>grid-align-self</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+![image](align-self.png)
+
+上图展示了各取值的展示效果。
+
+#### place-self
+> `place-self`属性是`align-self`和`justify-self`缩写形式。第一个值指`align-self`，第二个值指`justify-self`。如果第二个值不存在，则第一个值也将用于该值。两个值之间用空格分开。
+
+**案例展示：**[https://codepen.io/qwguo88/full/GRpdyEP](https://codepen.io/qwguo88/full/GRpdyEP)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="grid-place-self" src="https://codepen.io/qwguo88/embed/GRpdyEP?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/GRpdyEP'>grid-place-self</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+![image](place-self.png)
+
+上图展示了部分值得展示效果。
+
+
+## 相关网站
+### grid可视化在线生成代码
+1. 可以拖动增加删除网格：[https://grid.layoutit.com/](https://grid.layoutit.com/)
+
+### 参考网站
+1. [https://www.zhangxinxu.com/wordpress/2018/11/display-grid-css-css3/](https://www.zhangxinxu.com/wordpress/2018/11/display-grid-css-css3/)
+2. [http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html](http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
