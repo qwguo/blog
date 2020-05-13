@@ -65,6 +65,8 @@ Chrome、Safari，对此属性不起作用，文字和normal效果一样，文�
   (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+4. `break-word`：属性和下边的 `overflow-wrap:break-word`表现差不多，唯一的区别在表格连续英文字符串换行上，前者可以让表格单元格中的连续英文自动换行，后者不行。
+
 >个人测试：连续的字母和数字会自动折行
 Firefox,chrome,safari等浏览器在中文和英文状态下显示效果一样当内容到达容器边缘都允许在标点符号和单词中间换行，允许标点符号在行首。
 Ie6-11，等浏览器在中文和英文状态下显示效果一样当内容到达容器边缘也是允许单词和句子中间换行，但是他不允许标点符号在行首显示，如果内容到达边缘后第二行行首刚好是标点符号，他会让上一个单子尾字母或中文的汉子跟随标点符号一起换行。
@@ -84,18 +86,37 @@ overflow-wrap: normal | break-word | anywhere;
 ```
 1. `normal`：默认值，允许内容顶开或溢出指定的容器边界，也就是长单词不换行
 2. `break-word`：在单词中间换行，当单词的长度超出了容器的长度是会在单词中间截断换到下一行显示。
+3. `anywhere`：
 
 >Web-kite,和ie各浏览器显示效果一样，允许连续的字母和数字等内容到达容器边缘后强直换行，和word-break:break-all的区别在于，word-wrap:break-word;不允许在英文单词间换行、标点符号在行首。word-break:break-all则允许英文单词间分开单词换行、标点符号在行首显示。但是ie下标点符号在行首显示不起作用。
 
+**案例展示：**[https://codepen.io/qwguo88/full/ExVpgxj](https://codepen.io/qwguo88/full/ExVpgxj)
 
-如果要在表格下让连续的字母或数字换行，使用word-break:break-all;可以达到换行目的但是相应的单词和标点符号会在中间折行。使用word-wrap:break-word;不起作用。解决方法是给表格定义table-layout:fixed;
-	如果在元素中使用了white-space:pre/nowrap的话，word-wrap:break-wrap和word-break:break-word;都将失去作用，使中文，英文都在同一行显示，不会换行.
-在换行中有时还会涉及到：white-space: normal | pre | nowrap | pre-wrap | pre-line；设置或检索对象内空格的处理方式。
+<iframe height="500" style="width: 100%;" scrolling="no" title="overflow-wrap:break-word" src="https://codepen.io/qwguo88/embed/ExVpgxj?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/ExVpgxj'>overflow-wrap:break-word</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
-normal：浏览器的默认处理方式，文本自动换行。
-pre: 用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字超出边界时不换行。可查阅pre对象 。
-nowrap：强制在同一行内显示所有文本，合并文本间的多余空白，直到文本结束或者遭遇br对象。
-pre-wrap：用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字碰到边界时发生换行。
-pre-line：保持文本的换行，不保留文字间的空白距离，当文字碰到边界时发生换行。
-当white-sace设置成nowrap的时候word-break和word-wrap设置换行的将都不生效。
-当white-space设置成pre的时候word-break换行将不生效。Word-wrap换行仅对文字和字符生效如果容器中是图片的话，图片将不换行。块级元素和行内块级元素显示效果一样。Firefox不可以。
+
+如果要在表格下让连续的字母或数字换行，使用`word-break:break-all;`可以达到换行目的但是相应的单词和标点符号会在中间折行。使用`word-wrap:break-word;`不起作用。解决方法是给表格定义`table-layout:fixed;`
+**提示：**
+> 当然在元素中使用了white-space:pre/nowrap的话，word-wrap:break-wrap和word-break:break-word;都将失去作用，使中文，英文都在同一行显示，不会换行.
+在换行中有时还会涉及到：设置或检索对象内空格的处理方式。
+
+## white-space
+> 用于设置元素对象内空格的处理方式
+
+**语法：**
+```css
+white-space: normal | pre | nowrap | pre-wrap | pre-line | break-spaces；
+```
+**取值说明：**
+1. `normal`：浏览器的默认处理方式 连续的空白符会被合并，换行符会被当作空白符来处理 文本自动换行。
+2. `pre`： 用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字超出边界时不换行，在遇到换行符或者`<br>`元素时才会换行。
+3. `nowrap`：强制在同一行内显示所有文本，合并文本间的多余空白，直到文本结束或者遭遇br对象。
+4. `pre-wrap`：用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字碰到边界时发生换行。
+5. `pre-line`：保持文本的换行，不保留文字间的空白距离，当文字碰到边界时发生换行。
+6. `break-spaces`：
+
+当`white-sace`设置成`nowrap`的时候`word-break`和w`ord-wrap`设置换行的将都不生效。
+当`white-space`设置成pre的时候`word-break`换行将不生效。`word-wrap`换行仅对文字和字符生效如果容器中是图片的话，图片将不换行。块级元素和行内块级元素显示效果一样。
