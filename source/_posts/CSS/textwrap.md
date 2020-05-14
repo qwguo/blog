@@ -118,5 +118,13 @@ white-space: normal | pre | nowrap | pre-wrap | pre-line | break-spaces；
 5. `pre-line`：保持文本的换行，不保留文字间的空白距离，当文字碰到边界时发生换行。
 6. `break-spaces`：
 
+
+**案例展示：**[https://codepen.io/qwguo88/full/veZQvO](https://codepen.io/qwguo88/full/veZQvO)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="white-space" src="https://codepen.io/qwguo88/embed/veZQvO?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/veZQvO'>white-space</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 当`white-sace`设置成`nowrap`的时候`word-break`和w`ord-wrap`设置换行的将都不生效。
 当`white-space`设置成pre的时候`word-break`换行将不生效。`word-wrap`换行仅对文字和字符生效如果容器中是图片的话，图片将不换行。块级元素和行内块级元素显示效果一样。
