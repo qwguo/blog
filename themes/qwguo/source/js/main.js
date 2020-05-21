@@ -76,7 +76,7 @@ function randomNum(minNum,maxNum){
           lineNumbers: true,
           mode: getLang,
           height: 'auto',
-          readOnly: 'nocursor',
+          readOnly: true,
           theme: "dracula",
           tags: tags
         });
