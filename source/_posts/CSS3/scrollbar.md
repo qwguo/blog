@@ -192,6 +192,8 @@ selector::-webkit-scrollbar-thumb:window-inactive{ styles }
 
 # FireFox浏览器
 
+_案例需要使用`Firefox`浏览器查看效果_
+
 **展示案例：** [https://codepen.io/qwguo88/full/zYvMzVJ](https://codepen.io/qwguo88/full/zYvMzVJ)
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="firefox-scrollbar" src="https://codepen.io/qwguo88/embed/zYvMzVJ?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
@@ -234,4 +236,10 @@ div{
 2. `trackColor`：用来设置滚动条轨道的颜色。
 
 
-## Internet Explorer(IE)
+<!-- ## Internet Explorer(IE) -->
+
+## 参考文章
+
+1. [https://css-tricks.com/custom-scrollbars-in-webkit/](https://css-tricks.com/custom-scrollbars-in-webkit/)
+2. [https://webkit.org/blog/363/styling-scrollbars/](https://webkit.org/blog/363/styling-scrollbars/)
+3. [https://developer.mozilla.org/zh-CN/docs/Web/CSS/scrollbar-width](https://developer.mozilla.org/zh-CN/docs/Web/CSS/scrollbar-width)
