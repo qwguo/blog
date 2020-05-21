@@ -5,7 +5,7 @@ summary:
 drafts: false
 p: CSS/textwrap
 date: 2020-05-12 13:49:17
-categories: [CSS, CSS3]
+categories: [CSS]
 tags: [CSS, word-break, word-wrap, 文本换行]
 poster: poster.png
 ---
