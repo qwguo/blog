@@ -146,6 +146,13 @@ selector{
 
 从上边代码可以看出，css获取变量和css的样式优先级一样，顺序是：`!important` > `style=""` > `#id` > `.class` > `tagName` > `:root`; 但是需要注意的是这里的`span`是先找自己定义作用域下的变量，如果没有才找父级作用域的变量，上边代码`span`自身定义的有变量，所以背景就是紫色。
 
+**案例演示：**[https://codepen.io/qwguo88/full/eYpXGGQ](https://codepen.io/qwguo88/full/eYpXGGQ)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="css-variables" src="https://codepen.io/qwguo88/embed/eYpXGGQ?height=500&theme-id=30742&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/eYpXGGQ'>css-variables</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 ## javascript中操作变量
 > css3中的变量我们也可以使用javascript来获取和操作它
 
