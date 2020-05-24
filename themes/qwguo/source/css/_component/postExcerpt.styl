@@ -67,12 +67,12 @@
         color btn-color
 
     .article-tag-list
-      margin 20px 0 0
+      margin 10px 0 0
       padding 0
       list-style none
       li
         display inline-block
-        margin 0 10px 0 0
+        margin 10px 10px 0 0
         background-color lighten(main-color, 30%)
         border-radius 5px
         a
@@ -80,6 +80,13 @@
           display inline-block
           font-size 12px
 
-
-
+@media screen and (max-width: 960px)
+  .post-excerpt
+    .title
+      font-size 30px
+    .poster
+      display none
+    &:hover
+      .tag-class
+        display none
 
