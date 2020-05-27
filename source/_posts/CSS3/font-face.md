@@ -15,20 +15,62 @@ poster: poster.png
 
 > `@font-face`属性可以让我们自定义字体名称，然后引入一个我们提供的特殊字字体文件。
 
-**基本语法：**
+## 基本语法：
 ```css
 @font-face {
-  [ font-family: <family-name>; ] ||
-  [ src: <src>; ] ||
-  [ unicode-range: <unicode-range>; ] ||
-  [ font-variant: <font-variant>; ] ||
-  [ font-feature-settings: <font-feature-settings>; ] ||
-  [ font-variation-settings: <font-variation-settings>; ] ||
-  [ font-stretch: <font-stretch>; ] ||
-  [ font-weight: <font-weight>; ] ||
-  [ font-style: <font-style>; ]
+  font-family: <font-name>;
+  src: local( <family-name> ) | <url> [format("formatName")][,<url> [format("formatName")]]*;
+  unicode-range: <unicode-range>;
+  font-variant: <font-variant>;
+  font-feature-settings: <font-feature-settings>;
+  font-variation-settings: <font-variation-settings>;
+  font-stretch: <font-stretch>;
+  font-weight: <font-weight>;
+  font-style: <font-style>;
+  font-display: <font-display>;
 }
 ```
+## 属性规则说明
+
+###  font-family
+> 给你引入的字体起一个名字，`font-name`你定呀的名字，他会在元素`font-family:`中使用，如`div{font-family:font-name}`；
+
+### src
+> 用于指定加载字体文件的路径或者加载本地字体
+
+#### local
+> 加载一个本地字体，`font-name`表示本地的字体名称，比如`Microsoft YaHei | 微软雅黑`；如果本地有应用此字体显示文本。
+
+**示例：**
+```css
+/* 加载一个本地字体 */
+@font-face{
+  font-family: myFont;
+  src: local('Microsoft YaHei');
+}
+/* 加载多个本地字体 */
+@font-face{
+  font-family: myFont;
+  src:  local(黑体),
+        local("Microsoft YaHei");
+}
+/* 应用自定义字体 */
+.box{
+  font-family: myFont;
+}
+```
+在上边代码中看到，可以使用一个或多个`local`，多个之间用都好分开，括号中的字体名称可以使用单引号或者双引号括起来，也可以不带引号直接写字体名称，_但是只能写一个字体名称_
+
+#### url
+> 表示服务器端提供的字体地址，这个也是可以使用多个，多个之间用都好隔开，一般写多个是为了浏览器兼容加载不同格式的字体。目前网上可以加载四种格式的字体：
+
+1. `EOT`：只适用于IE浏览器。
+2. `TTF`：
+2. `woff`：
+
+#### format
+> 可选值，表示给加载的外部字体指定字体格式，用来告诉浏览器让浏览器能够识别，可用得类型有 `woff`, `woff2`, `truetype`, `opentype`, `embedded-opentype`, `svg`。
+
 
 ```css
 @font-face{
