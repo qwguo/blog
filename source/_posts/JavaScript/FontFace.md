@@ -41,6 +41,11 @@ concat fontFace  = new FontFace('fontFamily', 'url(fontUrl) | ArrayBuffer', desc
 进过测试发现，上边的`descriptions`对象的属性，处理`display`能测试出效果外，其他并没有生效，可能是我应用的字体不支持原因
 
 
+## 兼容性
+
+![image](FontFace_caniuse.png)
+
+从图上可以看出这是一个新的对象方法，`IE`，`Edge18-`，等低版本浏览器基本不兼容这个对象，如果我们要做兼容可以使用下边介绍的异步加载方式；
 
 
 ## 创建FontFace对象
@@ -93,9 +98,18 @@ var xhr = new XMLHttpRequest(); // 定义一个异步对象
 xhr.open('GET', 'ShouShu.ttf', true); // 异步GET方式加载字体
 xhr.responseType = "arraybuffer"; //把异步获取类型改为arraybuffer二进制类型
 xhr.onload = function(){
-  var buffer = this.response;  //获取字体文件二进制码
-  var myFonts = new FontFace('ShouShu', buffer);  // 通过二进制码实例化字体对象
-  document.fonts.add(myFonts); // 将字体对象添加到页面中
+  // 这里做了一个判断：如果浏览器支持FontFace方法执行
+  if(typeof FontFace != 'undefined'){
+    var buffer = this.response;  //获取字体文件二进制码
+    var myFonts = new FontFace('myFontName', buffer);  // 通过二进制码实例化字体对象
+    document.fonts.add(myFonts); // 将字体对象添加到页面中
+  }else{
+    // 如果浏览器不支持FontFace方法，直接添加样式到页面
+    var styles = document.createElement('style');
+    styles.innerHTML = '@font-face{font-family:"myFontName";src:url("ShouShu.ttf") format("truetype");font-display:swap;}';
+    console.log(document.getElementsByTagName('head'));
+    document.getElementsByTagName('head')[0].appendChild(styles);
+  }
 }
 xhr.send();
 ```
