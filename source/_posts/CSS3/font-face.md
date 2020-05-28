@@ -98,21 +98,40 @@ poster: poster.png
   [兼容详情](https://caniuse.com/#feat=svg-fonts)
 
 #### format
-> 可选值，表示给加载的外部字体指定字体格式，用来告诉浏览器让浏览器能够识别，可用得类型有 `woff`, `woff2`, `truetype`, `opentype`, `embedded-opentype`, `svg`。
+> 可选值，表示给加载的外部字体指定字体格式，用来告诉浏览器让浏览器能够识别所使用的字体格式，可用的类型有 `embedded-opentype`, `truetype`, `opentype`, `woff`, `woff2`, `svg`。分别对应上边我们介绍的字体格式。
 
+**语法：**
 ```css
+/* 加载一种字体格式 */
 @font-face{
   font-family: "myFontName";
-  font-display: swap;
+  src:  url('font.woff') format('woff');
+}
+
+/* 加载多个字体格式，兼容更多浏览器 */
+@font-face{
+  font-family: "myFontName";
   src: url('font.eot'); /* IE9*/
-  src: local(<family-name>)
-  url('font.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  src: url('font.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
   url('font.woff2') format('woff2'),
   url('font.woff') format('woff'), /* chrome、firefox */
   url('font.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
   url('font.svg#Alibaba-PuHuiTi-Regular') format('svg'); /* iOS 4.1- */
 }
 ```
+从上边语法来看我们可以加载一个格式的字体文件，也可以加载多个格式字体，之间用逗号分开，浏览器会优先读取写在前面的字体格式并且检测是否支持，如果支持就使用该格式的字体文件。
+
+### unicode-range
+### font-variant
+### font-feature-settings
+### font-variation-settings
+### font-stretch
+### font-weight
+### font-style
+### font-display
+
+
+
 
 
 ## 参考网站
