@@ -64,13 +64,41 @@ poster: poster.png
 #### url
 > 表示服务器端提供的字体地址，这个也是可以使用多个，多个之间用都好隔开，一般写多个是为了浏览器兼容加载不同格式的字体。目前网上可以加载四种格式的字体：
 
-1. `EOT`：只适用于IE浏览器。
-2. `TTF`：
-2. `woff`：
+1. `EOT`：全拼：`Embedded_OpenType`，是由微软开发的字体格式规范，所以只适用于IE浏览器。[详细介绍](https://en.wikipedia.org/wiki/Embedded_OpenType)
+
+  兼容：
+  ![image](EOT_caniuse.png)
+  [兼容详情](https://caniuse.com/#search=EOT)
+
+2. `TTF`：全拼：`TrueType`，是一种轮廓字体标准，最早是由苹果公司研发，后来成为`Mac OS`、`Microsoft Windows`系统中最常用的字体格式。[详细介绍](https://en.wikipedia.org/wiki/TrueType)
+
+  兼容：
+  ![image](TTF_OTF_caniuse.png)
+  [兼容详情](https://caniuse.com/#search=TTF)
+3. `OTF`：全拼：`OpenType`，是可缩放计算机字体的格式，是由微软和Adobe公司联合开发。[详细介绍](https://en.wikipedia.org/wiki/OpenType)
+
+  兼容：
+  ![image](TTF_OTF_caniuse.png)
+  [兼容详情](https://caniuse.com/#search=OTF)
+4. `WOFF`：全拼：`Web Open Font Format`web网络开放字体格式，他是专为网络设计的一种字体格式，`WOFF`是把`OpenType`和`TrueType`字体进行了封装，并进行了压缩优化，它使用了广泛应用的`zlib`压缩，并添加了XML元数据，这种字体格式体积更小，适用于网络传输，可以使用户体验做到更好。[详细介绍](https://en.wikipedia.org/wiki/Web_Open_Font_Format)
+
+  兼容：
+  ![image](WOFF_caniuse.png)
+  [兼容详情](https://caniuse.com/#feat=mdn-css_at-rules_font-face_woff)
+5. `WOFF2`：它是WOFF的升级版，它使用`Brotli`进行字节级压缩，比`WOFF`体积更小
+
+  兼容：
+  ![image](WOFF2_caniuse.png)
+  [兼容详情](https://caniuse.com/#feat=mdn-css_at-rules_font-face_woff_2)
+
+6. `SVG`：全拼：`Scalable Vector Graphics`可缩放矢量图形，是一种基于可扩展标记语言（XML）的矢量图像格式，用于二维图形，并支持交互性和动画，字体中就是使用svg技术来呈现文字样式。我测试只有苹果`Safari`支持； [详细介绍](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
+
+  兼容：
+  ![image](SVG_caniuse.png)
+  [兼容详情](https://caniuse.com/#feat=svg-fonts)
 
 #### format
 > 可选值，表示给加载的外部字体指定字体格式，用来告诉浏览器让浏览器能够识别，可用得类型有 `woff`, `woff2`, `truetype`, `opentype`, `embedded-opentype`, `svg`。
-
 
 ```css
 @font-face{
