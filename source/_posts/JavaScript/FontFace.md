@@ -38,8 +38,6 @@ concat fontFace  = new FontFace('fontFamily', 'url(fontUrl) | ArrayBuffer', desc
     - `fallback` 为字体提供一个非常小的阻塞周期和短暂的交换周期。也就是说等字体加载在过了一定的交互周期后加载完字体将不进行更新显示
     - `optional` 为字体提供一个非常小的阻塞周期，并且没有交换周期。也就是说等字体加载不进行更新显示
 
-进过测试发现，上边的`descriptions`对象的属性，处理`display`能测试出效果外，其他并没有生效，可能是我应用的字体不支持原因
-
 
 ## 兼容性
 
