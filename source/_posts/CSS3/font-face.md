@@ -201,6 +201,16 @@ font-style: normal | italic | oblique <angle>{0,2}
 ### unicode-range
 > 表示自定义字体规则的unicode字体范围
 
+**案例：**[https://codepen.io/qwguo88/full/XWXWqmP](https://codepen.io/qwguo88/full/XWXWqmP)
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="font-face-unicode-range" src="https://codepen.io/qwguo88/embed/XWXWqmP?height=300&theme-id=30742&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/XWXWqmP'>font-face-unicode-range</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+从上边案例可以看出，`unicode-range`是用来规定应用当前字体规则的文字`unicode`码在规则内的将以此字体规则显示字体。
+他能让我们来控制一个段落中的个别字的显示效果，一般要显示的字体规则排在最前面，将优先显示。
+
 ### font-variant
 ### font-feature-settings
 ### font-variation-settings
