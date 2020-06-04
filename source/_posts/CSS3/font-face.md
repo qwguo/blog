@@ -199,7 +199,23 @@ font-style: normal | italic | oblique <angle>{0,2}
 
 
 ### unicode-range
-> 表示自定义字体规则的unicode字体范围
+> 表示自定义字体规则的unicode字符范围
+
+**语法：**
+```css
+/* unicode-range 取值规则 */
+unicode-range: U+26;                /* 单个值 */
+unicode-range: U+0-7F;              /* 字符编码区间*/
+unicode-range: U+0025-00FF;        /* 字符编码区间 */
+unicode-range: U+4??;              /* 通配符区间 */
+unicode-range: U+0025-00FF, U+4??; /* 可以写多个值，多个值之间用逗号分开 */
+```
+**取值说明：**
+取值规则：前边是`U+`后边跟上字符的`charCode`值
+1. 可以是单个值，表示文本中只有该字符的字应用该字体。
+2. 可以使用一个字符区间，表示文本中如果有在此区间的文字将应用改字体规则。
+3. 也可以使用通配符来设置一个区间规则其中`?`表示一个16进制`0-F`的之间的值`U+4??`表示 `U+400` 到 `U+4FF`区间的字符编码。
+4. 也可以使用多个值，多个值之间使用逗号分开。
 
 **案例：**[https://codepen.io/qwguo88/full/XWXWqmP](https://codepen.io/qwguo88/full/XWXWqmP)
 
