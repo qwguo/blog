@@ -227,10 +227,10 @@ unicode-range: U+0025-00FF, U+4??; /* 可以写多个值，多个值之间用逗
 从上边案例可以看出，`unicode-range`是用来规定应用当前字体规则的文字`unicode`码在规则内的将以此字体规则显示字体。
 他能让我们来控制一个段落中的个别字的显示效果，一般要显示的字体规则排在最前面，将优先显示。
 
-### font-variant
+<!-- ### font-variant
 ### font-feature-settings
 ### font-variation-settings
-### font-stretch
+### font-stretch -->
 
 ### font-display
 > 设置自定义字体在没有加载完的显示方式取值如下：
