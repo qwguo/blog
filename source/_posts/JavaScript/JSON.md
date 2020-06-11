@@ -1,13 +1,14 @@
 ---
-title: post
+title: JSON是一种轻量级数据交换格式
 summary:
+  - JSON全称JavaScript Object Notation，它基于 ECMAScript 的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。
   - 'JSON是一种数据格式，不是一种编程语言。虽然具有相同的语法形式，但 JSON 并不从属于 JavaScript。而且，并不是只有 JavaScript 才使用 `JSON`，毕竟JSON只是一种数据格式。很多编程语言都有针对 JSON 的解析器和序列化器'
 drafts: false
 p: JavaScript/JSON
 date: 2020-06-10 23:09:05
 categories:
 tags:
-poster:
+poster: poster.png
 ---
 
 # JSON
@@ -72,7 +73,7 @@ JSON对象包含两个方法: 用于解析 JavaScript Object Notation  (JSON) �
 
 
 ```javascript
-JSON.stringify(value[, replacer [, space]])
+JSON.stringify(value[, replacer | [] [, space]])
 ```
 
 **参数：**
@@ -80,3 +81,20 @@ JSON.stringify(value[, replacer [, space]])
 1. `value`：将要序列化成字符串的对象或者数组的对象值。
 2. `replace`：可选参数，如果该参数是一个函数，则在序列化过程中，被序列化的值的每个属性都会经过该函数的转换和处理；如果该参数是一个数组，则只有包含在这个数组中的属性名才会被序列化到最终的 JSON 字符串中；如果该参数为 null 或者未提供，则对象所有的属性都会被序列化；
 3. `space`：可选参数，指定缩进用的空白字符串，用于美化输出；如果参数是个数字，它代表有多少的空格；上限为10。该值若小于1，则意味着没有空格；如果该参数为字符串（当字符串长度超过10个字母，取其前10个字母），该字符串将被作为空格；如果该参数没有提供（或者为 null），将没有空格。
+
+```javascript
+var firstJson = {
+  "a": 10,
+  "b": 20,
+  "c": 30,
+  "20": 'aaa'
+}
+/* 把json转换成字符串 */
+JSON.stringify(firstJson);
+// {"20":"aaa","a":10,"b":20,"c":30}
+
+/* 第二个参数是数组，根据数组匹配键值转换返回值 */
+var towString = JSON.stringify(firstJson, ['a', 20]);
+// {"a":10,"20":"aaa"}
+
+```
