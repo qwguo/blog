@@ -250,3 +250,24 @@ font-display: auto | block | swap | fallback | optional
 ## 参考网站
 
 1. https://webplatform.github.io/docs/tutorials/typography/font-face/
+2. https://developer.mozilla.org/zh-CN/docs/Web/CSS/@font-face/font-display
+3. https://www.zhangxinxu.com/wordpress/2016/11/css-unicode-range-character-font-face/
+4. https://www.w3cplus.com/css/font-display-masses.html
+
+## 字体下载格式转换网站
+
+1. https://www.fontke.com/tool/fontface/
+2. http://www.fonts.net.cn/
+3. https://fonts.google.com/
+
+## 字体压缩工具
+
+1. http://www.fonts.net.cn/ **字体天下**
+1. http://www.ziticq.com/ **字体传奇**
+1. https://www.hellofont.cn/ **字由**
+1. http://fontstore.baidu.com/static/editor/index.html   **百度在线字体编辑器**
+2. https://efe.baidu.com/   **百度字体处理**
+3. https://www.fontsquirrel.com/tools/webfont-generator **字体格式换**
+4. https://www.fontke.com/tool/fontface/ **字体转换**
+
+
