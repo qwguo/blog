@@ -23,10 +23,10 @@ concat fontFace  = new FontFace('fontFamily', 'url(fontUrl) | ArrayBuffer', desc
 1. `fontFamily`：字符串，自定义的要应用到页面或者元素中得字体名称；
 2. `fontUrl`：字符串，字体文件的路径，可以是第三方字体文件路径,但是需要请求的地址服务器开启跨越访问，此值必须要用`url()`包裹起来；
 3. `ArrayBuffer`：用于描述的外部资源构建的二进制编码数组
-4. `descriptions`：对象形式，可选值，用来设置字体显示，和样式等，可以设置得值：
+4. `descriptions`：对象形式，可选值，用来设置字体归属于那种属性下的字体规则，如字体样式，字体加粗，字体字符串范围等，还有该规则的显示行为等；可以设置得值：
   - `family`: 定义字体名称，这里的设置会被第一个参数值替代，但是我们可以通过实例对象的`fontFace.family`属性进行更改。
-  - `style`: 设置字体是样式，对应css中的`font-style`取值；
-  - `weight`: 设置字体的粗细，对应css中的`font-weight`取值；
+  - `style`: 设置当前字体规则的`font-style`值，也就是当应用改规则的元素设置了相对于的值将加载改字体规则，取值为对应css中的`font-style`取值；
+  - `weight`: 设置字体的粗细值，对应css中的`font-weight`取值；
   - `stretch`: 设置如何拉伸字体，对应css中的`font-stretch`取值；
   - `unicodeRange`: 定义字体支持的UNICODE字符范围
   - `variant`: variant
@@ -53,11 +53,10 @@ concat fontFace  = new FontFace('fontFamily', 'url(fontUrl) | ArrayBuffer', desc
 
 ```javascript
 var myFonts = new FontFace('myFontName', 'url(ShouShu.ttf)', {
-    style: 'italic',  //这里需要字体的支持
-    weight: 700,  //这里需要字体的支持
+    style: 'italic',  //表示该字体规则为斜体规则，只有在应用此规则字体的元素中设置了`font-style:italic`时应用该规则
+    weight: 700,  //表示改字体规则为粗体规则，只有在应用此规则字体的元素中设置了`font-weight:700|bold`时应用改规则
     display: 'swap',
     family: 'ali',  //这个值被第一个参数代替
-    variant: 'small-caps'  //这里需要字体的支持
 });
 ```
 
