@@ -3,7 +3,7 @@ title: JSON是一种轻量级数据交换格式
 summary:
   - JSON全称JavaScript Object Notation，它基于 ECMAScript 的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。
   - 'JSON是一种数据格式，不是一种编程语言。虽然具有相同的语法形式，但 JSON 并不从属于 JavaScript。而且，并不是只有 JavaScript 才使用 `JSON`，毕竟JSON只是一种数据格式。很多编程语言都有针对 JSON 的解析器和序列化器'
-drafts: true
+drafts: false
 p: JavaScript/JSON
 date: 2020-06-10 23:09:05
 categories:
@@ -66,7 +66,7 @@ javascript中的json没有这么严格要求，可以不用给属性名添加双
 
 JSON对象包含两个方法: 用于解析 JavaScript Object Notation  (JSON) 的 parse() 方法，以及将对象/值转换为 JSON字符串的 stringify() 方法。除了这两个方法, JSON这个对象本身并没有其他作用，也不能被调用或者作为构造函数调用。
 
-### stringify()
+### stringify
 > 用于将JSON对象转换成JSON字符串，可以通过额外的参数, 控制仅包含某些属性, 或者以自定义方法来替换某些key对应的属性值。
 
 **语法：**
@@ -93,8 +93,66 @@ var firstJson = {
 JSON.stringify(firstJson);
 // {"20":"aaa","a":10,"b":20,"c":30}
 
-/* 第二个参数是数组，根据数组匹配键值转换返回值 */
-var towString = JSON.stringify(firstJson, ['a', 20]);
-// {"a":10,"20":"aaa"}
+/* 第二个参数是数组，根据数组提供的值和对象的键值做==对比返回存在此键值的值 */
+JSON.stringify(firstJson, ['a', 20, 'x']);
+// {"a":10,"20":"aaa"}  这个对比会进行类型转换
 
+/* 第二个值时方法的时候 */
+JSON.stringify(firstJson, function(key, value){
+  // 先判断key是否为真因为第一次循环会把整个对象作为参数传入，键值为空，第二次开始遍历每个值
+  if(key){
+    // 为每个值加10
+    value += 10;
+  }
+  return value;
+});
+// {"20":"aaa10","a":20,"b":30,"c":40}
+
+/* 第三个参数 */
+JSON.stringify(firstJson, null, 2);
+/* {
+  "20": "aaa",
+  "a": 10,
+  "b": 20,
+  "c": 30
+}*/
+```
+
+### toJSON
+> _此方法并非是JSON中的方法_，如果一个被序列化的对象拥有 toJSON 方法，那么该 toJSON 方法就会覆盖该对象默认的序列化行为：不是该对象被序列化，而是调用 toJSON 方法后的返回值会被序列化
+
+```javascript
+/* 对象形式 */
+var firstJson = {
+  "a": 10,
+  "b": 20,
+  "c": 30,
+  "20": 'aaa',
+  toJSON: function(){
+    return {'x':1, 'y':10};
+  }
+}
+JSON.stringify(firstJson);
+// {"x":1,"y":10}
+
+/* 数组形式 */
+var arr = [1, 2, 4, 'abc', true, 4.5, {a:10, b:20}];
+// 可以在数组原型上添加toJSON方法。
+Array.prototype.toJSON = function(){
+    return 'arr';
+}
+// 可以在实例化对象中添加toJSON方法效果一样
+/* arr.toJSON = function(){
+    return 'arr';
+} */
+var getArrStr1 = JSON.stringify(arr);
+// "arr"
+```
+
+### parse
+> 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。提供可选的 reviver 函数用以在返回之前对所得到的对象执行变换(操作)。
+
+**基本语法：**
+```javascript
+JSON.parse(text[, reviver])
 ```
