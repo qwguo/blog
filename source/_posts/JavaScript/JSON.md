@@ -150,9 +150,32 @@ var getArrStr1 = JSON.stringify(arr);
 ```
 
 ### parse
-> 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。提供可选的 reviver 函数用以在返回之前对所得到的对象执行变换(操作)。
+> 用来解析由字符串描述的JavaScript值或对象。
 
 **基本语法：**
 ```javascript
 JSON.parse(text[, reviver])
+```
+**参数说明：**
+
+1. `text`：必选，要被解析成 JavaScript 值的字符串，若传入的字符串不符合 JSON 规范，则会抛出 SyntaxError 异常。
+2. `reviver`：可选，转换器，如果传入该参数(函数)，可以用来修改解析生成的原始值，调用时机在 parse 函数返回之前。
+
+**示例：**
+```javascript
+/* 只传入一个要转换的值 */
+JSON.parse('{}');              // {}
+JSON.parse('{a: 10, b:20}');   // {a: 10, b:20}
+JSON.parse('true');            // true
+JSON.parse('foo');             // SyntaxError错误
+JSON.parse('"foo"');           // "foo"
+JSON.parse('[1, 5, "false", true]'); // [1, 5, "false", true]
+JSON.parse('null');            // null
+
+/* 传入递归函数 */
+JSON.parse('{"a": 1, "b": 2,"c": {"d": 4, "e": {"f": 6}}}', function (k, v) {
+    console.log(k); // 输出当前的属性名，从而得知遍历顺序是从内向外的，
+                    // 最后一个属性名会是个空字符串。
+    return v;       // 返回原始属性值，相当于没有传递 reviver 参数。
+});
 ```
