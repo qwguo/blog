@@ -73,7 +73,7 @@ JSON对象包含两个方法: 用于解析 JavaScript Object Notation  (JSON) �
 
 
 ```javascript
-JSON.stringify(value[, replacer | [] [, space]])
+JSON.stringify(value[, replace | [] [, space]])
 ```
 
 **参数：**
@@ -164,18 +164,47 @@ JSON.parse(text[, reviver])
 **示例：**
 ```javascript
 /* 只传入一个要转换的值 */
+// 可以使空对象字符串
 JSON.parse('{}');              // {}
-JSON.parse('{a: 10, b:20}');   // {a: 10, b:20}
+// 对象字符串
+JSON.parse('{a:10, b:20}');   // SyntaxError 这里的键值必须使用单引号或者双引号括起来
+// 对象字符串
+JSON.parse('{"a":10, "b":20}');   // {a: 10, b:20}
+// 可以是字符串正假值
 JSON.parse('true');            // true
+// 不可以直接使用字符串
 JSON.parse('foo');             // SyntaxError错误
+// 字符串需要引号括起来
 JSON.parse('"foo"');           // "foo"
+// 可以是数组
 JSON.parse('[1, 5, "false", true]'); // [1, 5, "false", true]
+// 可以是null值
 JSON.parse('null');            // null
+// 不能使用undefined
+JSON.parse(undefined)         // SyntaxError错误
+// 不能使用function
+JSON.parse(function(){})         // SyntaxError错误
 
 /* 传入递归函数 */
-JSON.parse('{"a": 1, "b": 2,"c": {"d": 4, "e": {"f": 6}}}', function (k, v) {
-    console.log(k); // 输出当前的属性名，从而得知遍历顺序是从内向外的，
-                    // 最后一个属性名会是个空字符串。
-    return v;       // 返回原始属性值，相当于没有传递 reviver 参数。
+var getJSON = JSON.parse('{"a": 1, "b": "2","c": {"d": 4, "e": {"f": 6}},"g":null, "f":"hello"}', function (k, v) {
+  console.log(k);  // 这里依次输出的顺序是：a, b, d, f, e, c, g, f ''
+  if(typeof v == 'number'){  //这里通过遍历判断值是否为数字类型是进行处理并返回
+    return v + 10;
+  }
+  if(k == "f"){ // 这里判断键值是否是f，如果是返回undefined，也就是删除此值
+    return undefined;
+  }
+  // 默认返回
+  return v;
 });
+console.log(getJSON);  // { a: 11, b: '2', c: { d: 14, e: { f: 16 } }, g: null }
 ```
+
+1. 通过上边实例可以看出，我们在使用`parse`方法的时候必须传入正确的JSON支持的数据类型：JSON对象、数组、数值、字符串、布尔值和 空(null) 。
+
+2. 当我们提供第二个值的时候，他会为每一个值执行一次这个方法，并且把键当做第一个参数，值当做第二个参数传入该函数，并且在函数内部进行一些处理，当我们想要排除一些指定的键值对的话我们可以返回undefined，就会删除该项。并且它的执行顺序是依次顺序执行，当遇到的是对象形式，先便利里边的值，然后再输出该对象的键值，也就是由内到外执行，最后便利整个对象并且把转换后的整体返回，这个和 `stringify` 中的`replace`方法刚好相反。
+这里还需要主要的是在遍历的时候`reviver`函数内的this指向的是当前的对象，如果遇到的键值是一个对象，那么进入该对象遍历时，this会执行该键值的对象。
+
+## 参考网站
+
+1. https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
