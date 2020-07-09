@@ -84,9 +84,9 @@ theme: qwguo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:qwguo/qwguo.github.io.git
+  # repository: git@github.com:qwguo/qwguo.github.io.git
   # repository: git@gitee.com:qwguo/qwguo.git
-  # repository: git@e.coding.net:qwguo/blog.git
+  repository: git@e.coding.net:qwguo/blog.git
   branch: master
 
 
