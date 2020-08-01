@@ -220,14 +220,22 @@ background-repeat: space repeat;
 
 **语法：**
 ```css
+/*当元素内容多出现滚动条的时候，滚动滚动条，内容向上走，但是背景固定在可视区域内*/
 background-attachment: scroll;
+/*背景按照窗口的可视区域固定定位，当滚动内容的时候只有该元素的可视区域可以看到背景*/
 background-attachment: fixed;
+/*背景根据元素中的内容定位，会随着内容一起滚动*/
 background-attachment: local;
+/*这里也可以使用多个值，来设置分别设置多个背景，多个值之间用逗号分开*/
 background-attachment: scroll, fixed;
 ```
 
-**示例：**
+**示例：**[https://codepen.io/qwguo88/full/eYJwprz](https://codepen.io/qwguo88/full/eYJwprz)
 
+<iframe height="500" style="width: 100%;" scrolling="no" title="background-attachment" src="https://codepen.io/qwguo88/embed/eYJwprz?height=500&theme-id=30742&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/eYJwprz'>background-attachment</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## background-size
 
@@ -236,9 +244,148 @@ background-attachment: scroll, fixed;
 **语法：**
 ```css
 /*取值为关键字*/
+/*按照图片的等比例缩放，默认值为 auto auto*/
+backgorund-size: auto;
 /*等比例缩小或者放大背景图片，以容器的宽或高进行缩放，保证完全填充满容器，当图片大的时候会有一边益处*/
 backgorund-size: cover;
 /*等比例缩小或者放大背景图片，以容器的宽或高和图片的宽高比例进行缩放，保证宽或者高一项能填充满，另一边会有空白露出背景颜色*/
 backgorund-size: contain;
 
+/*可以使用固定单位值，或者其他单位设置*/
+background-size: 20% | 10px | 10rem ...
+
+/*横向和纵向的大小分开设置*/
+background-size: auto cover;
+background-size: 30px auto;
+background-size: 50% 40%;
+/*多个背景分开设置效果*/
+background-size: 20% auto, 30px 20%, 50em 100%, cover, contain;
 ```
+**说明：**
+这里需要说明的是
+1. 如果有多张背景图片但是只设置了一个`background-size`那么所有的图片将统一按照这个值进行缩放。
+2. 如果分开设置横向和纵向缩放比例，关键字`cover`和`contain`不能和单位值混合使用，错误：`background-size: cover 100px`;
+3. 如果只指定一个单位值，那么默认横向缩放指定大小，纵向缩放按照图片比例进行缩放，可以通过设置`auto 30%`实现横向按照图片比例缩放纵向指定尺寸缩放。
+4. 当背景图片宽度比高度大的时候`auto 100%`等价于`cover`，`100% auto | 100%`等价于`contain`；
+5. 当背景图片宽度比高度小的时候`100% auto | 100%`等价于`cover`，`auto 100%`等价于`contain`；
+
+**示例：**[https://codepen.io/qwguo88/full/JjGgXwj](https://codepen.io/qwguo88/full/JjGgXwj)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="background-size" src="https://codepen.io/qwguo88/embed/JjGgXwj?height=500&theme-id=30742&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/JjGgXwj'>background-size</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+## background-origin
+
+>指定背景图片的源点位置是从什么地方作为参考。
+
+**语法：**
+```css
+/*背景图片的原点从元素的边线内开始显示，默认值*/
+background-origin: padding-box;
+/*背景图片原点从元素的边线开始显示*/
+background-origin: border-box;
+/*背景图片从元素的内容区开始显示*/
+background-origin: content-box;
+/*给多个背景分别设置原点位置*/
+background-origin: content-box, padding-box, border-box;
+```
+**说明：**
+1. 当使用`background-attachment`为fixed时，该属性将被忽略不起作用。
+2. `background-origin`只作用于背景图片，对背景颜色无效。
+3. 如果有多个背景图片，但是只设置了一个只，所有背景图片都应用此设置。
+4. 可以同时设置多个背景图片的不同原点，多个值之间用逗号分开。
+5. 当设置了此属性后，background-position的位置将按照次原点开始偏移。
+
+**示例：**[https://codepen.io/qwguo88/full/qBbejra](https://codepen.io/qwguo88/full/qBbejra)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="background-origin" src="https://codepen.io/qwguo88/embed/qBbejra?height=500&theme-id=30742&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/qBbejra'>background-origin</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+
+## background-clip
+
+> `background-clip`：设置元素的背景（背景图片或颜色）是否延伸到边框、内边距盒子、内容盒子下面。
+
+```css
+/* 取关键字值 */
+/*背景将从元素的边框开始显示*/
+background-clip: border-box;
+/*背景将从元素的边框内部开始显示*/
+background-clip: padding-box;
+/*背景将从元素的内容区域开始位置显示*/
+background-clip: content-box;
+/*背景只在元素内部的文字轮廓中显示，这里有兼容问题，需要带-webkit前缀，同时需要把文字的颜色设置成透明*/
+background-clip: text;
+-webkit-background-clip: text;
+color:transparent;
+```
+**说明：**
+
+1. `background-clip`是用来设置从哪以外的位置开始裁切掉背景。
+2. 如果有多个背景图片，但是只设置了一个只，所有背景图片都应用此设置。
+3. 可以同时设置多个背景图片的不同原点，多个值之间用逗号分开。
+4. `background-clip: text`不同浏览器兼容相同。
+
+**示例：**[https://codepen.io/qwguo88/full/GRoVveK](https://codepen.io/qwguo88/full/GRoVveK)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="background-clip" src="https://codepen.io/qwguo88/embed/GRoVveK?height=500&theme-id=30742&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/GRoVveK'>background-clip</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+## background
+> 此属性是上边的属性简写形式，此属性的值可以取上边的属性的任意一个或多个作为值
+
+**语法：**
+```css
+/*如果把上边的属性写全，基本顺序是*/
+background: background-color background-image background-position/background-size background-repeat background-origin background-clip background-attachment initial|inherit;
+/*none值这个表示，元素没有背景，上边的属性都取默认值*/
+background: none;
+/*可以单独设置一个值，等价于background-image:url(图片地址)*/
+background:url(图片地址);
+/*可以设置多个值*/
+background: #c00 url(图片地址) no-repeat 20px 10px/50% 30%;
+/*设置多个背景*/
+background: url(图片地址) no-repeat 20px 10px/50% 30%, url(图片2地址) no-repeat left top/50% border-box content-box, #c00;
+```
+**说明：**
+1. `background-size`属性只能跟在`background-position`后边设置并且必须使用/（斜杠）将其分开；如：`center right/ 40% auto`
+2. 当`background-origin background-clip`只有一个值的的时候，表示同时这只这两个值，如果有两个值，一个值表示`background-origin`、第二个值表示`background-clip`
+3. 如果设置了多个背景需要使用逗号分开，而且如果有背景颜色需要放到最后，这样不会覆盖前边的背景；
+
+## background-blend-mode
+> 字面意思是背景的混合模式，用于定义该元素的背景图片、背景色如何混合模式显示，当多个背景重叠时，混合模式是计算像素最终颜色值的方法，每种混合模式采用前景和背景的颜色值，执行其计算并返回最终的颜色值。最终的可见层是对混合层中的每个重叠像素执行混合模式计算的结果。
+
+**语法：**
+
+```css
+/*取值*/
+background-blend-mode: normal | multiply | screen | overlay | darken | lighten | color-dodge | color-burn | hard-light | soft-light | difference | exclusion | hue | saturation | color | luminosity;
+/* 取单值 */
+background-blend-mode: normal;
+/* 双值，每个背景一个值 */
+background-blend-mode: darken, luminosity;
+```
+
+**兼容：**
+![image](background-blend-mode-caniuse.png)
+
+[兼容详情](https://caniuse.com/#search=background-blend-mode)
+
+**示例：**[https://codepen.io/qwguo88/full/LYGwzaV](https://codepen.io/qwguo88/full/LYGwzaV)
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="background-blend-mode" src="https://codepen.io/qwguo88/embed/LYGwzaV?height=500&theme-id=30742&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/qwguo88/pen/LYGwzaV'>background-blend-mode</a> by qwguo
+  (<a href='https://codepen.io/qwguo88'>@qwguo88</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+## 参考网站
+
+1. MDN: [https://developer.mozilla.org/zh-CN/docs/Web/CSS/background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background)
+
+
