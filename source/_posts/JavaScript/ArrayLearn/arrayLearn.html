@@ -5,7 +5,7 @@
  * @description  : description
  * @Date         : 2021-11-08 08:47:10
  * @LastEditors  : qwguo
- * @LastEditTime : 2021-11-08 09:05:25
+ * @LastEditTime : 2021-11-12 01:35:27
  * @FilePath     : /blog/source/_posts/JavaScript/ArrayLearn/arrayLearn.html
 -->
 <!DOCTYPE html>
@@ -17,16 +17,163 @@
   <title>Document</title>
 </head>
 <body>
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
   <script>
     // 创建数组
     var newArray = new Array('apple', 'banner', 'orange', 'pear', 'Mongo');
-    console.log(newArray)
+    console.log('new 关键字创建', newArray);
+    console.log(newArray instanceof Array);
+
     var newArray_2 = new Array(10);
     var newArray_2_1 = new Array(3, 4);
-    console.log(newArray_2);
-    console.log(newArray_2_1);
+    var newArray_2_2 = new Array('10');
+    // var newArray_2_3 = new Array(-10);
+    console.log('new Array(10)', newArray_2);
+    console.log('new Array(3, 4)', newArray_2_1);
+    console.log('new Array("10")', newArray_2_2);
+    // console.log('new Array(-10)', newArray_2_3);
+
     var newArray_3 = ['apple', 'banner', 'orange', 'pear', 'Mongo'];
-    console.log(newArray_3);
+    console.log('字面量形式：', newArray_3);
+    console.log(newArray_3 instanceof Array);
+
+    var newArray_4 = Array();
+    console.log('Array():', newArray_4);
+    console.log(newArray_4 instanceof Array);
+
+    //数组的属性length
+    var lengthArray_1 = ['apple', 'banner', 'orange', 'pear', 'Mongo'];
+    var arrLength = lengthArray_1.length;
+    console.log('arrLength', arrLength)
+    lengthArray_1.length = 3;
+    console.log('length-3', lengthArray_1);
+    lengthArray_1.length = 10;
+    console.log('length-10', lengthArray_1);
+    // lengthArray_1.length = 4294967296;
+    // lengthArray_1.length = -4;
+    // lengthArray_1.length = '10';
+    // lengthArray_1.length = 'a';
+    // lengthArray_1.length = 1.2;
+    // console.log('length-4294967296', lengthArray_1);
+
+    /* Array.from */
+    (function(){
+      console.log('-----Array.from方法-----');
+      function fn(){
+        // 把函数接收的参数转换数组
+        console.log('arguments', arguments);
+        console.log('Object', Object(arguments));
+        return Array.from(arguments);
+      }
+      let newArr = fn('apple', 'banner', 'orange', 'pear', 'Mongo');
+      console.log('把函数参数转换成数组：', newArr);
+
+      // 把获取dom节点的集合类数组改成数组
+      let domArr = document.querySelectorAll('span');
+      console.log('原始数据：', domArr);
+      console.log('修改后的数据：', Array.from(domArr));
+
+      // 由于字符串页带有length属性，所以from可以把字符串的每个个字符单独分开转换成数组
+      let str = 'hello world';
+      console.log('字符串：',str);
+      console.log('转换成数组：', Array.from(str));
+
+      // 我们还可以把带length属性的对象转换成数组
+      let parson = {name: 'qwguo', sex: '男', age: 30, length: 3};
+      let parson2 = {0: 'qwguo', 1: '男', 2: 30, length: 3};
+      console.log('对象元数据1：', parson);
+      console.log('对象转换成数组：', Array.from(parson));
+      console.log('对象元数据2：', parson2);
+      console.log('对象转换成数组：', Array.from(parson2));
+
+      // ES6新增的数据类型，Set数据类型，Map数据类型，本身就是可以迭代的，所以可以调用from方法将其转换成数组
+      // Set数据类型转换成数组
+      var newSet = new Set(['foo', 'bar', 'baz', 'foo'])
+      console.log('原set数据：', newSet);
+      console.log('把set数据转换成数组：', Array.from(newSet));
+
+      // Map数据类型转换成数组
+      const mapper = new Map([['1', 'a'], ['2', 'b']]);
+      console.log('map元数据:', mapper);
+
+      console.log('map数据转换成数组', Array.from(mapper));
+
+      // 也可以把map的值转换成数组
+      console.log('map.values方法只转换值为数组：', Array.from(mapper.values()));
+
+      console.log('map.values方法只转换键为数组：', Array.from(mapper.keys()));
+      // ['1', '2'];
+
+      // 使用from 的第二个参数
+      function fn2(){
+        // 把函数接收的参数转换数组
+        return Array.from(arguments, (v, i)=>{
+          return v = v + '_++';
+        });
+      }
+      let newArr2 = fn2('apple', 'banner', 'orange', 'pear', 'Mongo');
+      console.log('把函数参数转换成数组：', newArr2);
+      // (5) ['apple_++', 'banner_++', 'orange_++', 'pear_++', 'Mongo_++']
+
+      let numArr = Array.from({length: 5}, (v, i) => { return i});
+      console.log(numArr);
+
+      function numRange(start, end, step, fun){
+        return Array.from({length: (end - start) / step + 1}, (v, i) => start + i * step);
+      }
+      console.log(numRange(1, 10, 1));
+      // (10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      console.log(numRange(1, 10, 4));
+      // (3) [1, 5, 9]
+
+      console.log(numRange('A'.charCodeAt(), 'Z'.charCodeAt(), 1).map(function(v, i){return String.fromCharCode(v)}));
+      // (26) ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
+      // 第三个参数是用来改变第二个参数的map方法调用时候的内部this执行的参数
+
+      function fn3(){
+        // 把函数接收的参数转换数组
+        let y = {z: 20};
+        return Array.from(arguments, function(v, i){
+          console.log(this);
+          return v = v + '_++';
+        });
+      }
+      // 这种情况调用fn3的话，map内部的this指向的是window，因为是在window下调用的该
+      let newArr3 = fn3('apple', 'banner', 'orange', 'pear', 'Mongo');
+      //如果通过这种方式调用this指向的还是window，虽然这调用fn3方法时改变了this，但是map方法的执行并没有改变this
+      let x = {a: 10, b: 20};
+      fn3.call(x, 'apple', 'banner', 'orange', 'pear', 'Mongo');
+
+      // 把上边的方法改成如下代码
+      function fn4(){
+        // 把函数接收的参数转换数组
+        let y = {z: 20};
+        return Array.from(arguments, function(v, i){
+          console.log(this);
+          return v = v + '_++';
+        }, this);
+      }
+      let xx = {a: 10, b: 20};
+      fn4.call(xx, 'apple', 'banner', 'orange', 'pear', 'Mongo');
+      // 这个时候调用map内部的this就指向了调用该方法的this了，我们也可以传入上边的y把this指向改变为y对象
+
+      // 这里还需要注意的是，如果把map方法换成箭头函数的话，由于箭头函数没有this,所以内部的this执行调用该方法的this，就相当于上边第三个参数传this值
+    })();
+    // Array.isArray()
+    (function(){
+      let objArr = {0: 'qwguo', 1: '30', 2: '男', length: 3}
+      console.log(Array.isArray(objArr));
+      // false
+      console.log(Array.isArray(Array.from(objArr)));
+      // true
+      let spanDom = document.querySelectorAll('span');
+      console.log(Array.isArray(spanDom));
+      // false
+      let arr = [10, 20, 30];
+      console.log(Array.isArray(arr));
+      // true
+    })()
   </script>
 </body>
 </html>
