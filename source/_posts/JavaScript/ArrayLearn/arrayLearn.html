@@ -5,7 +5,7 @@
  * @description  : description
  * @Date         : 2021-11-08 08:47:10
  * @LastEditors  : qwguo
- * @LastEditTime : 2021-11-12 01:35:27
+ * @LastEditTime : 2021-11-15 08:42:52
  * @FilePath     : /blog/source/_posts/JavaScript/ArrayLearn/arrayLearn.html
 -->
 <!DOCTYPE html>
@@ -20,41 +20,45 @@
   <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
   <script>
     // 创建数组
-    var newArray = new Array('apple', 'banner', 'orange', 'pear', 'Mongo');
-    console.log('new 关键字创建', newArray);
-    console.log(newArray instanceof Array);
+    (function(){
+      var newArray = new Array('apple', 'banner', 'orange', 'pear', 'Mongo');
+      console.log('new 关键字创建', newArray);
+      console.log(newArray instanceof Array);
 
-    var newArray_2 = new Array(10);
-    var newArray_2_1 = new Array(3, 4);
-    var newArray_2_2 = new Array('10');
-    // var newArray_2_3 = new Array(-10);
-    console.log('new Array(10)', newArray_2);
-    console.log('new Array(3, 4)', newArray_2_1);
-    console.log('new Array("10")', newArray_2_2);
-    // console.log('new Array(-10)', newArray_2_3);
+      var newArray_2 = new Array(10);
+      var newArray_2_1 = new Array(3, 4);
+      var newArray_2_2 = new Array('10');
+      // var newArray_2_3 = new Array(-10);
+      console.log('new Array(10)', newArray_2);
+      console.log('new Array(3, 4)', newArray_2_1);
+      console.log('new Array("10")', newArray_2_2);
+      // console.log('new Array(-10)', newArray_2_3);
 
-    var newArray_3 = ['apple', 'banner', 'orange', 'pear', 'Mongo'];
-    console.log('字面量形式：', newArray_3);
-    console.log(newArray_3 instanceof Array);
+      var newArray_3 = ['apple', 'banner', 'orange', 'pear', 'Mongo'];
+      console.log('字面量形式：', newArray_3);
+      console.log(newArray_3 instanceof Array);
 
-    var newArray_4 = Array();
-    console.log('Array():', newArray_4);
-    console.log(newArray_4 instanceof Array);
+      var newArray_4 = Array();
+      console.log('Array():', newArray_4);
+      console.log(newArray_4 instanceof Array);
+    })/* () */;
 
     //数组的属性length
-    var lengthArray_1 = ['apple', 'banner', 'orange', 'pear', 'Mongo'];
-    var arrLength = lengthArray_1.length;
-    console.log('arrLength', arrLength)
-    lengthArray_1.length = 3;
-    console.log('length-3', lengthArray_1);
-    lengthArray_1.length = 10;
-    console.log('length-10', lengthArray_1);
-    // lengthArray_1.length = 4294967296;
-    // lengthArray_1.length = -4;
-    // lengthArray_1.length = '10';
-    // lengthArray_1.length = 'a';
-    // lengthArray_1.length = 1.2;
-    // console.log('length-4294967296', lengthArray_1);
+    (function(){
+      var lengthArray_1 = ['apple', 'banner', 'orange', 'pear', 'Mongo'];
+      var arrLength = lengthArray_1.length;
+      console.log('arrLength', arrLength)
+      lengthArray_1.length = 3;
+      console.log('length-3', lengthArray_1);
+      lengthArray_1.length = 10;
+      console.log('length-10', lengthArray_1);
+      // lengthArray_1.length = 4294967296;
+      // lengthArray_1.length = -4;
+      // lengthArray_1.length = '10';
+      // lengthArray_1.length = 'a';
+      // lengthArray_1.length = 1.2;
+      // console.log('length-4294967296', lengthArray_1);
+    })/* () */;
 
     /* Array.from */
     (function(){
@@ -159,7 +163,9 @@
       // 这个时候调用map内部的this就指向了调用该方法的this了，我们也可以传入上边的y把this指向改变为y对象
 
       // 这里还需要注意的是，如果把map方法换成箭头函数的话，由于箭头函数没有this,所以内部的this执行调用该方法的this，就相当于上边第三个参数传this值
-    })();
+    })/* () */;
+
+
     // Array.isArray()
     (function(){
       let objArr = {0: 'qwguo', 1: '30', 2: '男', length: 3}
@@ -173,7 +179,281 @@
       let arr = [10, 20, 30];
       console.log(Array.isArray(arr));
       // true
-    })()
+      console.dir(Array.isArray);
+      /* 兼容写法 */
+      if(Array.isArray){
+        Array.isArray = function(arg){
+          return Object.prototype.toString.call(arg) === '[object Array]';
+        }
+        console.log(Array.isArray([1]));
+        console.log(Array.isArray({}));
+        console.log(Array.isArray(document.getElementsByTagName('span')));
+      }
+    })/* () */;
+
+    // Array.of()
+    (function(){
+      var newArr_1 = new Array(7);
+      console.log(newArr_1);
+      //(7) [空属性 × 7]
+      var newArr_2 = Array.of(7);
+      console.log(newArr_2);
+      // [7]
+      var newArr_3 = Array.of('a', 'b', 7, 10);
+      console.log(newArr_3);
+
+      console.dir(Array.of);
+      // 兼容性写法
+      if(Array.of){
+        /* function of(){
+          return Array.prototype.slice.call(arguments)
+        }
+        of.name = "of";
+        Array.of = of;
+        console.dir(Array.of);
+        console.log(Array.of.name); */
+        Array.of = function(){
+          return Array.prototype.slice.call(arguments)
+        }
+        console.log(Array.of(7));
+      }
+      // console.dir(Array.of);
+    })/* () */;
+
+
+
+    // array.at()
+    (function(){
+      let array_1 = [10, 5, 'apple', 'banner', 'orange', 'pear'];
+      console.log(array_1.at(2));
+      // apple
+      console.log(array_1.at(-6));
+      // orange
+
+      // 兼容写法
+      if(Array.prototype.at){
+        Array.prototype.at = function(index) {
+          index = index < 0 ? this.length + index : index;
+          return this[index];
+        }
+        console.log(array_1.at(-7));
+      }
+    })/* () */;
+
+    // array.concat()
+    (function(params) {
+      var number_arr = [10, 20, 5, 8, 12, 30];
+      var fruit_arr = ['apple', 'banner', 'orange', 'pear'];
+      var animal_arr = ['dog', 'cat', 'sheep', 'chicken', 'horse', 'cow'];
+
+
+
+      /**
+       * concat方法，合并两个数组或多个数组，生成一个新数组, 该方法并不会改变任何一个原数组
+       * array_1.concat(array_2, array_3, array_4,...,array_n);
+       * array_1，可以是一个空数组，或者是要合并的数组的其中一个。
+       * 参数：为一个或多个数组，或者是任意类型的值
+       * 此方法为ECMAScript 1版本的方法
+       */
+
+      let concat_arr = number_arr.concat(fruit_arr, animal_arr);
+      let newConcat_arr = [].concat(number_arr, fruit_arr, animal_arr);
+      let concat_str_arr = [].concat('new_val', 100, undefined, null, NaN, {a:10}, fruit_arr);
+      console.log('原number_arr:', number_arr);
+      console.log('原fruit_arr:', fruit_arr);
+      console.log('原animal_arr:', animal_arr);
+      console.log('合并后的数组:',concat_arr);
+      console.log('合并后的数组2:',newConcat_arr);
+      console.log('任意值合并：',concat_str_arr)
+    })/* () */;
+
+    // array.copyWithin()
+    (function(){
+      console.log('数组的copyWithin方法');
+      console.log('元数据：\n',['a', 'b', 'c', 'd', 'e', 'f', 'g']);
+      let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g'].copyWithin();
+      console.log(arr);
+      let arr_1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g'].copyWithin(2);
+      console.log(arr_1);
+      let arr_2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g'].copyWithin(3, 4);
+      console.log(arr_2);
+      let arr_3 = ['a', 'b', 'c', 'd', 'e', 'f', 'g'].copyWithin(1, 4, 6);
+      console.log(arr_3);
+      let arr_4 = ['a', 'b', 'c', 'd', 'e', 'f', 'g'].copyWithin(-5, -2, -1);
+      console.log(arr_4);
+      let arr_5 = ['a', 'b', 'c', 'd', 'e', 'f', 'g'].copyWithin(-5, -1, 2);
+      console.log(arr_5);
+    }/* () */);
+
+
+
+    // array.entries()
+    (function(){
+      let arr_1 = ['a', 'b', 'c'];
+      let en_array = arr_1.entries();
+      console.log(arr_1)
+      console.log(en_array)
+      // console.log(en_array.next())
+      for(i of en_array){
+        console.log(i);
+      }
+    }/* () */);
+
+    // array.every()
+    (function(){
+      console.log('array.every');
+      let array_1 = [20, 3, 15, 40, 2, 50, 70];
+      let y = { a: 20};
+      let mark_1 = array_1.every((v, i, arr)=>{
+        console.log(this);
+        return v > 10;
+      }, y);
+      console.log(mark_1);
+      // false
+      let mark_2 = array_1.every(function(v, i, arr){
+        return v > 1;
+      });
+      console.log(mark_2);
+      // true
+      // let mark_3 = array_1.every(function(v, i, arr){
+      //   console.log(i, v);
+      //   if(i === 0){
+      //     console.log(this);
+      //     arr.push(100);
+      //     arr.splice(1, 1, 60)
+      //   }
+      //   return v > 1;
+      // });
+      // console.log(mark_3);
+      if(Array.prototype.every){
+        console.log('兼容写法');
+        Array.prototype.every = function(callBack, thisArg){
+          let arr = this;
+          let leg = arr.length;
+          for(let i = 0; i < leg; i++){
+            if(!callBack.call(thisArg, arr[i], i, arr)){
+              return false;
+            }
+          }
+          return true;
+        }
+        let x = { a: 10};
+        let mark_4 = array_1.every((element, index, array)=>{
+          return element > 10;
+        }, x);
+        console.log('mark_4', mark_4);
+      }
+    }/* () */);
+
+    // array.fill()
+    (function(){
+      if(!Array.prototype.fill){
+        Array.prototype.fill = function(){
+          let arr = this;
+          let len = arr.length;
+          let val = arguments[0];
+          let start = arguments[1];
+          let end = arguments[2];
+          if(start){
+            if(start < 0)
+            start = len + start;
+          }else{
+            start = 0
+          }
+          if(end){
+            if(end < 0){
+              end = len + end;
+            }
+          }else{
+            end = len;
+          }
+          while(start<end){
+            arr[start] = val;
+            start++;
+          }
+          return arr;
+        }
+      }
+      let arr = ['a', 'b', 'c', 'd'];
+      let j = {a: 10}
+      console.log(arr);
+      console.log([].concat(arr).fill());
+      console.log([].concat(arr).fill(10));
+      console.log([].concat(arr).fill(10, 2));
+      console.log([].concat(arr).fill(10, null, 2));
+      console.log([].concat(arr).fill(10, 0, 2));
+      console.log([].concat(arr).fill(3, -2, -1));
+      console.log([].concat(arr).fill([3, 10], 1, 4));
+      console.log([].concat(arr).fill(NaN, 1, 4));
+      console.log([].concat(arr).fill(j, 1, 4));
+      j.b = 20;
+    }/* () */);
+
+    // array.filter()
+    (function(){
+      if(!Array.prototype.filter){
+        Array.prototype.filter = function(callBack, thisArg){
+          if(typeof(callBack) !== 'function'){
+            throw new TypeError(callBack + ' is not a function');
+            return;
+          }
+          let newArr = [];
+          let arr = this;
+          let len = arr.length;
+          let i = 0;
+          while(i<len){
+            if(callBack.call(thisArg, arr[i], i, arr)){
+              newArr.push(arr[i]);
+            }
+            i++;
+          }
+          return newArr;
+        }
+      }
+      let array = [10, 20, 5, 3, 80, 6, 1, 12];
+      console.log('原数组：', array);
+      let newArray_1 = array.filter((element, index, arr)=>{
+        console.log(this);
+        return element > 10;
+      });
+      console.log(newArray_1);
+      // (3) [20, 80, 12]
+      let newArray_2 = array.filter((element, index, arr)=>{
+        return index%2;
+      });
+      console.log(newArray_2);
+      // (4) [20, 3, 6, 12]
+      let array_2 = ['apple', 'banana', 'grapes', 'mango', 'orange'];
+      let fun = function(e, i, arr){
+        return e.indexOf('ap') != -1;
+      };
+      let newArray_3 = array_2.filter(fun);
+      let newArray_4 = array_2.filter('fun');
+      console.log(newArray_3);
+      // (2) ['apple', 'grapes']
+    }/* () */);
+    // array.find()
+    (function(){
+      let array = [10, 20, 5, 3, 80, 6, 1, 12];
+      console.log('原数组：', array);
+      let newArray_1 = array.find((element, index, arr)=>{
+        return element > 60;
+      });
+      console.log(newArray_1);
+      // 80
+      let newArray_2 = array.find((element, index, arr)=>{
+        return index%2;
+      });
+      console.log(newArray_2);
+      // 20
+      let array_2 = ['apple', 'banana', 'grapes', 'mango', 'orange'];
+      let fun = function(e, i, arr){
+        return e.indexOf('ap') != -1;
+      };
+      let newArray_3 = array_2.find(fun);
+      console.log(newArray_3);
+      // apple
+    }());
   </script>
 </body>
 </html>
