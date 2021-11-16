@@ -640,3 +640,24 @@ let fun = function(e, i, arr){
 let newArray_3 = array_2.find(fun);
 // apple
 ```
+
+#### 兼容写法
+
+```javascript
+if(!Array.prototype.find){
+  Array.prototype.find = function(callBack, thisAge){
+    let arr = this, len = arr.length, i = 0;
+    while(i<len){
+      if(callBack.call(thisAge, arr[i], i, arr)){
+        return arr[i];
+      }
+      i++;
+    }
+  }
+}
+```
+
+### array.findIndex()
+
+> 此方法和find类似他是通过迭代循环数组中的每一项，然后为每一项调用函数进行测试，并且返回符合条件的那一项的索引值
+
