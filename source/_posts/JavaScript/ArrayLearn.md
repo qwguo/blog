@@ -661,3 +661,79 @@ if(!Array.prototype.find){
 
 > 此方法和find类似他是通过迭代循环数组中的每一项，然后为每一项调用函数进行测试，并且返回符合条件的那一项的索引值
 
+#### 语法
+
+```javascript
+array.findIndex(callBack(element, index, arr), thisArg)
+```
+
+#### 参数
+
+- `callBack`：循环迭代为每个元素执行的回调函数，回调函数中进行判断，如果条件成立返回当前项的索引下标并且结束循环，只要循环中找到一个匹配项立马结束循环,如果没有匹配的项返回-1
+  - `element`：循环迭代的每一项
+  - `index`：当前项的下标索引值
+  - `array`：循环的当前数组
+- `thisArg`：用于改变回调函数中的this指向
+
+#### 兼容写法
+
+```javascript
+if(!Array.prototype.findIndex){
+  Array.prototype.findIndex = function(callBack, thisAge){
+    let arr = this, len = arr.length, i = 0;
+    while(i<len){
+      if(callBack.call(thisAge, arr[i], i, arr)){
+        return i;
+      }
+      i++;
+    }
+    return -1;
+  }
+}
+```
+
+
+### array.flat()
+
+> 扁平化一个数组，把多维数组转换成给定参数的层级数组，此方法并不会改变原数组，而是返回一个新数组
+
+#### 语法
+
+```javascript
+array.flat([depth])
+```
+
+#### 参数
+
+- `depth`：可选参数，表示希望把当前的多为数组结构多少层，如果给的的参数大于数组的最大深度，那么将把数组转换成一维数组，如果不指定，那么只是吧数组中的二维拆成一维。
+
+#### 示例
+
+```javascript
+const array = [0, 1, 2, [3, 4, [5, 6, [7, 8]]], 20, [30, 31, 32, [33, 34]]];
+console.log(array.flat());
+// (11) [0, 1, 2, 3, 4, Array(3), 20, 30, 31, 32, Array(2)]
+// 只结构一层
+
+console.log(array.flat(2));
+// (14) [0, 1, 2, 3, 4, 5, 6, Array(2), 20, 30, 31, 32, 33, 34]
+
+console.log(array.flat(5));
+// (15) [0, 1, 2, 3, 4, 5, 6, 7, 8, 20, 30, 31, 32, 33, 34]
+
+console.log(array.flat(-1));
+// (6) [0, 1, 2, Array(3), 20, Array(4)]
+// 如果参数为负数将不进行任何操作
+
+console.log(array.flat('a'));
+// (6) [0, 1, 2, Array(3), 20, Array(4)]
+// 如果传入的参数为字符串，会执行Number看是否可以转换成数字，如果不能，不进行操作
+
+console.log(array.flat(2.1));
+// (14) [0, 1, 2, 3, 4, 5, 6, Array(2), 20, 30, 31, 32, 33, 34]
+// 如果传入的是小数，那么将转换成整数在进行结构
+
+console.log(array.flat('2'));
+// (14) [0, 1, 2, 3, 4, 5, 6, Array(2), 20, 30, 31, 32, 33, 34]
+// 字符串将进行隐试类型转换
+```
